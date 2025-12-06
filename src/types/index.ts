@@ -8,6 +8,14 @@ export type LegislativeStatus =
   | 'uchwalona'
   | 'odrzucona';
 
+export interface DocumentVersion {
+  id: string;
+  version: string;
+  date: Date;
+  url: string;
+  description: string;
+}
+
 export interface Ustawa {
   id: string;
   title: string;
@@ -18,6 +26,7 @@ export interface Ustawa {
   createdAt: Date;
   updatedAt: Date;
   drukNumber?: string;
+  documentVersions?: DocumentVersion[];
 }
 
 export type UpdateType =
@@ -29,6 +38,12 @@ export type UpdateType =
   | 'amendment'
   | 'ai_summary';
 
+export interface CodeDiff {
+  fileName: string;
+  additions: string[];
+  deletions: string[];
+}
+
 export interface LegislativeUpdate {
   id: string;
   ustawaId: string;
@@ -39,6 +54,8 @@ export interface LegislativeUpdate {
   aiSummary?: string;
   createdAt: Date;
   sourceUrl?: string;
+  documentVersion?: DocumentVersion;
+  diff?: CodeDiff;
 }
 
 export const statusLabels: Record<LegislativeStatus, string> = {

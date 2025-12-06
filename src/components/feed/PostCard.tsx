@@ -15,6 +15,9 @@ import {
   Sparkles,
   ExternalLink,
   Share2,
+  Download,
+  Plus,
+  Minus,
 } from 'lucide-react';
 import { FollowButton } from '@/components/ui/FollowButton';
 
@@ -69,6 +72,53 @@ export function PostCard({ update }: PostCardProps) {
             </div>
             <p className="text-sm">{update.aiSummary}</p>
           </div>
+        )}
+
+        {/* Diff display */}
+        {update.diff && (
+          <div className="mb-4 rounded-lg border border-border overflow-hidden font-mono text-xs">
+            <div className="bg-muted px-3 py-2 border-b border-border flex items-center gap-2">
+              <FileText className="h-3.5 w-3.5" />
+              <span className="font-medium">{update.diff.fileName}</span>
+            </div>
+            <div className="bg-background">
+              {update.diff.deletions.map((line, i) => (
+                <div key={`del-${i}`} className="flex bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-400">
+                  <span className="w-8 flex-shrink-0 text-center py-1 bg-red-100 dark:bg-red-900/50 select-none">
+                    <Minus className="h-3 w-3 inline" />
+                  </span>
+                  <span className="px-2 py-1 overflow-x-auto">{line}</span>
+                </div>
+              ))}
+              {update.diff.additions.map((line, i) => (
+                <div key={`add-${i}`} className="flex bg-green-50 dark:bg-green-950/30 text-green-700 dark:text-green-400">
+                  <span className="w-8 flex-shrink-0 text-center py-1 bg-green-100 dark:bg-green-900/50 select-none">
+                    <Plus className="h-3 w-3 inline" />
+                  </span>
+                  <span className="px-2 py-1 overflow-x-auto">{line}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Document attachment */}
+        {update.documentVersion && (
+          <a
+            href={update.documentVersion.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3 mb-4 bg-muted/50 rounded-lg border border-border hover:bg-muted transition-colors"
+          >
+            <div className="p-2 bg-primary/10 rounded">
+              <FileText className="h-4 w-4 text-primary" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium">Wersja {update.documentVersion.version}</p>
+              <p className="text-xs text-muted-foreground">{update.documentVersion.description}</p>
+            </div>
+            <Download className="h-4 w-4 text-muted-foreground" />
+          </a>
         )}
 
         <div className="flex items-center gap-1 pt-3 border-t border-border">

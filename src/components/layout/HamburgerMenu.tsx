@@ -14,7 +14,11 @@ const navItems = [
   { icon: Settings, label: 'Ustawienia', href: '/ustawienia' },
 ];
 
-export function HamburgerMenu() {
+interface HamburgerMenuProps {
+  offsetLeft?: boolean;
+}
+
+export function HamburgerMenu({ offsetLeft = false }: HamburgerMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -22,7 +26,7 @@ export function HamburgerMenu() {
       <Button
         variant="ghost"
         size="icon"
-        className="fixed top-4 left-4 z-50"
+        className={`fixed top-4 z-50 ${offsetLeft ? 'left-14' : 'left-4'}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

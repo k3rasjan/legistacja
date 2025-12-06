@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { UstawaAvatar } from '@/components/ustawa/UstawaAvatar';
 import { TrainStatusBar } from '@/components/ustawa/TrainStatusBar';
+import { DocumentHistory } from '@/components/ustawa/DocumentHistory';
 import { PostCard } from '@/components/feed/PostCard';
 import { HamburgerMenu } from '@/components/layout/HamburgerMenu';
 import { mockUstawy, mockUpdates, mockConsultations } from '@/data/mock';
@@ -31,18 +32,22 @@ export default async function UstawaPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen">
-      <HamburgerMenu />
+      <HamburgerMenu offsetLeft />
+
+      {/* Back arrow next to hamburger menu */}
+      <Link href="/" className="fixed top-4 left-4 z-50">
+        <Button variant="ghost" size="icon">
+          <ArrowLeft className="h-5 w-5" />
+        </Button>
+      </Link>
+
+      {/* Document History - Top Right */}
+      {ustawa.documentVersions && ustawa.documentVersions.length > 0 && (
+        <DocumentHistory versions={ustawa.documentVersions} />
+      )}
 
       <div className="flex">
         <aside className="fixed left-0 top-0 h-screen w-64 border-r border-border bg-background pt-16 px-4 overflow-y-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <Link href="/">
-              <Button variant="ghost" size="icon">
-                <ArrowLeft className="h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
-
           <div className="flex items-center gap-3 mb-6">
             <UstawaAvatar
               shortTitle={ustawa.shortTitle}
@@ -85,7 +90,7 @@ export default async function UstawaPage({ params }: PageProps) {
         </aside>
 
         <main className="ml-64 flex-1 p-6 pt-16">
-          <div className="max-w-2xl">
+          <div className="w-full">
             <div className="mb-6">
               <h2 className="text-xl font-bold mb-2">{ustawa.title}</h2>
               <p className="text-muted-foreground">{ustawa.description}</p>
