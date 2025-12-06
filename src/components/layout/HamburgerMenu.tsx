@@ -1,0 +1,71 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { Menu, X, Home, Search, Bell, Bookmark, Settings, Scale, MessageSquare } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+const navItems = [
+  { icon: Home, label: 'Strona główna', href: '/' },
+  { icon: MessageSquare, label: 'Konsultacje', href: '/konsultacje' },
+  { icon: Search, label: 'Szukaj', href: '/szukaj' },
+  { icon: Bell, label: 'Powiadomienia', href: '/powiadomienia' },
+  { icon: Bookmark, label: 'Obserwowane', href: '/obserwowane' },
+  { icon: Settings, label: 'Ustawienia', href: '/ustawienia' },
+];
+
+export function HamburgerMenu() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <Button
+        variant="ghost"
+        size="icon"
+        className="fixed top-4 left-4 z-50"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+      </Button>
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      <aside
+        className={`fixed top-0 left-0 h-full w-72 bg-background border-r border-border z-50 transform transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="p-4 pt-16">
+          <Link
+            href="/"
+            className="flex items-center gap-2 mb-8 px-2"
+            onClick={() => setIsOpen(false)}
+          >
+            <Scale className="h-8 w-8 text-primary" />
+            <span className="text-xl font-bold">Legislacja</span>
+          </Link>
+
+          <nav className="space-y-1">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
+                <Button variant="ghost" className="w-full justify-start gap-3 text-base">
+                  <item.icon className="h-5 w-5" />
+                  {item.label}
+                </Button>
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        <div className="absolute bottom-4 left-4 text-xs text-muted-foreground">
+          <p>Legislacja Tracker v0.1</p>
+        </div>
+      </aside>
+    </>
+  );
+}
