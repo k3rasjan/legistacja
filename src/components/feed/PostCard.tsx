@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
@@ -13,13 +14,12 @@ import {
   Vote,
   Edit,
   Sparkles,
-  ExternalLink,
-  Share2,
   Download,
   Plus,
   Minus,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
-import { FollowButton } from '@/components/ui/FollowButton';
 
 const updateTypeIcons = {
   status_change: ArrowRight,
@@ -49,7 +49,14 @@ function formatRelativeTime(date: Date): string {
 }
 
 export function PostCard({ update }: PostCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const Icon = updateTypeIcons[update.type];
+
+  // Get the current document version - either from the update or the latest from ustawa
+  const currentDocument = update.documentVersion
+    || (update.ustawa.documentVersions && update.ustawa.documentVersions.length > 0
+        ? update.ustawa.documentVersions[update.ustawa.documentVersions.length - 1]
+        : null);
 
   return (
     <Card>
@@ -71,6 +78,19 @@ export function PostCard({ update }: PostCardProps) {
               <span className="text-sm font-medium">Podsumowanie AI</span>
             </div>
             <p className="text-sm">{update.aiSummary}</p>
+          </div>
+        )}
+
+        {/* Expanded detailed AI summary */}
+        {isExpanded && update.aiDetailedSummary && (
+          <div className="bg-muted/50 rounded-lg p-4 border border-border mb-4">
+            <div className="flex items-center gap-2 text-foreground mb-3">
+              <Sparkles className="h-4 w-4" />
+              <span className="text-sm font-medium">Szczegółowa analiza AI</span>
+            </div>
+            <div className="text-sm space-y-2 whitespace-pre-line">
+              {update.aiDetailedSummary}
+            </div>
           </div>
         )}
 
@@ -102,10 +122,10 @@ export function PostCard({ update }: PostCardProps) {
           </div>
         )}
 
-        {/* Document attachment */}
-        {update.documentVersion && (
+        {/* Document attachment - always show current document version */}
+        {currentDocument && (
           <a
-            href={update.documentVersion.url}
+            href={currentDocument.url}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 p-3 mb-4 bg-muted/50 rounded-lg border border-border hover:bg-muted transition-colors"
@@ -114,27 +134,34 @@ export function PostCard({ update }: PostCardProps) {
               <FileText className="h-4 w-4 text-primary" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium">Wersja {update.documentVersion.version}</p>
-              <p className="text-xs text-muted-foreground">{update.documentVersion.description}</p>
+              <p className="text-sm font-medium">Wersja {currentDocument.version}</p>
+              <p className="text-xs text-muted-foreground">{currentDocument.description}</p>
             </div>
             <Download className="h-4 w-4 text-muted-foreground" />
           </a>
         )}
 
-        <div className="flex items-center gap-1 pt-3 border-t border-border">
-          <FollowButton size="sm" />
-          <Button variant="ghost" size="sm" className="text-muted-foreground">
-            <Share2 className="h-4 w-4 mr-1" />
-            Udostępnij
+
+        {/* Read more button */}
+        <div className="flex justify-center pt-3 border-t border-border mt-4">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-muted-foreground"
+          >
+            {isExpanded ? (
+              <>
+                <ChevronUp className="h-4 w-4 mr-1" />
+                Zwiń
+              </>
+            ) : (
+              <>
+                <ChevronDown className="h-4 w-4 mr-1" />
+                Czytaj więcej
+              </>
+            )}
           </Button>
-          {update.sourceUrl && (
-            <Button variant="ghost" size="sm" className="text-muted-foreground ml-auto" asChild>
-              <a href={update.sourceUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-4 w-4 mr-1" />
-                Źródło
-              </a>
-            </Button>
-          )}
         </div>
       </CardContent>
     </Card>

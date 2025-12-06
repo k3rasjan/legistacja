@@ -17,6 +17,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '1-3', version: '2.0', date: new Date('2024-12-01'), url: '/documents/nowelizacja-rodo-v2.pdf', description: 'Po konsultacjach publicznych' },
       { id: '1-4', version: '2.1', date: new Date('2024-12-05'), url: '/documents/nowelizacja-rodo-v2.1.pdf', description: 'Aktualna wersja' },
     ],
+    categories: ['technologia', 'biznes'],
   },
   {
     id: '2',
@@ -35,6 +36,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '2-4', version: '2.1', date: new Date('2024-11-10'), url: '/documents/dostepnosc-cyfrowa-v2.1.pdf', description: 'Po I czytaniu w Sejmie' },
       { id: '2-5', version: '2.2', date: new Date('2024-12-03'), url: '/documents/dostepnosc-cyfrowa-v2.2.pdf', description: 'Po poprawkach komisji' },
     ],
+    categories: ['technologia', 'pomoc-spoleczna'],
   },
   {
     id: '3',
@@ -48,6 +50,7 @@ export const mockUstawy: Ustawa[] = [
     documentVersions: [
       { id: '3-1', version: '0.1', date: new Date('2024-12-01'), url: '/documents/transparentnosc-v0.1.pdf', description: 'Wersja robocza' },
     ],
+    categories: ['technologia'],
   },
   {
     id: '4',
@@ -64,6 +67,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '4-2', version: '1.1', date: new Date('2024-11-05'), url: '/documents/e-tozsamosc-v1.1.pdf', description: 'Po uzgodnieniach' },
       { id: '4-3', version: '1.2', date: new Date('2024-12-04'), url: '/documents/e-tozsamosc-v1.2.pdf', description: 'Aktualna wersja' },
     ],
+    categories: ['technologia', 'bezpieczenstwo'],
   },
   {
     id: '5',
@@ -82,6 +86,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '5-4', version: '3.1', date: new Date('2024-11-01'), url: '/documents/ai-administracja-v3.1.pdf', description: 'Po poprawkach Senatu' },
       { id: '5-5', version: '4.0', date: new Date('2024-11-20'), url: '/documents/ai-administracja-v4.pdf', description: 'Wersja uchwalona' },
     ],
+    categories: ['technologia'],
   },
   {
     id: '6',
@@ -98,6 +103,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '6-2', version: '2.0', date: new Date('2024-10-20'), url: '/documents/cyberbezpieczenstwo-v2.pdf', description: 'Wersja rządowa' },
       { id: '6-3', version: '2.1', date: new Date('2024-12-05'), url: '/documents/cyberbezpieczenstwo-v2.1.pdf', description: 'Po III czytaniu w Sejmie' },
     ],
+    categories: ['technologia', 'bezpieczenstwo'],
   },
   {
     id: '7',
@@ -116,6 +122,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '7-4', version: '3.1', date: new Date('2024-11-15'), url: '/documents/e-glosowanie-v3.1.pdf', description: 'Po Senacie' },
       { id: '7-5', version: '3.2', date: new Date('2024-12-04'), url: '/documents/e-glosowanie-v3.2.pdf', description: 'Do podpisu Prezydenta' },
     ],
+    categories: ['technologia'],
   },
   {
     id: '8',
@@ -133,6 +140,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '8-3', version: '1.2', date: new Date('2024-11-28'), url: '/documents/otwarte-dane-v1.2.pdf', description: 'Z analizą porównawczą UE' },
       { id: '8-4', version: '2.0', date: new Date('2024-12-06'), url: '/documents/otwarte-dane-v2.pdf', description: 'Wersja do konsultacji' },
     ],
+    categories: ['technologia'],
   },
   {
     id: '9',
@@ -151,6 +159,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '9-4', version: '2.0', date: new Date('2024-11-10'), url: '/documents/e-zamowienia-v2.pdf', description: 'Wersja po uzgodnieniach' },
       { id: '9-5', version: '2.1', date: new Date('2024-12-03'), url: '/documents/e-zamowienia-v2.1.pdf', description: 'Aktualna wersja robocza' },
     ],
+    categories: ['technologia', 'biznes'],
   },
   {
     id: '10',
@@ -169,6 +178,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '10-4', version: '2.1', date: new Date('2024-09-10'), url: '/documents/dezinformacja-v2.1.pdf', description: 'Po pracach komisji' },
       { id: '10-5', version: '2.2', date: new Date('2024-10-15'), url: '/documents/dezinformacja-v2.2.pdf', description: 'Wersja odrzucona' },
     ],
+    categories: ['technologia', 'bezpieczenstwo'],
   },
   {
     id: '11',
@@ -183,6 +193,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '11-1', version: '0.1', date: new Date('2024-12-02'), url: '/documents/dziedzictwo-v0.1.pdf', description: 'Wstępny zarys koncepcji' },
       { id: '11-2', version: '0.2', date: new Date('2024-12-06'), url: '/documents/dziedzictwo-v0.2.pdf', description: 'Rozszerzony projekt' },
     ],
+    categories: ['technologia', 'kultura'],
   },
   {
     id: '12',
@@ -202,6 +213,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '12-5', version: '3.0', date: new Date('2024-11-10'), url: '/documents/telemedycyna-v3.pdf', description: 'Wersja rządowa' },
       { id: '12-6', version: '3.1', date: new Date('2024-12-05'), url: '/documents/telemedycyna-v3.1.pdf', description: 'Po komisji sejmowej' },
     ],
+    categories: ['technologia', 'zdrowie'],
   },
   {
     id: '13',
@@ -219,6 +231,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '13-3', version: '1.2', date: new Date('2024-11-05'), url: '/documents/reforma-edukacji-v1.2.pdf', description: 'Z podstawą programową' },
       { id: '13-4', version: '2.0', date: new Date('2024-12-04'), url: '/documents/reforma-edukacji-v2.pdf', description: 'Wersja do konsultacji' },
     ],
+    categories: ['edukacja', 'technologia'],
   },
   {
     id: '14',
@@ -237,6 +250,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '14-4', version: '2.1', date: new Date('2024-11-15'), url: '/documents/elektromobilnosc-v2.1.pdf', description: 'Po I czytaniu' },
       { id: '14-5', version: '2.2', date: new Date('2024-12-03'), url: '/documents/elektromobilnosc-v2.2.pdf', description: 'Z poprawkami komisji' },
     ],
+    categories: ['srodowisko', 'transport'],
   },
   {
     id: '15',
@@ -257,6 +271,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '15-6', version: '3.2', date: new Date('2024-09-30'), url: '/documents/kaucja-v3.2.pdf', description: 'Po Senacie' },
       { id: '15-7', version: '4.0', date: new Date('2024-11-15'), url: '/documents/kaucja-v4.pdf', description: 'Wersja uchwalona' },
     ],
+    categories: ['srodowisko'],
   },
   {
     id: '16',
@@ -274,6 +289,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '16-3', version: '1.2', date: new Date('2024-12-01'), url: '/documents/rodzina-plus-v1.2.pdf', description: 'Po uzgodnieniach z MF' },
       { id: '16-4', version: '2.0', date: new Date('2024-12-05'), url: '/documents/rodzina-plus-v2.pdf', description: 'Aktualna wersja' },
     ],
+    categories: ['rodzina', 'pomoc-spoleczna'],
   },
   {
     id: '17',
@@ -293,6 +309,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '17-5', version: '2.2', date: new Date('2024-11-10'), url: '/documents/placa-min-v2.2.pdf', description: 'Po Senacie' },
       { id: '17-6', version: '3.0', date: new Date('2024-11-28'), url: '/documents/placa-min-v3.pdf', description: 'Wersja uchwalona' },
     ],
+    categories: ['prawo-pracy'],
   },
   {
     id: '18',
@@ -311,6 +328,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '18-4', version: '2.1', date: new Date('2024-11-01'), url: '/documents/ochrona-zwierzat-v2.1.pdf', description: 'Po komisji' },
       { id: '18-5', version: '2.2', date: new Date('2024-12-04'), url: '/documents/ochrona-zwierzat-v2.2.pdf', description: 'Przekazana do Senatu' },
     ],
+    categories: ['srodowisko'],
   },
   {
     id: '19',
@@ -327,6 +345,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '19-2', version: '1.1', date: new Date('2024-11-10'), url: '/documents/rozwoj-wsi-v1.1.pdf', description: 'Po uwagach KRIR' },
       { id: '19-3', version: '2.0', date: new Date('2024-12-06'), url: '/documents/rozwoj-wsi-v2.pdf', description: 'Wersja do konsultacji' },
     ],
+    categories: ['rolnictwo'],
   },
   {
     id: '20',
@@ -345,6 +364,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '20-4', version: '2.0', date: new Date('2024-11-15'), url: '/documents/fundusze-v2.pdf', description: 'Po uzgodnieniach' },
       { id: '20-5', version: '2.1', date: new Date('2024-12-02'), url: '/documents/fundusze-v2.1.pdf', description: 'Aktualna wersja' },
     ],
+    categories: ['biznes', 'podatki'],
   },
   {
     id: '21',
@@ -359,6 +379,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '21-1', version: '0.1', date: new Date('2024-11-20'), url: '/documents/podatek-cyfrowy-v0.1.pdf', description: 'Założenia projektu' },
       { id: '21-2', version: '0.2', date: new Date('2024-12-05'), url: '/documents/podatek-cyfrowy-v0.2.pdf', description: 'Rozszerzony zarys' },
     ],
+    categories: ['podatki', 'technologia'],
   },
   {
     id: '22',
@@ -378,6 +399,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '22-5', version: '3.1', date: new Date('2024-11-15'), url: '/documents/sport-v3.1.pdf', description: 'Po I czytaniu' },
       { id: '22-6', version: '3.2', date: new Date('2024-12-03'), url: '/documents/sport-v3.2.pdf', description: 'Uchwalona przez Sejm' },
     ],
+    categories: ['zdrowie', 'kultura'],
   },
   {
     id: '23',
@@ -394,6 +416,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '23-2', version: '1.1', date: new Date('2024-11-15'), url: '/documents/ekoturystyka-v1.1.pdf', description: 'Po uwagach branży' },
       { id: '23-3', version: '2.0', date: new Date('2024-12-04'), url: '/documents/ekoturystyka-v2.pdf', description: 'Wersja do konsultacji' },
     ],
+    categories: ['srodowisko', 'biznes'],
   },
   {
     id: '24',
@@ -414,6 +437,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '24-6', version: '3.2', date: new Date('2024-11-15'), url: '/documents/oze-v3.2.pdf', description: 'Po komisji' },
       { id: '24-7', version: '3.3', date: new Date('2024-12-05'), url: '/documents/oze-v3.3.pdf', description: 'Przyjęta przez Senat' },
     ],
+    categories: ['srodowisko', 'mieszkalnictwo'],
   },
   {
     id: '25',
@@ -432,6 +456,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '25-4', version: '2.0', date: new Date('2024-11-15'), url: '/documents/czyste-powietrze-v2.pdf', description: 'Po uzgodnieniach' },
       { id: '25-5', version: '2.1', date: new Date('2024-12-02'), url: '/documents/czyste-powietrze-v2.1.pdf', description: 'Aktualna wersja' },
     ],
+    categories: ['srodowisko', 'zdrowie'],
   },
   {
     id: '26',
@@ -448,6 +473,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '26-2', version: '1.1', date: new Date('2024-11-25'), url: '/documents/mieszkanie-v1.1.pdf', description: 'Z analizą lokalizacji' },
       { id: '26-3', version: '2.0', date: new Date('2024-12-06'), url: '/documents/mieszkanie-v2.pdf', description: 'Wersja do konsultacji' },
     ],
+    categories: ['mieszkalnictwo', 'rodzina'],
   },
   {
     id: '27',
@@ -467,6 +493,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '27-5', version: '3.1', date: new Date('2024-11-20'), url: '/documents/budowlanka-v3.1.pdf', description: 'Po I czytaniu' },
       { id: '27-6', version: '3.2', date: new Date('2024-12-04'), url: '/documents/budowlanka-v3.2.pdf', description: 'Po komisji' },
     ],
+    categories: ['mieszkalnictwo', 'biznes'],
   },
   {
     id: '28',
@@ -487,6 +514,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '28-6', version: '3.2', date: new Date('2024-11-01'), url: '/documents/transport-v3.2.pdf', description: 'Po Senacie' },
       { id: '28-7', version: '3.3', date: new Date('2024-12-03'), url: '/documents/transport-v3.3.pdf', description: 'Do podpisu Prezydenta' },
     ],
+    categories: ['transport', 'bezpieczenstwo'],
   },
   {
     id: '29',
@@ -506,6 +534,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '29-5', version: '2.1', date: new Date('2024-11-15'), url: '/documents/cpk-kolej-v2.1.pdf', description: 'Z analizą finansową' },
       { id: '29-6', version: '2.2', date: new Date('2024-12-05'), url: '/documents/cpk-kolej-v2.2.pdf', description: 'Aktualna wersja' },
     ],
+    categories: ['transport'],
   },
   {
     id: '30',
@@ -522,6 +551,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '30-2', version: '1.1', date: new Date('2024-11-20'), url: '/documents/dzieci-online-v1.1.pdf', description: 'Po uwagach RPD' },
       { id: '30-3', version: '2.0', date: new Date('2024-12-06'), url: '/documents/dzieci-online-v2.pdf', description: 'Wersja do konsultacji' },
     ],
+    categories: ['technologia', 'rodzina', 'bezpieczenstwo'],
   },
   {
     id: '31',
@@ -541,6 +571,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '31-5', version: '3.1', date: new Date('2024-11-15'), url: '/documents/jezyk-migowy-v3.1.pdf', description: 'Po I czytaniu' },
       { id: '31-6', version: '3.2', date: new Date('2024-12-04'), url: '/documents/jezyk-migowy-v3.2.pdf', description: 'Uchwalona przez Sejm' },
     ],
+    categories: ['pomoc-spoleczna'],
   },
   {
     id: '32',
@@ -560,6 +591,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '32-5', version: '3.1', date: new Date('2024-10-15'), url: '/documents/prawa-pacjenta-v3.1.pdf', description: 'Po Sejmie' },
       { id: '32-6', version: '3.2', date: new Date('2024-12-05'), url: '/documents/prawa-pacjenta-v3.2.pdf', description: 'W Senacie' },
     ],
+    categories: ['zdrowie'],
   },
   {
     id: '33',
@@ -580,6 +612,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '33-6', version: '3.2', date: new Date('2024-10-30'), url: '/documents/refundacja-v3.2.pdf', description: 'Po Senacie' },
       { id: '33-7', version: '4.0', date: new Date('2024-11-30'), url: '/documents/refundacja-v4.pdf', description: 'Wersja uchwalona' },
     ],
+    categories: ['zdrowie'],
   },
   {
     id: '34',
@@ -597,6 +630,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '34-3', version: '1.2', date: new Date('2024-11-20'), url: '/documents/szkolnictwo-v1.2.pdf', description: 'Po uwagach związków' },
       { id: '34-4', version: '2.0', date: new Date('2024-12-04'), url: '/documents/szkolnictwo-v2.pdf', description: 'Wersja do konsultacji' },
     ],
+    categories: ['edukacja'],
   },
   {
     id: '35',
@@ -615,6 +649,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '35-4', version: '2.0', date: new Date('2024-11-20'), url: '/documents/nauka-v2.pdf', description: 'Po uzgodnieniach' },
       { id: '35-5', version: '2.1', date: new Date('2024-12-03'), url: '/documents/nauka-v2.1.pdf', description: 'Aktualna wersja' },
     ],
+    categories: ['edukacja', 'technologia'],
   },
   {
     id: '36',
@@ -629,6 +664,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '36-1', version: '0.1', date: new Date('2024-11-25'), url: '/documents/zabytki-v0.1.pdf', description: 'Założenia projektu' },
       { id: '36-2', version: '0.2', date: new Date('2024-12-05'), url: '/documents/zabytki-v0.2.pdf', description: 'Wersja robocza' },
     ],
+    categories: ['kultura'],
   },
   {
     id: '37',
@@ -648,6 +684,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '37-5', version: '3.1', date: new Date('2024-11-20'), url: '/documents/artysci-v3.1.pdf', description: 'Po I czytaniu' },
       { id: '37-6', version: '3.2', date: new Date('2024-12-04'), url: '/documents/artysci-v3.2.pdf', description: 'Po II czytaniu' },
     ],
+    categories: ['kultura', 'prawo-pracy'],
   },
   {
     id: '38',
@@ -664,6 +701,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '38-2', version: '1.1', date: new Date('2024-11-15'), url: '/documents/konsument-v1.1.pdf', description: 'Po uwagach branży' },
       { id: '38-3', version: '2.0', date: new Date('2024-12-06'), url: '/documents/konsument-v2.pdf', description: 'Wersja do konsultacji' },
     ],
+    categories: ['biznes'],
   },
   {
     id: '39',
@@ -684,6 +722,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '39-6', version: '3.2', date: new Date('2024-10-15'), url: '/documents/sygnalisci-v3.2.pdf', description: 'Po Senacie' },
       { id: '39-7', version: '4.0', date: new Date('2024-11-25'), url: '/documents/sygnalisci-v4.pdf', description: 'Wersja uchwalona' },
     ],
+    categories: ['prawo-pracy', 'biznes'],
   },
   {
     id: '40',
@@ -702,6 +741,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '40-4', version: '2.0', date: new Date('2024-11-01'), url: '/documents/platformy-v2.pdf', description: 'Po uzgodnieniach' },
       { id: '40-5', version: '2.1', date: new Date('2024-12-02'), url: '/documents/platformy-v2.1.pdf', description: 'Aktualna wersja' },
     ],
+    categories: ['prawo-pracy', 'technologia'],
   },
 ];
 
@@ -717,6 +757,27 @@ export const mockUpdates: LegislativeUpdate[] = [
     title: 'Rozpoczęto konsultacje społeczne',
     content: 'Ministerstwo Cyfryzacji ogłosiło rozpoczęcie konsultacji społecznych projektu nowelizacji ustawy o ochronie danych osobowych. Uwagi można zgłaszać do 20 grudnia 2024 r.',
     aiSummary: 'Rozpoczęły się konsultacje publiczne dot. nowelizacji RODO. Projekt wprowadza nowe uprawnienia dla obywateli w zakresie kontroli nad ich danymi, w tym prawo do "cyfrowego zapomnienia" i zwiększone kary za naruszenia. Termin zgłaszania uwag: 20.12.2024.',
+    aiDetailedSummary: `Szczegółowa analiza projektu nowelizacji RODO:
+
+GŁÓWNE ZMIANY:
+• Prawo do "cyfrowego zapomnienia" - obywatele zyskają możliwość żądania trwałego usunięcia swoich danych z wszystkich systemów administratora danych
+• Zwiększone kary - maksymalna kara za naruszenia wzrośnie z 20 mln EUR do 40 mln EUR lub 4% globalnego obrotu
+• Nowy organ - utworzenie Rzecznika Praw Cyfrowych z kompetencjami do reprezentowania obywateli w sporach z firmami technologicznymi
+
+WPŁYW NA OBYWATELI:
+• Łatwiejsze wycofanie zgody na przetwarzanie danych
+• Prawo do przenoszenia danych między usługodawcami (np. zmiana banku z pełną historią transakcji)
+• Obowiązkowe powiadomienia o naruszeniach bezpieczeństwa w ciągu 24h
+
+WPŁYW NA PRZEDSIĘBIORCÓW:
+• Obowiązek wyznaczenia Inspektora Ochrony Danych dla firm zatrudniających powyżej 50 osób
+• Konieczność przeprowadzania audytów bezpieczeństwa co 12 miesięcy
+• Nowe wymogi dotyczące zgód marketingowych - każda zgoda musi być oddzielna i świadoma
+
+HARMONOGRAM:
+• Konsultacje: do 20.12.2024
+• Planowane przyjęcie przez Radę Ministrów: Q1 2025
+• Wejście w życie: 18 miesięcy od uchwalenia`,
     createdAt: new Date('2024-12-05T10:30:00'),
     sourceUrl: 'https://rcl.gov.pl/projekty/ud123',
   },
@@ -728,6 +789,36 @@ export const mockUpdates: LegislativeUpdate[] = [
     title: 'Głosowanie w Sejmie - II czytanie',
     content: 'Sejm przyjął projekt ustawy o dostępności cyfrowej w II czytaniu. Za głosowało 412 posłów, przeciw 15, wstrzymało się 28.',
     aiSummary: 'Sejm poparł ustawę o dostępności cyfrowej (412 za, 15 przeciw). Ustawa wymusi na urzędach dostosowanie stron i aplikacji dla osób z niepełnosprawnościami do końca 2025 r. Następny krok: III czytanie i głosowanie końcowe.',
+    aiDetailedSummary: `Analiza głosowania i następnych kroków:
+
+WYNIK GŁOSOWANIA:
+• Za: 412 posłów (89%)
+• Przeciw: 15 posłów (3%)
+• Wstrzymało się: 28 posłów (6%)
+• Nieobecni: 5 posłów
+
+GŁÓWNE WYMOGI USTAWY:
+• Wszystkie strony internetowe podmiotów publicznych muszą spełniać standard WCAG 2.1 na poziomie AA
+• Aplikacje mobilne urzędów muszą być dostępne dla czytników ekranu
+• Dokumenty PDF muszą być otagowane dla technologii asystujących
+• Formularze online muszą być w pełni obsługiwalne z klawiatury
+
+KTO JEST OBJĘTY:
+• Wszystkie urzędy administracji rządowej i samorządowej
+• Uczelnie publiczne
+• Szpitale i przychodnie publiczne
+• Spółki Skarbu Państwa
+• Organizacje pozarządowe korzystające ze środków publicznych
+
+KARY ZA NIEPRZESTRZEGANIE:
+• Pierwsze naruszenie: upomnienie i 90 dni na poprawę
+• Drugie naruszenie: kara do 100 000 zł
+• Systematyczne naruszenia: kara do 500 000 zł i odpowiedzialność osobista kierownika jednostki
+
+NASTĘPNE KROKI:
+• III czytanie planowane na 10.12.2024
+• Przekazanie do Senatu: połowa grudnia
+• Planowane wejście w życie: 1.07.2025`,
     createdAt: new Date('2024-12-04T16:45:00'),
     sourceUrl: 'https://sejm.gov.pl/druk/456',
   },
@@ -739,6 +830,36 @@ export const mockUpdates: LegislativeUpdate[] = [
     title: 'Projekt skierowany do prekonsultacji',
     content: 'Kancelaria Prezesa Rady Ministrów opublikowała wstępny projekt ustawy o transparentności procesów legislacyjnych i rozpoczęła etap prekonsultacji.',
     aiSummary: 'Nowy projekt ustawy ma zwiększyć przejrzystość procesu legislacyjnego. Zakłada obowiązek publikacji wszystkich dokumentów w czasie rzeczywistym oraz stworzenie centralnego portalu do śledzenia prac nad ustawami. Etap: prekonsultacje.',
+    aiDetailedSummary: `Analiza projektu ustawy o transparentności:
+
+GŁÓWNE ZAŁOŻENIA:
+• Utworzenie Centralnego Portalu Legislacyjnego dostępnego dla wszystkich obywateli
+• Publikacja dokumentów w czasie rzeczywistym - maksymalnie 24h od powstania
+• Obowiązek nagrywania i publikowania wszystkich posiedzeń komisji sejmowych
+• Jawność procesu tworzenia Oceny Skutków Regulacji (OSR)
+
+NOWE OBOWIĄZKI DLA MINISTERSTW:
+• Publikowanie harmonogramu prac nad każdym projektem
+• Udostępnianie wszystkich opinii i stanowisk, w tym wewnętrznych
+• Informowanie o spotkaniach z lobbystami i grupami interesu
+• Raportowanie kosztów przygotowania każdego projektu ustawy
+
+KORZYŚCI DLA OBYWATELI:
+• Możliwość śledzenia dowolnego projektu ustawy od początku do końca
+• Subskrypcja powiadomień o zmianach w interesujących projektach
+• Dostęp do pełnej dokumentacji, nie tylko wersji finalnych
+• Możliwość zgłaszania uwag na każdym etapie procesu
+
+WYZWANIA WDROŻENIOWE:
+• Konieczność modernizacji systemów IT w całej administracji
+• Szkolenie urzędników z nowych obowiązków publikacyjnych
+• Integracja z istniejącymi systemami (RCL, Sejm, Senat)
+• Szacowany koszt wdrożenia: 150-200 mln zł
+
+OCZEKIWANE EFEKTY:
+• Zwiększenie zaufania obywateli do procesu legislacyjnego
+• Ograniczenie lobbingu "tylnymi drzwiami"
+• Lepsze prawo dzięki szerszym konsultacjom`,
     createdAt: new Date('2024-12-06T09:00:00'),
   },
   {
@@ -749,6 +870,36 @@ export const mockUpdates: LegislativeUpdate[] = [
     title: 'Opublikowano Ocenę Skutków Regulacji',
     content: 'Do projektu ustawy o cyfrowej tożsamości obywatela dodano szczegółową Ocenę Skutków Regulacji (OSR), zawierającą analizę wpływu na obywateli i przedsiębiorców.',
     aiSummary: 'OSR projektu e-Tożsamości wskazuje na potencjalne oszczędności 2 mld zł rocznie dla administracji. Wdrożenie cyfrowego portfela obywatela ma objąć 30 mln Polaków do 2027 r. Główne ryzyka: koszty wdrożenia i cyberbezpieczeństwo.',
+    aiDetailedSummary: `Szczegółowa analiza Oceny Skutków Regulacji (OSR):
+
+OSZCZĘDNOŚCI DLA ADMINISTRACJI:
+• Eliminacja papierowych dokumentów: 800 mln zł rocznie
+• Automatyzacja procesów weryfikacji tożsamości: 600 mln zł rocznie
+• Redukcja kosztów obsługi klienta: 400 mln zł rocznie
+• Zmniejszenie liczby wizyt w urzędach: 200 mln zł rocznie
+
+KORZYŚCI DLA OBYWATELI:
+• Cyfrowy portfel z dowodem osobistym, prawem jazdy, legitymacją studencką
+• Możliwość załatwiania wszystkich spraw urzędowych online
+• Automatyczne przedłużanie dokumentów bez wizyty w urzędzie
+• Bezpieczne udostępnianie danych firmom (np. przy wynajmie samochodu)
+
+HARMONOGRAM WDROŻENIA:
+• Q2 2025: uruchomienie aplikacji mObywatel 3.0
+• Q4 2025: integracja z systemami bankowymi
+• Q2 2026: pełna funkcjonalność e-dowodu
+• Q4 2027: zasięg 30 mln użytkowników
+
+ZIDENTYFIKOWANE RYZYKA:
+• Koszty wdrożenia (1,2 mld zł) mogą przekroczyć zakładany budżet
+• Wymogi cyberbezpieczeństwa mogą opóźnić projekt
+• Wykluczenie cyfrowe osób starszych - potrzeba równoległych rozwiązań
+• Zależność od dostawców technologii (ryzyko vendor lock-in)
+
+REKOMENDACJE MINISTERSTWA:
+• Etapowe wdrożenie z pilotażem w 3 województwach
+• Dodatkowe środki na kampanię edukacyjną
+• Utworzenie punktów pomocy cyfrowej w każdej gminie`,
     createdAt: new Date('2024-12-04T14:20:00'),
     sourceUrl: 'https://rcl.gov.pl/projekty/ud789/osr',
     documentVersion: { id: '4-2', version: '1.1', date: new Date('2024-11-05'), url: '/documents/e-tozsamosc-v1.1.pdf', description: 'Po uzgodnieniach' },
@@ -761,6 +912,38 @@ export const mockUpdates: LegislativeUpdate[] = [
     title: 'Nowa wersja projektu po uwagach resortowych',
     content: 'Opublikowano zaktualizowaną wersję projektu ustawy uwzględniającą uwagi zgłoszone przez Ministerstwo Sprawiedliwości i UODO.',
     aiSummary: 'Zaktualizowany projekt RODO uwzględnia 47 uwag resortowych. Kluczowe zmiany: doprecyzowano definicję "danych wrażliwych", wydłużono okres przejściowy z 12 do 18 miesięcy, dodano wyjątki dla małych przedsiębiorstw.',
+    aiDetailedSummary: `Szczegółowa analiza zmian w projekcie:
+
+UWAGI RESORTOWE - PODSUMOWANIE:
+• Ministerstwo Sprawiedliwości: 23 uwagi (18 uwzględnionych)
+• UODO: 15 uwag (12 uwzględnionych)
+• Ministerstwo Rozwoju: 9 uwag (7 uwzględnionych)
+• Inne resorty: 10 uwag (10 uwzględnionych)
+
+KLUCZOWE ZMIANY W DEFINICJACH:
+• "Dane wrażliwe" - rozszerzono o dane biometryczne i genetyczne
+• "Administrator danych" - doprecyzowano odpowiedzialność przy współadministrowaniu
+• "Profilowanie" - dodano nową definicję zgodną z AI Act
+
+ZMIANY DLA PRZEDSIĘBIORCÓW:
+• Okres przejściowy wydłużony z 12 do 18 miesięcy
+• Firmy do 10 pracowników zwolnione z obowiązku prowadzenia rejestru czynności przetwarzania
+• Uproszczona procedura zgłaszania naruszeń dla mikroprzedsiębiorstw
+• Niższe kary dla podmiotów o obrotach poniżej 2 mln zł rocznie
+
+WZMOCNIONA OCHRONA DZIECI:
+• Zgoda na przetwarzanie danych od 16 lat (wcześniej 13 lat)
+• Obowiązkowa weryfikacja wieku przy usługach online
+• Zakaz profilowania osób poniżej 18 roku życia
+
+NOWE UPRAWNIENIA UODO:
+• Możliwość kontroli bez zapowiedzi w przypadku podejrzenia poważnych naruszeń
+• Prawo do nakładania kar w trybie natychmiastowym
+• Współpraca transgraniczna z organami ochrony danych innych państw UE
+
+CO DALEJ:
+• Projekt trafi na Komitet Stały Rady Ministrów
+• Planowane przyjęcie przez rząd: styczeń 2025`,
     createdAt: new Date('2024-12-03T11:15:00'),
     documentVersion: { id: '1-2', version: '1.1', date: new Date('2024-11-22'), url: '/documents/nowelizacja-rodo-v1.1.pdf', description: 'Po uwagach resortowych' },
     diff: {
@@ -782,6 +965,42 @@ export const mockUpdates: LegislativeUpdate[] = [
     title: 'Ustawa podpisana przez Prezydenta',
     content: 'Prezydent RP podpisał ustawę o sztucznej inteligencji w administracji publicznej. Ustawa wejdzie w życie 1 stycznia 2025 r.',
     aiSummary: 'Ustawa o AI w administracji wchodzi w życie 1.01.2025. Urzędy będą mogły wykorzystywać AI do obsługi petentów, ale z obowiązkiem informowania o tym obywateli. Zakaz podejmowania automatycznych decyzji bez udziału człowieka w sprawach istotnych.',
+    aiDetailedSummary: `Pełna analiza uchwalonej ustawy o AI w administracji:
+
+GŁÓWNE ZAŁOŻENIA USTAWY:
+• Administracja publiczna może wykorzystywać AI do automatyzacji rutynowych zadań
+• Obywatel musi być informowany, gdy kontaktuje się z systemem AI
+• Decyzje w sprawach istotnych (świadczenia, zezwolenia, kary) wymagają udziału człowieka
+• Każda decyzja wydana z pomocą AI musi być weryfikowalna przez urzędnika
+
+DOZWOLONE ZASTOSOWANIA AI:
+• Chatboty informacyjne na stronach urzędów
+• Automatyczne sortowanie i kierowanie wniosków
+• Analiza dokumentów pod kątem kompletności
+• Tłumaczenie dokumentów na języki mniejszości
+• Transkrypcja rozmów telefonicznych
+
+ZAKAZANE ZASTOSOWANIA:
+• Automatyczne odmowy świadczeń bez kontroli człowieka
+• Profilowanie obywateli w celu oceny ryzyka (social scoring)
+• Rozpoznawanie twarzy w przestrzeni publicznej
+• Podejmowanie decyzji kadrowych wobec urzędników
+
+WYMOGI TECHNICZNE:
+• Systemy AI muszą być certyfikowane przez NASK
+• Obowiązkowe logowanie wszystkich decyzji AI
+• Audyt algorytmów co 12 miesięcy
+• Możliwość wyjaśnienia działania systemu na żądanie obywatela
+
+ODPOWIEDZIALNOŚĆ:
+• Za błędy AI odpowiada organ administracji, nie dostawca technologii
+• Obywatel może żądać ponownego rozpatrzenia sprawy przez człowieka
+• Organ ma 14 dni na odpowiedź na skargę dotyczącą decyzji AI
+
+WEJŚCIE W ŻYCIE:
+• 1 stycznia 2025 - przepisy ogólne
+• 1 lipca 2025 - obowiązek certyfikacji systemów
+• 1 stycznia 2026 - pełna implementacja`,
     createdAt: new Date('2024-11-20T12:00:00'),
   },
   {

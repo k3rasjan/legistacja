@@ -1,3 +1,137 @@
+// Categories for ustawy
+export type UstawaCategory =
+  | 'podatki'
+  | 'edukacja'
+  | 'zdrowie'
+  | 'srodowisko'
+  | 'prawo-pracy'
+  | 'mieszkalnictwo'
+  | 'transport'
+  | 'technologia'
+  | 'rolnictwo'
+  | 'bezpieczenstwo'
+  | 'pomoc-spoleczna'
+  | 'biznes'
+  | 'kultura'
+  | 'rodzina';
+
+export const categoryLabels: Record<UstawaCategory, string> = {
+  'podatki': 'Podatki',
+  'edukacja': 'Edukacja',
+  'zdrowie': 'Zdrowie',
+  'srodowisko': 'Środowisko',
+  'prawo-pracy': 'Prawo pracy',
+  'mieszkalnictwo': 'Mieszkalnictwo',
+  'transport': 'Transport',
+  'technologia': 'Technologia',
+  'rolnictwo': 'Rolnictwo',
+  'bezpieczenstwo': 'Bezpieczeństwo',
+  'pomoc-spoleczna': 'Pomoc społeczna',
+  'biznes': 'Biznes i handel',
+  'kultura': 'Kultura',
+  'rodzina': 'Rodzina',
+};
+
+export const categoryIcons: Record<UstawaCategory, string> = {
+  'podatki': 'Receipt',
+  'edukacja': 'GraduationCap',
+  'zdrowie': 'Heart',
+  'srodowisko': 'Leaf',
+  'prawo-pracy': 'Briefcase',
+  'mieszkalnictwo': 'Home',
+  'transport': 'Car',
+  'technologia': 'Laptop',
+  'rolnictwo': 'Wheat',
+  'bezpieczenstwo': 'Shield',
+  'pomoc-spoleczna': 'HandHeart',
+  'biznes': 'Building',
+  'kultura': 'Palette',
+  'rodzina': 'Users',
+};
+
+// Onboarding types
+export type SocialStatus =
+  | 'student'
+  | 'employed-private'
+  | 'employed-public'
+  | 'self-employed'
+  | 'unemployed'
+  | 'retired'
+  | 'homemaker';
+
+export const socialStatusLabels: Record<SocialStatus, string> = {
+  'student': 'Student',
+  'employed-private': 'Zatrudniony (sektor prywatny)',
+  'employed-public': 'Zatrudniony (sektor publiczny)',
+  'self-employed': 'Samozatrudniony / Właściciel firmy',
+  'unemployed': 'Bezrobotny',
+  'retired': 'Emeryt / Rencista',
+  'homemaker': 'Prowadzący gospodarstwo domowe',
+};
+
+export type MaritalStatus =
+  | 'single'
+  | 'married'
+  | 'divorced'
+  | 'widowed';
+
+export const maritalStatusLabels: Record<MaritalStatus, string> = {
+  'single': 'Singiel / Panna / Kawaler',
+  'married': 'W związku małżeńskim / partnerskim',
+  'divorced': 'Rozwiedziony/a',
+  'widowed': 'Wdowiec / Wdowa',
+};
+
+export type HousingStatus =
+  | 'renter'
+  | 'owner'
+  | 'looking'
+  | 'living-with-family';
+
+export const housingStatusLabels: Record<HousingStatus, string> = {
+  'renter': 'Wynajmuję',
+  'owner': 'Właściciel',
+  'looking': 'Szukam mieszkania',
+  'living-with-family': 'Mieszkam z rodziną',
+};
+
+export type AgeRange =
+  | '18-25'
+  | '26-35'
+  | '36-50'
+  | '51-65'
+  | '65+';
+
+export const ageRangeLabels: Record<AgeRange, string> = {
+  '18-25': '18-25 lat',
+  '26-35': '26-35 lat',
+  '36-50': '36-50 lat',
+  '51-65': '51-65 lat',
+  '65+': '65+ lat',
+};
+
+export interface UserPreferences {
+  socialStatus: SocialStatus | null;
+  maritalStatus: MaritalStatus | null;
+  housingStatus: HousingStatus | null;
+  ageRange: AgeRange | null;
+  hasChildren: boolean | null;
+  isEmployer: boolean | null;
+  categories: UstawaCategory[];
+  onboardingCompleted: boolean;
+}
+
+export const defaultUserPreferences: UserPreferences = {
+  socialStatus: null,
+  maritalStatus: null,
+  housingStatus: null,
+  ageRange: null,
+  hasChildren: null,
+  isEmployer: null,
+  categories: [],
+  onboardingCompleted: false,
+};
+
 export type LegislativeStatus =
   | 'prekonsultacje'
   | 'konsultacje'
@@ -27,6 +161,7 @@ export interface Ustawa {
   updatedAt: Date;
   drukNumber?: string;
   documentVersions?: DocumentVersion[];
+  categories: UstawaCategory[];
 }
 
 export type UpdateType =
@@ -52,6 +187,7 @@ export interface LegislativeUpdate {
   title: string;
   content: string;
   aiSummary?: string;
+  aiDetailedSummary?: string;
   createdAt: Date;
   sourceUrl?: string;
   documentVersion?: DocumentVersion;

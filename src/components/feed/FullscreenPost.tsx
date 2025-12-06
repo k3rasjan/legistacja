@@ -8,6 +8,7 @@ import {
   statusLabels,
   statusColors,
   updateTypeLabels,
+  categoryLabels,
 } from '@/types';
 import {
   ArrowRight,
@@ -17,7 +18,6 @@ import {
   Edit,
   Sparkles,
   ExternalLink,
-  Share2,
 } from 'lucide-react';
 import { FollowButton } from '@/components/ui/FollowButton';
 import Link from 'next/link';
@@ -79,6 +79,16 @@ export function FullscreenPost({ update }: FullscreenPostProps) {
           </Badge>
         </div>
 
+        {update.ustawa.categories && update.ustawa.categories.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {update.ustawa.categories.map((category) => (
+              <Badge key={category} variant="outline" className="text-xs">
+                {categoryLabels[category]}
+              </Badge>
+            ))}
+          </div>
+        )}
+
         <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
           <Icon className="h-4 w-4" />
           <span>{updateTypeLabels[update.type]}</span>
@@ -101,10 +111,6 @@ export function FullscreenPost({ update }: FullscreenPostProps) {
 
         <div className="flex items-center gap-2 pt-4 border-t border-border">
           <FollowButton size="lg" />
-          <Button variant="ghost" size="lg" className="text-muted-foreground">
-            <Share2 className="h-5 w-5 mr-2" />
-            Udostępnij
-          </Button>
           {update.sourceUrl && (
             <Button variant="ghost" size="lg" className="text-muted-foreground ml-auto" asChild>
               <a href={update.sourceUrl} target="_blank" rel="noopener noreferrer">

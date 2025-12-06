@@ -5,7 +5,9 @@ import { DocumentHistory } from '@/components/ustawa/DocumentHistory';
 import { PostCard } from '@/components/feed/PostCard';
 import { HamburgerMenu } from '@/components/layout/HamburgerMenu';
 import { mockUstawy, mockUpdates, mockConsultations } from '@/data/mock';
+import { categoryLabels } from '@/types';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { FollowButton } from '@/components/ui/FollowButton';
 import { ArrowLeft, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
@@ -48,7 +50,7 @@ export default async function UstawaPage({ params }: PageProps) {
 
       <div className="flex">
         <aside className="fixed left-0 top-0 h-screen w-64 border-r border-border bg-background pt-16 px-4 overflow-y-auto">
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-4">
             <UstawaAvatar
               shortTitle={ustawa.shortTitle}
               status={ustawa.status}
@@ -59,6 +61,16 @@ export default async function UstawaPage({ params }: PageProps) {
               <p className="text-sm text-muted-foreground truncate">{ustawa.ministry}</p>
             </div>
           </div>
+
+          {ustawa.categories && ustawa.categories.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-6">
+              {ustawa.categories.map((category) => (
+                <Badge key={category} variant="outline" className="text-xs">
+                  {categoryLabels[category]}
+                </Badge>
+              ))}
+            </div>
+          )}
 
           <FollowButton variant="bell" size="default" fullWidth className="mb-6" />
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AccessibilityProvider } from "@/contexts/AccessibilityContext";
+import { OnboardingRedirect } from "@/components/OnboardingRedirect";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,7 +30,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AccessibilityProvider>
-          {children}
+          <OnboardingRedirect>
+            {children}
+          </OnboardingRedirect>
         </AccessibilityProvider>
       </body>
     </html>

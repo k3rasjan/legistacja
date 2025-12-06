@@ -36,20 +36,20 @@ export function FollowButton({
 
   return (
     <Button
-      variant={isFollowing ? 'default' : (variant === 'bell' ? 'default' : 'ghost')}
+      variant={isFollowing ? 'default' : 'outline'}
       size={size}
       onClick={handleClick}
       className={cn(
-        'transition-all duration-200',
+        'transition-all duration-200 border-2',
         isAnimating && 'scale-110',
-        !isFollowing && variant !== 'bell' && 'text-muted-foreground',
-        isFollowing && 'bg-primary text-primary-foreground',
+        !isFollowing && 'border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary',
+        isFollowing && 'bg-primary text-primary-foreground border-primary',
         fullWidth && 'w-full',
         className
       )}
     >
       <Icon className={cn(iconSize, iconMargin, isAnimating && 'animate-pulse')} />
-      {isFollowing ? 'Obserwujesz' : 'Obserwuj'}
+      {isFollowing ? 'Śledzisz' : 'Śledź'}
     </Button>
   );
 }
