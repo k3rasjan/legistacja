@@ -29,8 +29,9 @@ export function TrainStatusBar({ currentStatus }: TrainStatusBarProps) {
         const isFuture = index > currentIndex;
 
         return (
-          <div key={stage.key} className="flex flex-col items-center">
-            <div className="flex items-center gap-3">
+          <div key={stage.key} className="flex items-start gap-3">
+            {/* Icon column with connecting line */}
+            <div className="flex flex-col items-center">
               <div
                 className={`
                   w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all
@@ -44,26 +45,35 @@ export function TrainStatusBar({ currentStatus }: TrainStatusBarProps) {
                 {isCurrent && <Train className="h-5 w-5" />}
                 {isFuture && <Circle className="h-4 w-4" />}
               </div>
-              <span
-                className={`
-                  text-sm font-medium w-28
-                  ${isPast ? 'text-green-600' : ''}
-                  ${isCurrent ? 'text-foreground font-bold' : ''}
-                  ${isFuture ? 'text-muted-foreground' : ''}
-                `}
-              >
-                {stage.label}
-              </span>
+              {index < stages.length - 1 && (
+                <div className="h-8 w-4 relative flex justify-between">
+                  {/* Left rail */}
+                  <div className={`w-0.5 h-full ${index < currentIndex ? 'bg-green-500' : 'bg-muted-foreground/30'}`} />
+                  {/* Right rail */}
+                  <div className={`w-0.5 h-full ${index < currentIndex ? 'bg-green-500' : 'bg-muted-foreground/30'}`} />
+                  {/* Cross ties */}
+                  <div className="absolute inset-0 flex flex-col justify-evenly">
+                    {[0, 1, 2].map((i) => (
+                      <div
+                        key={i}
+                        className={`w-full h-0.5 ${index < currentIndex ? 'bg-green-500' : 'bg-muted-foreground/30'}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
-
-            {index < stages.length - 1 && (
-              <div
-                className={`
-                  w-0.5 h-12 ml-[-3.5rem]
-                  ${index < currentIndex ? 'bg-green-500' : 'bg-muted-foreground/30'}
-                `}
-              />
-            )}
+            {/* Label */}
+            <span
+              className={`
+                text-sm font-medium w-28 pt-2.5
+                ${isPast ? 'text-green-600' : ''}
+                ${isCurrent ? 'text-foreground font-bold' : ''}
+                ${isFuture ? 'text-muted-foreground' : ''}
+              `}
+            >
+              {stage.label}
+            </span>
           </div>
         );
       })}

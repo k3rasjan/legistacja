@@ -28,7 +28,7 @@ export function DocumentHistory({ versions }: DocumentHistoryProps) {
       {/* Download Icon Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed top-4 right-4 z-50 w-11 h-11 flex items-center justify-center bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-colors"
+        className="fixed top-4 right-4 z-50 w-11 h-11 flex items-center justify-center bg-primary text-primary-foreground rounded-lg shadow-lg hover:bg-primary/90 transition-colors"
         title="Pobierz dokumenty"
       >
         <Download className="h-5 w-5 -mt-0.5" />

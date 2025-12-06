@@ -35,8 +35,8 @@ export default async function UstawaPage({ params }: PageProps) {
       <HamburgerMenu offsetLeft />
 
       {/* Back arrow next to hamburger menu */}
-      <Link href="/" className="fixed top-4 left-4 z-50">
-        <Button variant="ghost" size="icon">
+      <Link href="/" className="fixed top-4 left-4 z-40">
+        <Button variant="ghost" size="icon" className="bg-background rounded-lg">
           <ArrowLeft className="h-5 w-5" />
         </Button>
       </Link>
