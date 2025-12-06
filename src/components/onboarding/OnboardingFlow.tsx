@@ -10,12 +10,10 @@ import {
   SocialStatus,
   MaritalStatus,
   HousingStatus,
-  AgeRange,
   UstawaCategory,
   socialStatusLabels,
   maritalStatusLabels,
   housingStatusLabels,
-  ageRangeLabels,
   categoryLabels,
 } from '@/types';
 import {
@@ -69,9 +67,9 @@ const categoryIcons: Record<UstawaCategory, React.ReactNode> = {
   'rodzina': <Users className="h-5 w-5" />,
 };
 
-type Step = 'welcome' | 'social' | 'age' | 'marital' | 'housing' | 'children' | 'employer' | 'categories' | 'complete' | 'loading';
+type Step = 'welcome' | 'social' | 'marital' | 'housing' | 'children' | 'employer' | 'categories' | 'complete' | 'loading';
 
-const STEPS: Step[] = ['welcome', 'social', 'age', 'marital', 'housing', 'children', 'employer', 'categories', 'complete'];
+const STEPS: Step[] = ['welcome', 'social', 'marital', 'housing', 'children', 'employer', 'categories', 'complete'];
 
 export function OnboardingFlow() {
   const router = useRouter();
@@ -81,7 +79,6 @@ export function OnboardingFlow() {
     socialStatuses: preferences.socialStatuses || [],
     maritalStatus: preferences.maritalStatus,
     housingStatus: preferences.housingStatus,
-    ageRange: preferences.ageRange,
     hasChildren: preferences.hasChildren,
     isEmployer: preferences.isEmployer,
     categories: preferences.categories || [],
@@ -201,26 +198,6 @@ export function OnboardingFlow() {
                     selected={(localPrefs.socialStatuses || []).includes(status)}
                     onClick={() => toggleSocialStatus(status)}
                     icon={socialStatusIcons[status]}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Age Range Step */}
-          {currentStep === 'age' && (
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold mb-2">W jakim jesteś wieku?</h2>
-                <p className="text-muted-foreground">Różne ustawy dotyczą różnych grup wiekowych.</p>
-              </div>
-              <div className="space-y-3">
-                {(Object.keys(ageRangeLabels) as AgeRange[]).map((age) => (
-                  <OnboardingOption
-                    key={age}
-                    label={ageRangeLabels[age]}
-                    selected={localPrefs.ageRange === age}
-                    onClick={() => setLocalPrefs({ ...localPrefs, ageRange: age })}
                   />
                 ))}
               </div>

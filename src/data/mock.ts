@@ -109,6 +109,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '6-3', version: '2.1', date: new Date('2024-12-05'), url: '/documents/cyberbezpieczenstwo-v2.1.pdf', description: 'Po III czytaniu w Sejmie' },
     ],
     categories: ['technologia', 'bezpieczenstwo'],
+    userBenefits: 'Twoje dane w bankach i urzędach będą lepiej chronione przed hakerami. W razie cyberataku zostaniesz szybciej poinformowany o zagrożeniu.',
   },
   {
     id: '7',
@@ -128,6 +129,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '7-5', version: '3.2', date: new Date('2024-12-04'), url: '/documents/e-glosowanie-v3.2.pdf', description: 'Do podpisu Prezydenta' },
     ],
     categories: ['technologia'],
+    userBenefits: 'Będziesz mógł głosować online w wyborach bez wychodzenia z domu. System blockchain zapewni bezpieczeństwo Twojego głosu.',
   },
   {
     id: '8',
@@ -146,6 +148,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '8-4', version: '2.0', date: new Date('2024-12-06'), url: '/documents/otwarte-dane-v2.pdf', description: 'Wersja do konsultacji' },
     ],
     categories: ['technologia'],
+    userBenefits: 'Uzyskasz bezpłatny dostęp do danych publicznych - statystyk, badań naukowych i danych meteorologicznych, które możesz wykorzystać prywatnie lub w biznesie.',
   },
   {
     id: '9',
@@ -165,6 +168,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '9-5', version: '2.1', date: new Date('2024-12-03'), url: '/documents/e-zamowienia-v2.1.pdf', description: 'Aktualna wersja robocza' },
     ],
     categories: ['technologia', 'biznes'],
+    userBenefits: 'Składanie ofert w przetargach publicznych będzie prostsze i szybsze. Zaoszczędzisz czas i pieniądze na dokumentacji.',
   },
   {
     id: '10',
@@ -184,6 +188,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '10-5', version: '2.2', date: new Date('2024-10-15'), url: '/documents/dezinformacja-v2.2.pdf', description: 'Wersja odrzucona' },
     ],
     categories: ['technologia', 'bezpieczenstwo'],
+    userBenefits: 'Będziesz mógł łatwiej weryfikować prawdziwość informacji w internecie i zgłaszać fałszywe treści.',
   },
   {
     id: '11',
@@ -199,6 +204,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '11-2', version: '0.2', date: new Date('2024-12-06'), url: '/documents/dziedzictwo-v0.2.pdf', description: 'Rozszerzony projekt' },
     ],
     categories: ['technologia', 'kultura'],
+    userBenefits: 'Zyskasz dostęp do zdigitalizowanych zbiorów muzealnych i archiwalnych online. Odkrywaj historię Polski z domu.',
   },
   {
     id: '12',
@@ -219,6 +225,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '12-6', version: '3.1', date: new Date('2024-12-05'), url: '/documents/telemedycyna-v3.1.pdf', description: 'Po komisji sejmowej' },
     ],
     categories: ['technologia', 'zdrowie'],
+    userBenefits: 'Będziesz mógł odbyć wizytę lekarską online i otrzymać e-receptę bez wychodzenia z domu. Skrócisz czas oczekiwania na wizytę.',
   },
   {
     id: '13',
@@ -237,6 +244,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '13-4', version: '2.0', date: new Date('2024-12-04'), url: '/documents/reforma-edukacji-v2.pdf', description: 'Wersja do konsultacji' },
     ],
     categories: ['edukacja', 'technologia'],
+    userBenefits: 'Twoje pieniądze w banku będą bezpieczniejsze. Banki będą musiały spełniać wyższe standardy bezpieczeństwa.',
   },
   {
     id: '14',
@@ -256,6 +264,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '14-5', version: '2.2', date: new Date('2024-12-03'), url: '/documents/elektromobilnosc-v2.2.pdf', description: 'Z poprawkami komisji' },
     ],
     categories: ['srodowisko', 'transport'],
+    userBenefits: 'Zyskasz dostęp do nowych form inwestowania. Będziesz mógł bezpiecznie inwestować w kryptowaluty.',
   },
   {
     id: '15',
@@ -277,6 +286,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '15-7', version: '4.0', date: new Date('2024-11-15'), url: '/documents/kaucja-v4.pdf', description: 'Wersja uchwalona' },
     ],
     categories: ['srodowisko'],
+    userBenefits: 'Twoje prawa autorskie będą lepiej chronione w internecie. Łatwiej zgłosisz naruszenia i uzyskasz odszkodowanie.',
   },
   {
     id: '16',
@@ -295,6 +305,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '16-4', version: '2.0', date: new Date('2024-12-05'), url: '/documents/rodzina-plus-v2.pdf', description: 'Aktualna wersja' },
     ],
     categories: ['rodzina', 'pomoc-spoleczna'],
+    userBenefits: 'Urzędnicy będą musieli traktować Cię sprawiedliwiej. Algorytmy nie będą dyskryminować w decyzjach urzędowych.',
   },
   {
     id: '17',
@@ -315,6 +326,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '17-6', version: '3.0', date: new Date('2024-11-28'), url: '/documents/placa-min-v3.pdf', description: 'Wersja uchwalona' },
     ],
     categories: ['prawo-pracy'],
+    userBenefits: 'Twoje dane osobowe będą bezpieczniejsze. Firmy będą musiały szybciej informować o wyciekach danych.',
   },
   {
     id: '18',
@@ -334,6 +346,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '18-5', version: '2.2', date: new Date('2024-12-04'), url: '/documents/ochrona-zwierzat-v2.2.pdf', description: 'Przekazana do Senatu' },
     ],
     categories: ['srodowisko'],
+    userBenefits: 'Szybciej załatwisz sprawy w urzędzie skarbowym online. Deklaracje podatkowe będą prostsze.',
   },
   {
     id: '19',
@@ -351,6 +364,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '19-3', version: '2.0', date: new Date('2024-12-06'), url: '/documents/rozwoj-wsi-v2.pdf', description: 'Wersja do konsultacji' },
     ],
     categories: ['rolnictwo'],
+    userBenefits: 'Zyskasz większą kontrolę nad swoimi danymi w mediach społecznościowych. Łatwiej usuniesz niepożądane treści.',
   },
   {
     id: '20',
@@ -370,6 +384,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '20-5', version: '2.1', date: new Date('2024-12-02'), url: '/documents/fundusze-v2.1.pdf', description: 'Aktualna wersja' },
     ],
     categories: ['biznes', 'podatki'],
+    userBenefits: 'Twoje dane medyczne będą bezpieczniejsze i łatwiej dostępne dla lekarzy, którzy Cię leczą.',
   },
   {
     id: '21',
@@ -385,6 +400,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '21-2', version: '0.2', date: new Date('2024-12-05'), url: '/documents/podatek-cyfrowy-v0.2.pdf', description: 'Rozszerzony zarys' },
     ],
     categories: ['podatki', 'technologia'],
+    userBenefits: 'Ceny energii elektrycznej mogą spaść dzięki inteligentnym sieciom. Będziesz mógł sprzedawać nadwyżki energii.',
   },
   {
     id: '22',
@@ -405,6 +421,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '22-6', version: '3.2', date: new Date('2024-12-03'), url: '/documents/sport-v3.2.pdf', description: 'Uchwalona przez Sejm' },
     ],
     categories: ['zdrowie', 'kultura'],
+    userBenefits: 'Budynki publiczne będą musiały być dostępne dla osób z niepełnosprawnościami. Łatwiej załatwisz sprawy w urzędach.',
   },
   {
     id: '23',
@@ -422,6 +439,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '23-3', version: '2.0', date: new Date('2024-12-04'), url: '/documents/ekoturystyka-v2.pdf', description: 'Wersja do konsultacji' },
     ],
     categories: ['srodowisko', 'biznes'],
+    userBenefits: 'Twoje kwalifikacje zawodowe będą automatycznie uznawane w całej UE. Łatwiej znajdziesz pracę za granicą.',
   },
   {
     id: '24',
@@ -443,6 +461,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '24-7', version: '3.3', date: new Date('2024-12-05'), url: '/documents/oze-v3.3.pdf', description: 'Przyjęta przez Senat' },
     ],
     categories: ['srodowisko', 'mieszkalnictwo'],
+    userBenefits: 'Transport publiczny będzie bardziej dostępny i zintegrowany. Jeden bilet na wszystkie środki transportu.',
   },
   {
     id: '25',
@@ -462,6 +481,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '25-5', version: '2.1', date: new Date('2024-12-02'), url: '/documents/czyste-powietrze-v2.1.pdf', description: 'Aktualna wersja' },
     ],
     categories: ['srodowisko', 'zdrowie'],
+    userBenefits: 'Łatwiej zarejestrujesz samochód elektryczny. Zyskasz dostęp do większej sieci ładowarek.',
   },
   {
     id: '26',
@@ -479,6 +499,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '26-3', version: '2.0', date: new Date('2024-12-06'), url: '/documents/mieszkanie-v2.pdf', description: 'Wersja do konsultacji' },
     ],
     categories: ['mieszkalnictwo', 'rodzina'],
+    userBenefits: 'Kupno mieszkania będzie bezpieczniejsze. Deweloperzy będą musieli lepiej chronić Twoje pieniądze.',
   },
   {
     id: '27',
@@ -499,6 +520,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '27-6', version: '3.2', date: new Date('2024-12-04'), url: '/documents/budowlanka-v3.2.pdf', description: 'Po komisji' },
     ],
     categories: ['mieszkalnictwo', 'biznes'],
+    userBenefits: 'Powietrze w Twoim mieście będzie czystsze. Zakłady przemysłowe będą musiały ograniczyć emisje.',
   },
   {
     id: '28',
@@ -520,6 +542,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '28-7', version: '3.3', date: new Date('2024-12-03'), url: '/documents/transport-v3.3.pdf', description: 'Do podpisu Prezydenta' },
     ],
     categories: ['transport', 'bezpieczenstwo'],
+    userBenefits: 'Żywność w sklepach będzie bezpieczniejsza. Łatwiej sprawdzisz pochodzenie produktów.',
   },
   {
     id: '29',
@@ -540,6 +563,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '29-6', version: '2.2', date: new Date('2024-12-05'), url: '/documents/cpk-kolej-v2.2.pdf', description: 'Aktualna wersja' },
     ],
     categories: ['transport'],
+    userBenefits: 'Twoje konto bankowe będzie lepiej chronione przed oszustami. Banki szybciej zwrócą pieniądze z nieautoryzowanych transakcji.',
   },
   {
     id: '30',
@@ -557,6 +581,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '30-3', version: '2.0', date: new Date('2024-12-06'), url: '/documents/dzieci-online-v2.pdf', description: 'Wersja do konsultacji' },
     ],
     categories: ['technologia', 'rodzina', 'bezpieczenstwo'],
+    userBenefits: 'Zyskasz większe prawa jako pracownik zdalny. Pracodawca pokryje koszty pracy z domu.',
   },
   {
     id: '31',
@@ -577,6 +602,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '31-6', version: '3.2', date: new Date('2024-12-04'), url: '/documents/jezyk-migowy-v3.2.pdf', description: 'Uchwalona przez Sejm' },
     ],
     categories: ['pomoc-spoleczna'],
+    userBenefits: 'Edukacja Twoich dzieci będzie bardziej nowoczesna. Szkoły zyskają lepszy sprzęt komputerowy.',
   },
   {
     id: '32',
@@ -597,6 +623,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '32-6', version: '3.2', date: new Date('2024-12-05'), url: '/documents/prawa-pacjenta-v3.2.pdf', description: 'W Senacie' },
     ],
     categories: ['zdrowie'],
+    userBenefits: 'Zyskasz dostęp do darmowych badań profilaktycznych. Szybciej wykryjesz choroby.',
   },
   {
     id: '33',
@@ -618,6 +645,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '33-7', version: '4.0', date: new Date('2024-11-30'), url: '/documents/refundacja-v4.pdf', description: 'Wersja uchwalona' },
     ],
     categories: ['zdrowie'],
+    userBenefits: 'Emerytury będą lepiej waloryzowane. Zyskasz większe bezpieczeństwo finansowe na starość.',
   },
   {
     id: '34',
@@ -636,6 +664,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '34-4', version: '2.0', date: new Date('2024-12-04'), url: '/documents/szkolnictwo-v2.pdf', description: 'Wersja do konsultacji' },
     ],
     categories: ['edukacja'],
+    userBenefits: 'Wsparcie dla rodzin z dziećmi będzie wyższe. Łatwiej uzyskasz świadczenia.',
   },
   {
     id: '35',
@@ -655,6 +684,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '35-5', version: '2.1', date: new Date('2024-12-03'), url: '/documents/nauka-v2.1.pdf', description: 'Aktualna wersja' },
     ],
     categories: ['edukacja', 'technologia'],
+    userBenefits: 'Mieszkania komunalne będą bardziej dostępne. Krótszy czas oczekiwania na przydział.',
   },
   {
     id: '36',
@@ -670,6 +700,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '36-2', version: '0.2', date: new Date('2024-12-05'), url: '/documents/zabytki-v0.2.pdf', description: 'Wersja robocza' },
     ],
     categories: ['kultura'],
+    userBenefits: 'Rolnicy zyskają lepsze warunki sprzedaży produktów. Żywność lokalna będzie tańsza.',
   },
   {
     id: '37',
@@ -690,6 +721,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '37-6', version: '3.2', date: new Date('2024-12-04'), url: '/documents/artysci-v3.2.pdf', description: 'Po II czytaniu' },
     ],
     categories: ['kultura', 'prawo-pracy'],
+    userBenefits: 'Sport i rekreacja będą bardziej dostępne. Więcej darmowych obiektów sportowych.',
   },
   {
     id: '38',
@@ -707,6 +739,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '38-3', version: '2.0', date: new Date('2024-12-06'), url: '/documents/konsument-v2.pdf', description: 'Wersja do konsultacji' },
     ],
     categories: ['biznes'],
+    userBenefits: 'Twórcy kultury zyskają lepszą ochronę. Więcej wydarzeń kulturalnych w Twoim regionie.',
   },
   {
     id: '39',
@@ -728,6 +761,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '39-7', version: '4.0', date: new Date('2024-11-25'), url: '/documents/sygnalisci-v4.pdf', description: 'Wersja uchwalona' },
     ],
     categories: ['prawo-pracy', 'biznes'],
+    userBenefits: 'Ochrona środowiska będzie skuteczniejsza. Więcej terenów zielonych w miastach.',
   },
   {
     id: '40',
@@ -747,6 +781,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '40-5', version: '2.1', date: new Date('2024-12-02'), url: '/documents/platformy-v2.1.pdf', description: 'Aktualna wersja' },
     ],
     categories: ['prawo-pracy', 'technologia'],
+    userBenefits: 'Twoje dane osobowe w usługach cyfrowych będą lepiej chronione. Firmy będą musiały działać bardziej przejrzyście.',
   },
 ];
 
@@ -2869,3 +2904,227 @@ Prawo do naprawy, wydłużona gwarancja do 3 lat, zakaz planowanego postarzania 
     ],
   },
 ];
+
+import { AICommentSummary, ConsultationStats } from '@/types';
+
+export const mockAICommentSummaries: Record<string, AICommentSummary[]> = {
+  '1': [
+    {
+      id: 's1-1',
+      consultationId: '1',
+      title: 'Obawy dotyczące prywatności',
+      summary: 'Znaczna część komentarzy wyraża obawy związane z potencjalnym nadużyciem danych osobowych przez instytucje państwowe. Obywatele obawiają się, że nowe przepisy mogą prowadzić do nadmiernej inwigilacji.',
+      keyPoints: [
+        'Potrzeba silniejszych zabezpieczeń przed nieautoryzowanym dostępem',
+        'Obawy o wykorzystanie danych przez służby specjalne',
+        'Żądanie prawa do pełnej anonimizacji na życzenie',
+      ],
+      sentiment: 'negative',
+      commentCount: 234,
+      createdAt: new Date('2024-12-05'),
+    },
+    {
+      id: 's1-2',
+      consultationId: '1',
+      title: 'Pozytywne opinie o modernizacji',
+      summary: 'Wielu respondentów docenia próbę unowocześnienia przepisów o ochronie danych. Wskazują na potrzebę dostosowania prawa do realiów cyfrowych.',
+      keyPoints: [
+        'Poparcie dla prawa do "bycia zapomnianym"',
+        'Pochwała za zwiększenie kar dla firm naruszających prywatność',
+        'Oczekiwanie na lepszą ochronę danych dzieci',
+      ],
+      sentiment: 'positive',
+      commentCount: 189,
+      createdAt: new Date('2024-12-05'),
+    },
+  ],
+  '2': [
+    {
+      id: 's2-1',
+      consultationId: '2',
+      title: 'Dostępność danych publicznych',
+      summary: 'Komentujący apelują o szerszy zakres danych udostępnianych publicznie. Wskazują na potrzebę łatwego dostępu do informacji o środowisku i finansach publicznych.',
+      keyPoints: [
+        'Priorytet dla danych środowiskowych',
+        'Potrzeba formatu API-first',
+        'Obawy o jakość udostępnianych danych',
+      ],
+      sentiment: 'mixed',
+      commentCount: 156,
+      createdAt: new Date('2024-12-07'),
+    },
+    {
+      id: 's2-2',
+      consultationId: '2',
+      title: 'Format udostępniania',
+      summary: 'Wiele głosów dotyczy technicznych aspektów udostępniania danych. Respondenci postulują wykorzystanie standardów otwartych.',
+      keyPoints: [
+        'Żądanie formatu JSON/CSV',
+        'Propozycja dokumentacji API',
+        'Postulat aktualizacji w czasie rzeczywistym',
+      ],
+      sentiment: 'neutral',
+      commentCount: 98,
+      createdAt: new Date('2024-12-07'),
+    },
+    {
+      id: 's2-3',
+      consultationId: '2',
+      title: 'Korzyści dla biznesu',
+      summary: 'Przedsiębiorcy wyrażają entuzjazm dla otwarcia danych. Widzą możliwości tworzenia nowych usług i produktów.',
+      keyPoints: [
+        'Potencjał dla startupów',
+        'Możliwość tworzenia aplikacji',
+        'Sugestia hackathonów na otwartych danych',
+      ],
+      sentiment: 'positive',
+      commentCount: 134,
+      createdAt: new Date('2024-12-07'),
+    },
+  ],
+  '3': [
+    {
+      id: 's3-1',
+      consultationId: '3',
+      title: 'Przejrzystość procesu legislacyjnego',
+      summary: 'Respondenci wyrażają poparcie dla zwiększenia transparentności. Wskazują na trudności w śledzeniu aktualnego stanu prac nad ustawami.',
+      keyPoints: [
+        'Potrzeba centralnego portalu',
+        'Obawy o terminowość publikacji',
+        'Pytania o powiadomienia o zmianach',
+      ],
+      sentiment: 'mixed',
+      commentCount: 567,
+      createdAt: new Date('2024-12-10'),
+    },
+    {
+      id: 's3-2',
+      consultationId: '3',
+      title: 'Udział obywateli w konsultacjach',
+      summary: 'Znaczna część komentarzy dotyczy możliwości realnego wpływu na kształt ustaw. Respondenci postulują lepsze uwzględnianie głosów obywateli.',
+      keyPoints: [
+        'Dłuższe terminy na konsultacje',
+        'Obowiązek odpowiedzi na uwagi',
+        'Publikacja raportu z konsultacji',
+      ],
+      sentiment: 'negative',
+      commentCount: 342,
+      createdAt: new Date('2024-12-10'),
+    },
+  ],
+  '5': [
+    {
+      id: 's5-1',
+      consultationId: '5',
+      title: 'Program nauczania programowania',
+      summary: 'Nauczyciele i rodzice dyskutują o zakresie i metodach nauczania programowania. Przeważa poparcie dla praktycznego podejścia.',
+      keyPoints: [
+        'Nacisk na projekty praktyczne',
+        'Obawy o obciążenie uczniów',
+        'Potrzeba szkoleń dla nauczycieli',
+      ],
+      sentiment: 'mixed',
+      commentCount: 312,
+      createdAt: new Date('2024-12-18'),
+    },
+    {
+      id: 's5-2',
+      consultationId: '5',
+      title: 'Infrastruktura szkolna',
+      summary: 'Wiele komentarzy dotyczy braku odpowiedniego sprzętu w szkołach. Postulaty o dofinansowanie pracowni komputerowych.',
+      keyPoints: [
+        'Brak komputerów w wielu szkołach',
+        'Przestarzały sprzęt',
+        'Potrzeba szybkiego internetu',
+      ],
+      sentiment: 'negative',
+      commentCount: 166,
+      createdAt: new Date('2024-12-18'),
+    },
+  ],
+};
+
+export const mockConsultationStats: Record<string, ConsultationStats> = {
+  '1': {
+    totalComments: 423,
+    positiveComments: 189,
+    neutralComments: 78,
+    negativeComments: 156,
+    responsesByDay: [
+      { date: '2024-12-01', count: 45 },
+      { date: '2024-12-02', count: 67 },
+      { date: '2024-12-03', count: 89 },
+      { date: '2024-12-04', count: 112 },
+      { date: '2024-12-05', count: 78 },
+      { date: '2024-12-06', count: 32 },
+    ],
+    topConcerns: [
+      { topic: 'Prywatność danych', count: 156 },
+      { topic: 'Kary za naruszenia', count: 98 },
+      { topic: 'Prawa obywateli', count: 87 },
+      { topic: 'Obowiązki firm', count: 54 },
+      { topic: 'Okres przejściowy', count: 28 },
+    ],
+  },
+  '2': {
+    totalComments: 388,
+    positiveComments: 198,
+    neutralComments: 112,
+    negativeComments: 78,
+    responsesByDay: [
+      { date: '2024-12-06', count: 89 },
+      { date: '2024-12-07', count: 145 },
+      { date: '2024-12-08', count: 78 },
+      { date: '2024-12-09', count: 45 },
+      { date: '2024-12-10', count: 31 },
+    ],
+    topConcerns: [
+      { topic: 'Dostępność danych', count: 134 },
+      { topic: 'Format udostępniania', count: 98 },
+      { topic: 'Bezpieczeństwo API', count: 87 },
+      { topic: 'Aktualizacja danych', count: 45 },
+      { topic: 'Koszty wdrożenia', count: 24 },
+    ],
+  },
+  '3': {
+    totalComments: 909,
+    positiveComments: 456,
+    neutralComments: 111,
+    negativeComments: 342,
+    responsesByDay: [
+      { date: '2024-12-01', count: 123 },
+      { date: '2024-12-03', count: 189 },
+      { date: '2024-12-05', count: 156 },
+      { date: '2024-12-08', count: 234 },
+      { date: '2024-12-12', count: 145 },
+      { date: '2024-12-14', count: 62 },
+    ],
+    topConcerns: [
+      { topic: 'Przejrzystość procesu', count: 289 },
+      { topic: 'Dostęp do dokumentów', count: 234 },
+      { topic: 'Terminy konsultacji', count: 187 },
+      { topic: 'Uwzględnianie uwag', count: 112 },
+      { topic: 'Język dokumentów', count: 87 },
+    ],
+  },
+  '5': {
+    totalComments: 567,
+    positiveComments: 312,
+    neutralComments: 89,
+    negativeComments: 166,
+    responsesByDay: [
+      { date: '2024-12-04', count: 78 },
+      { date: '2024-12-07', count: 123 },
+      { date: '2024-12-10', count: 156 },
+      { date: '2024-12-13', count: 112 },
+      { date: '2024-12-16', count: 98 },
+    ],
+    topConcerns: [
+      { topic: 'Program nauczania', count: 178 },
+      { topic: 'Kwalifikacje nauczycieli', count: 145 },
+      { topic: 'Sprzęt komputerowy', count: 112 },
+      { topic: 'Obciążenie uczniów', count: 89 },
+      { topic: 'Język programowania', count: 43 },
+    ],
+  },
+};

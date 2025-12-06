@@ -9,7 +9,7 @@ import { categoryLabels } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { FollowButton } from '@/components/ui/FollowButton';
-import { ArrowLeft, MessageSquare, Lightbulb } from 'lucide-react';
+import { ArrowLeft, MessageSquare, Lightbulb, Settings } from 'lucide-react';
 import Link from 'next/link';
 
 interface PageProps {
@@ -49,7 +49,7 @@ export default async function UstawaPage({ params }: PageProps) {
       )}
 
       <div className="flex">
-        <aside className="fixed left-0 top-0 h-screen w-64 border-r border-border bg-background pt-16 px-4 overflow-y-auto">
+        <aside className="fixed left-0 top-0 h-screen w-64 border-r border-border bg-background pt-16 px-4 pb-6 overflow-y-auto">
           <div className="flex items-center gap-3 mb-4">
             <UstawaAvatar
               shortTitle={ustawa.shortTitle}
@@ -98,6 +98,15 @@ export default async function UstawaPage({ params }: PageProps) {
           <div className="border-t border-border pt-4">
             <h2 className="text-sm font-semibold text-muted-foreground mb-2">Status procesu</h2>
             <TrainStatusBar currentStatus={ustawa.status} />
+          </div>
+
+          <div className="border-t border-border pt-4 mt-4">
+            <Link href={`/admin/ustawa/${id}`}>
+              <Button variant="outline" size="sm" className="w-full">
+                <Settings className="h-4 w-4 mr-2" />
+                Panel administracyjny
+              </Button>
+            </Link>
           </div>
         </aside>
 

@@ -20,6 +20,20 @@ export function AIOverview({ content, onContinue }: AIOverviewProps) {
     const container = scrollContainerRef.current;
     if (!container) return;
 
+    // Check if content is short enough that no scrolling is needed
+    const checkIfScrollable = () => {
+      const { scrollHeight, clientHeight } = container;
+      if (scrollHeight <= clientHeight + 50) {
+        // Content fits on screen, no need to scroll
+        setHasScrolledToBottom(true);
+        setShowScrollHint(false);
+      }
+    };
+
+    // Check on mount and after a short delay for content to render
+    checkIfScrollable();
+    const timer = setTimeout(checkIfScrollable, 100);
+
     const handleScroll = () => {
       const { scrollTop, scrollHeight, clientHeight } = container;
       const isAtBottom = scrollTop + clientHeight >= scrollHeight - 50;
@@ -35,7 +49,10 @@ export function AIOverview({ content, onContinue }: AIOverviewProps) {
     };
 
     container.addEventListener('scroll', handleScroll);
-    return () => container.removeEventListener('scroll', handleScroll);
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (

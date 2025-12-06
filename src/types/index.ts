@@ -260,3 +260,32 @@ export interface Consultation {
   totalResponses: number;
   aiOverview?: string;
 }
+
+export interface ConsultationComment {
+  id: string;
+  consultationId: string;
+  author: string;
+  content: string;
+  createdAt: Date;
+  sentiment: 'positive' | 'neutral' | 'negative';
+}
+
+export interface AICommentSummary {
+  id: string;
+  consultationId: string;
+  title: string;
+  summary: string;
+  keyPoints: string[];
+  sentiment: 'positive' | 'neutral' | 'negative' | 'mixed';
+  commentCount: number;
+  createdAt: Date;
+}
+
+export interface ConsultationStats {
+  totalComments: number;
+  positiveComments: number;
+  neutralComments: number;
+  negativeComments: number;
+  responsesByDay: { date: string; count: number }[];
+  topConcerns: { topic: string; count: number }[];
+}
