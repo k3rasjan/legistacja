@@ -10,6 +10,24 @@ import Link from 'next/link';
 
 interface ConsultationCardProps {
   consultation: Consultation;
+  searchQuery?: string;
+}
+
+function highlightText(text: string, query: string): React.ReactNode {
+  if (!query.trim()) return text;
+
+  const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  const parts = text.split(regex);
+
+  return parts.map((part, i) =>
+    regex.test(part) ? (
+      <mark key={i} className="bg-yellow-200 dark:bg-yellow-800 rounded px-0.5">
+        {part}
+      </mark>
+    ) : (
+      part
+    )
+  );
 }
 
 function formatDate(date: Date): string {
@@ -26,7 +44,7 @@ function getDaysRemaining(endDate: Date): number {
   return Math.ceil(diff / (1000 * 60 * 60 * 24));
 }
 
-export function ConsultationCard({ consultation }: ConsultationCardProps) {
+export function ConsultationCard({ consultation, searchQuery = '' }: ConsultationCardProps) {
   const daysRemaining = getDaysRemaining(consultation.endDate);
   const openQuestions = consultation.questions.filter((q) => q.type === 'open').length;
   const closedQuestions = consultation.questions.filter((q) => q.type === 'closed').length;
@@ -52,7 +70,7 @@ export function ConsultationCard({ consultation }: ConsultationCardProps) {
                   href={`/konsultacje/${consultation.id}`}
                   className="font-semibold text-lg hover:underline"
                 >
-                  {consultation.title}
+                  {highlightText(consultation.title, searchQuery)}
                 </Link>
                 {consultation.ustawa && (
                   <p className="text-sm text-muted-foreground">
@@ -72,7 +90,9 @@ export function ConsultationCard({ consultation }: ConsultationCardProps) {
               </Badge>
             </div>
 
-            <p className="mt-2 text-muted-foreground text-sm">{consultation.description}</p>
+            <p className="mt-2 text-muted-foreground text-sm">
+              {highlightText(consultation.description, searchQuery)}
+            </p>
 
             <div className="mt-4 flex flex-wrap gap-4 text-sm">
               <div className="flex items-center gap-1 text-muted-foreground">

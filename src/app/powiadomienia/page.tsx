@@ -238,7 +238,7 @@ export default function PowiadomieniaPage() {
           </Button>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-4">
           {filteredNotifications.map((notification) => {
             const ustawa = getUstawa(notification.ustawaId);
             const Icon = notificationIcons[notification.type];
@@ -250,6 +250,7 @@ export default function PowiadomieniaPage() {
                 key={notification.id}
                 href={`/ustawa/${notification.ustawaId}`}
                 onClick={() => markAsRead(notification.id)}
+                className="block"
               >
                 <div
                   className={`flex gap-4 p-4 rounded-xl border transition-colors hover:bg-accent/50 ${
