@@ -17,9 +17,9 @@ import {
   Edit,
   Sparkles,
   ExternalLink,
-  Bookmark,
   Share2,
 } from 'lucide-react';
+import { FollowButton } from '@/components/ui/FollowButton';
 import Link from 'next/link';
 
 const updateTypeIcons = {
@@ -100,10 +100,7 @@ export function FullscreenPost({ update }: FullscreenPostProps) {
         )}
 
         <div className="flex items-center gap-2 pt-4 border-t border-border">
-          <Button variant="ghost" size="lg" className="text-muted-foreground">
-            <Bookmark className="h-5 w-5 mr-2" />
-            Obserwuj
-          </Button>
+          <FollowButton size="lg" />
           <Button variant="ghost" size="lg" className="text-muted-foreground">
             <Share2 className="h-5 w-5 mr-2" />
             Udostępnij

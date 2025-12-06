@@ -40,10 +40,10 @@ export function HamburgerMenu() {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="p-4 pt-16">
+        <div className="px-6 pt-14">
           <Link
             href="/"
-            className="flex items-center gap-2 mb-8 px-2"
+            className="flex items-center gap-3 mb-8"
             onClick={() => setIsOpen(false)}
           >
             <Scale className="h-8 w-8 text-primary" />
@@ -53,7 +53,7 @@ export function HamburgerMenu() {
           <nav className="space-y-1">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
-                <Button variant="ghost" className="w-full justify-start gap-3 text-base">
+                <Button variant="ghost" className="w-full justify-start gap-3 text-base h-12 px-4">
                   <item.icon className="h-5 w-5" />
                   {item.label}
                 </Button>
@@ -62,7 +62,7 @@ export function HamburgerMenu() {
           </nav>
         </div>
 
-        <div className="absolute bottom-4 left-4 text-xs text-muted-foreground">
+        <div className="absolute bottom-6 left-6 text-xs text-muted-foreground">
           <p>Legislacja Tracker v0.1</p>
         </div>
       </aside>

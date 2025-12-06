@@ -104,4 +104,5 @@ export interface Consultation {
   isActive: boolean;
   questions: ConsultationQuestion[];
   totalResponses: number;
+  aiOverview?: string;
 }

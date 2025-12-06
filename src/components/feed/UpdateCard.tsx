@@ -19,9 +19,9 @@ import {
   Edit,
   Sparkles,
   ExternalLink,
-  Bookmark,
   Share2,
 } from 'lucide-react';
+import { FollowButton } from '@/components/ui/FollowButton';
 import Link from 'next/link';
 
 const updateTypeIcons = {
@@ -109,10 +109,7 @@ export function UpdateCard({ update }: UpdateCardProps) {
             )}
 
             <div className="mt-3 flex items-center gap-1">
-              <Button variant="ghost" size="sm" className="text-muted-foreground">
-                <Bookmark className="h-4 w-4 mr-1" />
-                Obserwuj
-              </Button>
+              <FollowButton size="sm" />
               <Button variant="ghost" size="sm" className="text-muted-foreground">
                 <Share2 className="h-4 w-4 mr-1" />
                 Udostępnij

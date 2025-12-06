@@ -5,7 +5,8 @@ import { PostCard } from '@/components/feed/PostCard';
 import { HamburgerMenu } from '@/components/layout/HamburgerMenu';
 import { mockUstawy, mockUpdates } from '@/data/mock';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Bell } from 'lucide-react';
+import { FollowButton } from '@/components/ui/FollowButton';
+import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 interface PageProps {
@@ -50,10 +51,7 @@ export default async function UstawaPage({ params }: PageProps) {
             </div>
           </div>
 
-          <Button className="w-full mb-6">
-            <Bell className="h-4 w-4 mr-2" />
-            Obserwuj
-          </Button>
+          <FollowButton variant="bell" size="default" fullWidth className="mb-6" />
 
           <div className="border-t border-border pt-4">
             <h2 className="text-sm font-semibold text-muted-foreground mb-2">Status procesu</h2>

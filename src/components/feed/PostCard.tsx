@@ -14,9 +14,9 @@ import {
   Edit,
   Sparkles,
   ExternalLink,
-  Bookmark,
   Share2,
 } from 'lucide-react';
+import { FollowButton } from '@/components/ui/FollowButton';
 
 const updateTypeIcons = {
   status_change: ArrowRight,
@@ -72,10 +72,7 @@ export function PostCard({ update }: PostCardProps) {
         )}
 
         <div className="flex items-center gap-1 pt-3 border-t border-border">
-          <Button variant="ghost" size="sm" className="text-muted-foreground">
-            <Bookmark className="h-4 w-4 mr-1" />
-            Obserwuj
-          </Button>
+          <FollowButton size="sm" />
           <Button variant="ghost" size="sm" className="text-muted-foreground">
             <Share2 className="h-4 w-4 mr-1" />
             Udostępnij
