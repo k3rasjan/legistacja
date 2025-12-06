@@ -200,8 +200,10 @@ export default function AdminUstawaPage() {
                                   backgroundColor: '#171717',
                                   border: 'none',
                                   borderRadius: '8px',
-                                  color: '#fff'
+                                  padding: '8px 12px',
                                 }}
+                                itemStyle={{ color: '#fff' }}
+                                labelStyle={{ color: '#a3a3a3', marginBottom: '4px' }}
                               />
                             </PieChart>
                           </ResponsiveContainer>
@@ -250,8 +252,10 @@ export default function AdminUstawaPage() {
                                   backgroundColor: '#171717',
                                   border: 'none',
                                   borderRadius: '8px',
-                                  color: '#fff'
+                                  padding: '8px 12px',
                                 }}
+                                itemStyle={{ color: '#fff' }}
+                                labelStyle={{ color: '#a3a3a3', marginBottom: '4px' }}
                               />
                               <Line
                                 type="monotone"
@@ -296,8 +300,11 @@ export default function AdminUstawaPage() {
                                 backgroundColor: '#171717',
                                 border: 'none',
                                 borderRadius: '8px',
-                                color: '#fff'
+                                padding: '8px 12px',
                               }}
+                              itemStyle={{ color: '#fff' }}
+                              labelStyle={{ color: '#a3a3a3', marginBottom: '4px' }}
+                              cursor={{ fill: 'transparent' }}
                             />
                             <Bar
                               dataKey="count"
