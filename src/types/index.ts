@@ -111,7 +111,7 @@ export const ageRangeLabels: Record<AgeRange, string> = {
 };
 
 export interface UserPreferences {
-  socialStatus: SocialStatus | null;
+  socialStatuses: SocialStatus[];
   maritalStatus: MaritalStatus | null;
   housingStatus: HousingStatus | null;
   ageRange: AgeRange | null;
@@ -122,7 +122,7 @@ export interface UserPreferences {
 }
 
 export const defaultUserPreferences: UserPreferences = {
-  socialStatus: null,
+  socialStatuses: [],
   maritalStatus: null,
   housingStatus: null,
   ageRange: null,
@@ -162,6 +162,7 @@ export interface Ustawa {
   drukNumber?: string;
   documentVersions?: DocumentVersion[];
   categories: UstawaCategory[];
+  userBenefits?: string;
 }
 
 export type UpdateType =

@@ -18,6 +18,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '1-4', version: '2.1', date: new Date('2024-12-05'), url: '/documents/nowelizacja-rodo-v2.1.pdf', description: 'Aktualna wersja' },
     ],
     categories: ['technologia', 'biznes'],
+    userBenefits: 'Zyskasz większą kontrolę nad swoimi danymi osobowymi. Będziesz mógł łatwiej żądać usunięcia swoich danych z serwisów internetowych i otrzymasz szybsze powiadomienia o wyciekach danych, które Cię dotyczą.',
   },
   {
     id: '2',
@@ -37,6 +38,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '2-5', version: '2.2', date: new Date('2024-12-03'), url: '/documents/dostepnosc-cyfrowa-v2.2.pdf', description: 'Po poprawkach komisji' },
     ],
     categories: ['technologia', 'pomoc-spoleczna'],
+    userBenefits: 'Strony internetowe urzędów i instytucji publicznych będą łatwiejsze w obsłudze. Jeśli masz problemy ze wzrokiem lub słuchem, zyskasz pełny dostęp do usług online, w tym czytniki ekranu i napisy.',
   },
   {
     id: '3',
@@ -51,6 +53,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '3-1', version: '0.1', date: new Date('2024-12-01'), url: '/documents/transparentnosc-v0.1.pdf', description: 'Wersja robocza' },
     ],
     categories: ['technologia'],
+    userBenefits: 'Będziesz mógł śledzić na bieżąco wszystkie prace nad ustawami, które Cię dotyczą. Zyskasz dostęp do pełnej dokumentacji i możliwość zgłaszania uwag na każdym etapie procesu legislacyjnego.',
   },
   {
     id: '4',
@@ -68,6 +71,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '4-3', version: '1.2', date: new Date('2024-12-04'), url: '/documents/e-tozsamosc-v1.2.pdf', description: 'Aktualna wersja' },
     ],
     categories: ['technologia', 'bezpieczenstwo'],
+    userBenefits: 'Będziesz mógł nosić cyfrowy dowód osobisty i prawo jazdy w telefonie. Załatwisz wszystkie sprawy urzędowe online bez wychodzenia z domu, a Twoje dokumenty będą automatycznie przedłużane.',
   },
   {
     id: '5',
@@ -87,6 +91,7 @@ export const mockUstawy: Ustawa[] = [
       { id: '5-5', version: '4.0', date: new Date('2024-11-20'), url: '/documents/ai-administracja-v4.pdf', description: 'Wersja uchwalona' },
     ],
     categories: ['technologia'],
+    userBenefits: 'Sprawy urzędowe będą załatwiane szybciej dzięki automatyzacji. Chatboty pomogą Ci 24/7 z podstawowymi pytaniami, a system zapewni, że ważne decyzje zawsze zweryfikuje człowiek.',
   },
   {
     id: '6',

@@ -9,7 +9,7 @@ import { categoryLabels } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { FollowButton } from '@/components/ui/FollowButton';
-import { ArrowLeft, MessageSquare } from 'lucide-react';
+import { ArrowLeft, MessageSquare, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
 
 interface PageProps {
@@ -107,6 +107,20 @@ export default async function UstawaPage({ params }: PageProps) {
               <h2 className="text-xl font-bold mb-2">{ustawa.title}</h2>
               <p className="text-muted-foreground">{ustawa.description}</p>
             </div>
+
+            {ustawa.userBenefits && (
+              <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-xl">
+                <div className="flex items-center gap-2 mb-2">
+                  <Lightbulb className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+                  <span className="font-semibold text-amber-800 dark:text-amber-200">
+                    Co zyskujesz?
+                  </span>
+                </div>
+                <p className="text-amber-900 dark:text-amber-100">
+                  {ustawa.userBenefits}
+                </p>
+              </div>
+            )}
 
             <h3 className="font-semibold mb-4">Aktualizacje ({updates.length})</h3>
 

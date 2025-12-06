@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { OnboardingOption } from './OnboardingOption';
@@ -39,6 +39,7 @@ import {
   Shield,
   HandHeart,
   Palette,
+  Loader2,
 } from 'lucide-react';
 
 const socialStatusIcons: Record<SocialStatus, React.ReactNode> = {
@@ -68,7 +69,7 @@ const categoryIcons: Record<UstawaCategory, React.ReactNode> = {
   'rodzina': <Users className="h-5 w-5" />,
 };
 
-type Step = 'welcome' | 'social' | 'age' | 'marital' | 'housing' | 'children' | 'employer' | 'categories' | 'complete';
+type Step = 'welcome' | 'social' | 'age' | 'marital' | 'housing' | 'children' | 'employer' | 'categories' | 'complete' | 'loading';
 
 const STEPS: Step[] = ['welcome', 'social', 'age', 'marital', 'housing', 'children', 'employer', 'categories', 'complete'];
 
@@ -77,7 +78,7 @@ export function OnboardingFlow() {
   const { preferences, updatePreferences, completeOnboarding } = useUserPreferences();
   const [currentStep, setCurrentStep] = useState<Step>('welcome');
   const [localPrefs, setLocalPrefs] = useState<Partial<UserPreferences>>({
-    socialStatus: preferences.socialStatus,
+    socialStatuses: preferences.socialStatuses || [],
     maritalStatus: preferences.maritalStatus,
     housingStatus: preferences.housingStatus,
     ageRange: preferences.ageRange,
@@ -104,9 +105,36 @@ export function OnboardingFlow() {
   };
 
   const handleComplete = () => {
+    setCurrentStep('loading');
     updatePreferences({ ...localPrefs, onboardingCompleted: true });
-    router.push('/');
   };
+
+  const [loadingProgress, setLoadingProgress] = useState(0);
+
+  // Redirect after loading animation
+  useEffect(() => {
+    if (currentStep === 'loading') {
+      // Animate progress bar over 5 seconds
+      const interval = setInterval(() => {
+        setLoadingProgress((prev) => {
+          if (prev >= 100) {
+            clearInterval(interval);
+            return 100;
+          }
+          return prev + 2;
+        });
+      }, 100); // 100ms * 50 steps = 5 seconds
+
+      const timer = setTimeout(() => {
+        router.push('/');
+      }, 5500);
+
+      return () => {
+        clearTimeout(timer);
+        clearInterval(interval);
+      };
+    }
+  }, [currentStep, router]);
 
   const toggleCategory = (category: UstawaCategory) => {
     const current = localPrefs.categories || [];
@@ -116,10 +144,18 @@ export function OnboardingFlow() {
     setLocalPrefs({ ...localPrefs, categories: updated });
   };
 
+  const toggleSocialStatus = (status: SocialStatus) => {
+    const current = localPrefs.socialStatuses || [];
+    const updated = current.includes(status)
+      ? current.filter(s => s !== status)
+      : [...current, status];
+    setLocalPrefs({ ...localPrefs, socialStatuses: updated });
+  };
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Progress bar */}
-      {currentStep !== 'welcome' && currentStep !== 'complete' && (
+      {currentStep !== 'welcome' && currentStep !== 'complete' && currentStep !== 'loading' && (
         <div className="fixed top-0 left-0 right-0 h-1 bg-muted">
           <div
             className="h-full bg-primary transition-all duration-300"
@@ -154,16 +190,16 @@ export function OnboardingFlow() {
           {currentStep === 'social' && (
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl font-bold mb-2">Jaki jest Twój status zawodowy?</h2>
-                <p className="text-muted-foreground">Pomoże nam to dopasować ustawy dotyczące Twojej sytuacji.</p>
+                <h2 className="text-2xl font-bold mb-2">Co Cię interesuje?</h2>
+                <p className="text-muted-foreground">Wybierz wszystkie opcje, które Cię dotyczą.</p>
               </div>
               <div className="space-y-3">
                 {(Object.keys(socialStatusLabels) as SocialStatus[]).map((status) => (
                   <OnboardingOption
                     key={status}
                     label={socialStatusLabels[status]}
-                    selected={localPrefs.socialStatus === status}
-                    onClick={() => setLocalPrefs({ ...localPrefs, socialStatus: status })}
+                    selected={(localPrefs.socialStatuses || []).includes(status)}
+                    onClick={() => toggleSocialStatus(status)}
                     icon={socialStatusIcons[status]}
                   />
                 ))}
@@ -318,8 +354,32 @@ export function OnboardingFlow() {
             </div>
           )}
 
+          {/* Loading Step */}
+          {currentStep === 'loading' && (
+            <div className="text-center space-y-8">
+              <div className="w-16 h-16 mx-auto border-4 border-muted border-t-primary rounded-full animate-spin" />
+
+              <div className="space-y-2">
+                <h1 className="text-2xl font-bold">Tworzymy plan specjalnie dla Ciebie</h1>
+                <p className="text-muted-foreground">
+                  Analizujemy Twoje preferencje...
+                </p>
+              </div>
+
+              <div className="w-full space-y-2">
+                <div className="h-2 bg-muted rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-primary rounded-full transition-all duration-100 ease-out"
+                    style={{ width: `${loadingProgress}%` }}
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground">{loadingProgress}%</p>
+              </div>
+            </div>
+          )}
+
           {/* Navigation buttons */}
-          {currentStep !== 'welcome' && currentStep !== 'complete' && (
+          {currentStep !== 'welcome' && currentStep !== 'complete' && currentStep !== 'loading' && (
             <div className="flex gap-3 mt-8">
               <Button variant="outline" onClick={goBack} className="flex-1">
                 <ArrowLeft className="mr-2 h-4 w-4" /> Wstecz
