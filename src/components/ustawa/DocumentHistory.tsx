@@ -1,8 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { DocumentVersion } from '@/types';
-import { FileText, Download, ChevronDown, ChevronUp } from 'lucide-react';
+import { FileText, Download, ChevronDown, ChevronUp, Loader2 } from 'lucide-react';
+
+const PdfViewer = dynamic(() => import('./PdfViewer').then(mod => ({ default: mod.PdfViewer })), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center h-full bg-muted">
+      <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+    </div>
+  ),
+});
 
 interface DocumentHistoryProps {
   versions: DocumentVersion[];
@@ -123,10 +133,9 @@ export function DocumentHistory({ versions }: DocumentHistoryProps) {
 
       {/* Inline PDF Viewer */}
       {selectedVersion && (
-        <div className="aspect-[3/4] sm:aspect-[4/5] md:aspect-[16/10] w-full bg-muted">
-          <iframe
-            src={selectedVersion.url}
-            className="w-full h-full border-0"
+        <div className="h-[500px] sm:h-[600px] md:h-[700px] w-full bg-muted">
+          <PdfViewer
+            url={selectedVersion.url}
             title={`Dokument wersja ${selectedVersion.version}`}
           />
         </div>

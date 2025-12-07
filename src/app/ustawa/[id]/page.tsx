@@ -126,12 +126,6 @@ export default async function UstawaPage({ params }: PageProps) {
             </div>
           )}
 
-          {ustawa.documentVersions && ustawa.documentVersions.length > 0 && (
-            <div className="mb-4 sm:mb-6">
-              <DocumentHistory versions={ustawa.documentVersions} />
-            </div>
-          )}
-
           <h3 className="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Aktualizacje ({updates.length})</h3>
 
           <div className="space-y-3 sm:space-y-4">
@@ -144,6 +138,13 @@ export default async function UstawaPage({ params }: PageProps) {
               </p>
             )}
           </div>
+
+          {ustawa.documentVersions && ustawa.documentVersions.length > 0 && (
+            <div className="mt-6 sm:mt-8">
+              <h3 className="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Dokument</h3>
+              <DocumentHistory versions={ustawa.documentVersions} />
+            </div>
+          )}
 
           <div className="border-t border-border pt-4 mt-6">
             <Link href={`/admin/ustawa/${id}`}>
@@ -246,12 +247,6 @@ export default async function UstawaPage({ params }: PageProps) {
               </div>
             )}
 
-            {ustawa.documentVersions && ustawa.documentVersions.length > 0 && (
-              <div className="mb-6">
-                <DocumentHistory versions={ustawa.documentVersions} />
-              </div>
-            )}
-
             <h3 className="font-semibold mb-4">Aktualizacje ({updates.length})</h3>
 
             <div className="space-y-4">
@@ -264,6 +259,13 @@ export default async function UstawaPage({ params }: PageProps) {
                 </p>
               )}
             </div>
+
+            {ustawa.documentVersions && ustawa.documentVersions.length > 0 && (
+              <div className="mt-8">
+                <h3 className="font-semibold mb-4">Dokument</h3>
+                <DocumentHistory versions={ustawa.documentVersions} />
+              </div>
+            )}
           </div>
         </main>
       </div>
