@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { HamburgerMenu } from '@/components/layout/HamburgerMenu';
 import { UstawaAvatar } from '@/components/ustawa/UstawaAvatar';
 import { Button } from '@/components/ui/button';
-import { mockUstawy } from '@/data/mock';
+import { mockUstawy, mockNotifications, NotificationType } from '@/data/mock';
 import {
   Bell,
   Vote,
@@ -16,18 +16,6 @@ import {
   Calendar,
 } from 'lucide-react';
 import Link from 'next/link';
-
-type NotificationType = 'vote' | 'consultation' | 'document' | 'deadline' | 'status_change';
-
-interface Notification {
-  id: string;
-  type: NotificationType;
-  ustawaId: string;
-  title: string;
-  description: string;
-  createdAt: Date;
-  isRead: boolean;
-}
 
 const notificationIcons: Record<NotificationType, typeof Vote> = {
   vote: Vote,
@@ -44,118 +32,6 @@ const notificationColors: Record<NotificationType, string> = {
   deadline: 'bg-red-100 text-red-600',
   status_change: 'bg-green-100 text-green-600',
 };
-
-// Mock notifications
-const mockNotifications: Notification[] = [
-  {
-    id: '1',
-    type: 'deadline',
-    ustawaId: '1',
-    title: 'Konsultacje kończą się za 3 dni',
-    description: 'Konsultacje społeczne dla Nowelizacja RODO kończą się 20 grudnia.',
-    createdAt: new Date('2024-12-06T10:00:00'),
-    isRead: false,
-  },
-  {
-    id: '2',
-    type: 'vote',
-    ustawaId: '6',
-    title: 'Głosowanie w Senacie',
-    description: 'Senat głosuje nad ustawą Cyberbezpieczeństwo w czwartek.',
-    createdAt: new Date('2024-12-06T09:30:00'),
-    isRead: false,
-  },
-  {
-    id: '3',
-    type: 'consultation',
-    ustawaId: '8',
-    title: 'Nowe konsultacje społeczne',
-    description: 'Rozpoczęły się konsultacje dla ustawy Otwarte dane. Weź udział!',
-    createdAt: new Date('2024-12-06T08:00:00'),
-    isRead: false,
-  },
-  {
-    id: '4',
-    type: 'document',
-    ustawaId: '3',
-    title: 'Nowy dokument',
-    description: 'Dodano koncepcję portalu legislacyjnego do projektu Transparentność legislacji.',
-    createdAt: new Date('2024-12-05T14:00:00'),
-    isRead: false,
-  },
-  {
-    id: '5',
-    type: 'status_change',
-    ustawaId: '22',
-    title: 'Zmiana statusu',
-    description: 'Ustawa Sport dla wszystkich została uchwalona przez Sejm.',
-    createdAt: new Date('2024-12-05T12:00:00'),
-    isRead: true,
-  },
-  {
-    id: '6',
-    type: 'deadline',
-    ustawaId: '3',
-    title: 'Konsultacje kończą się za tydzień',
-    description: 'Prekonsultacje Transparentność legislacji kończą się 15 grudnia.',
-    createdAt: new Date('2024-12-05T10:00:00'),
-    isRead: true,
-  },
-  {
-    id: '7',
-    type: 'vote',
-    ustawaId: '2',
-    title: 'Wynik głosowania',
-    description: 'Sejm przyjął Dostępność cyfrowa w II czytaniu (412 za, 15 przeciw).',
-    createdAt: new Date('2024-12-04T17:00:00'),
-    isRead: true,
-  },
-  {
-    id: '8',
-    type: 'status_change',
-    ustawaId: '24',
-    title: 'Zmiana statusu',
-    description: 'Ustawa OZE 2.0 została przekazana do Senatu.',
-    createdAt: new Date('2024-12-04T15:00:00'),
-    isRead: true,
-  },
-  {
-    id: '9',
-    type: 'document',
-    ustawaId: '12',
-    title: 'Nowy raport',
-    description: 'Opublikowano raport z pilotażu programu Telemedycyna.',
-    createdAt: new Date('2024-12-04T10:00:00'),
-    isRead: true,
-  },
-  {
-    id: '10',
-    type: 'consultation',
-    ustawaId: '26',
-    title: 'Nowe konsultacje',
-    description: 'Weź udział w konsultacjach programu Mieszkanie+.',
-    createdAt: new Date('2024-12-03T09:00:00'),
-    isRead: true,
-  },
-  {
-    id: '11',
-    type: 'deadline',
-    ustawaId: '11',
-    title: 'Przypomnienie o konsultacjach',
-    description: 'Zostało 12 dni na zgłoszenie uwag do Cyfrowe dziedzictwo.',
-    createdAt: new Date('2024-12-03T08:00:00'),
-    isRead: true,
-  },
-  {
-    id: '12',
-    type: 'vote',
-    ustawaId: '18',
-    title: 'Debata w Senacie',
-    description: 'Senat rozpoczął debatę nad ustawą Ochrona zwierząt.',
-    createdAt: new Date('2024-12-02T16:00:00'),
-    isRead: true,
-  },
-];
 
 function formatRelativeTime(date: Date): string {
   const now = new Date();

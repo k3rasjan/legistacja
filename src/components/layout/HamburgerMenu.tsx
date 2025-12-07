@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X, Home, Search, Bell, Bookmark, Settings, Scale, MessageSquare, List, Newspaper, Sparkles, LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWrappedUpdates } from '@/hooks/useWrappedUpdates';
+import { getUnreadNotificationCount } from '@/data/mock';
 
 interface NavItem {
   icon: LucideIcon;
@@ -31,6 +32,7 @@ interface HamburgerMenuProps {
 export function HamburgerMenu({ offsetLeft = false }: HamburgerMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { hasUpdates } = useWrappedUpdates();
+  const unreadNotifications = getUnreadNotificationCount();
 
   const filteredNavItems = useMemo(() => {
     return navItems.filter(item => !item.requiresUpdates || hasUpdates);
@@ -45,6 +47,9 @@ export function HamburgerMenu({ offsetLeft = false }: HamburgerMenuProps) {
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
+        {unreadNotifications > 0 && !isOpen && (
+          <span className="absolute bottom-1 right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-background" />
+        )}
       </Button>
 
       {isOpen && (
@@ -75,6 +80,11 @@ export function HamburgerMenu({ offsetLeft = false }: HamburgerMenuProps) {
                 <Button variant="ghost" className="w-full justify-start gap-2 sm:gap-3 text-sm sm:text-base h-10 sm:h-12 px-3 sm:px-4">
                   <item.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                   {item.label}
+                  {item.href === '/powiadomienia' && unreadNotifications > 0 && (
+                    <span className="ml-auto bg-red-500 text-white text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full font-medium">
+                      {unreadNotifications}
+                    </span>
+                  )}
                 </Button>
               </Link>
             ))}
