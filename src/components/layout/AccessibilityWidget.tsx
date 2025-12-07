@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Accessibility, Eye, Type, Zap, Link2, X } from 'lucide-react';
+import { Accessibility, Eye, Type, Zap, Link2, X, Shield } from 'lucide-react';
 import { useAccessibility } from '@/contexts/AccessibilityContext';
+import Link from 'next/link';
 
 interface ToggleItemProps {
   enabled: boolean;
@@ -127,10 +128,15 @@ export function AccessibilityWidget() {
             />
           </div>
 
-          <div className="p-2 pt-0">
-            <p className="text-[10px] text-muted-foreground text-center">
-              Zgodne z WCAG 2.2
-            </p>
+          <div className="p-2 pt-0 border-t border-border mt-1">
+            <Link
+              href="/dsa"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center justify-center gap-1.5 p-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+            >
+              <Shield className="h-3.5 w-3.5" />
+              Zgodnosc z DSA & WCAG 2.2
+            </Link>
           </div>
         </div>
       )}

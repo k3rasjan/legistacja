@@ -1,126 +1,116 @@
 # Legistacja
 
-**Sledz zmiany w prawie jak posty w social media**
+### Czym jest projekt
 
-Legistacja to platforma demokratyzujaca dostep do informacji o procesie legislacyjnym w Polsce. Agregujemy dane z oficjalnego API Sejmu RP i wykorzystujemy sztuczna inteligencje do generowania przystepnych podsumowań.
-
-## Problem
-
-- **3000+** aktow prawnych powstaje rocznie w Polsce
-- **< 1%** obywateli aktywnie sledzi proces legislacyjny
-- **72h** to sredni czas na konsultacje spoleczne
-
-Informacje o nowych ustawach sa rozproszone po wielu stronach rzadowych, jezyk prawniczy jest niezrozumialy, a czas na reakcje - zbyt krotki.
-
-## Rozwiazanie
-
-Legistacja umozliwia:
-- Sledzenie ustaw jak postow w mediach spolecznosciowych
-- Czytanie AI-generowanych podsumowań bez prawniczego zargonu
-- Otrzymywanie spersonalizowanych powiadomień
-- Udzial w konsultacjach spolecznych
-
-## Funkcje
-
-### Feed legislacyjny
-Chronologiczna os czasu z aktualizacjami o projektach ustaw. Kazda zmiana zawiera automatycznie wygenerowane podsumowanie AI.
-
-### Inteligentne wyszukiwanie
-Znajdz ustawy, ktore Cie dotycza - nawet bez znajomosci terminologii prawniczej.
-
-### Szczegoly ustawy
-- Status procesu legislacyjnego w czasie rzeczywistym
-- Sekcja "Co sie zmieni?" z analiza wplywu na obywateli
-- Szczegolowa analiza AI
-- Dostep do dokumentow zrodlowych
-
-### Zmiany w pigulce
-Inspirowane Spotify Wrapped - spersonalizowane podsumowanie najwazniejszych zmian w prawie od ostatniej wizyty.
-
-### Konsultacje spoleczne
-Przegladaj aktywne konsultacje i wez udzial w ksztaltowaniu prawa.
-
-### Powiadomienia
-Otrzymuj powiadomienia o zmianach w sledzonych ustawach, nowych konsultacjach i waznych glosowaniach.
-
-## Tech Stack
-
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS 4
-- **UI Components**: Radix UI, Lucide Icons
-- **Charts**: Recharts
-- **Database**: Prisma (ready)
-- **Data Source**: Sejm API
-
-## Uruchomienie
-
-```bash
-# Instalacja zaleznosci
-npm install
-
-# Uruchomienie serwera deweloperskiego
-npm run dev
-
-# Build produkcyjny
-npm run build
-npm start
-```
-
-Aplikacja bedzie dostepna pod adresem [http://localhost:3000](http://localhost:3000).
-
-## Struktura projektu
-
-```
-src/
-├── app/
-│   ├── page.tsx              # Strona glowna
-│   ├── feed/                 # Feed legislacyjny
-│   ├── szukaj/               # Wyszukiwarka ustaw
-│   ├── ustawa/[id]/          # Szczegoly ustawy
-│   ├── obserwowane/          # Obserwowane ustawy
-│   ├── konsultacje/          # Konsultacje spoleczne
-│   ├── powiadomienia/        # Powiadomienia
-│   ├── wrapped/              # Zmiany w pigulce
-│   ├── prezentacja/          # Prezentacja projektu
-│   └── dsa/                  # Zgodnosc z DSA
-├── components/
-│   ├── ui/                   # Komponenty UI
-│   └── layout/               # Komponenty layoutu
-├── contexts/                 # React Contexts
-├── lib/                      # Utilities
-└── data/                     # Mock data
-```
-
-## Zgodnosc z DSA
-
-Aplikacja jest w pelni zgodna z rozporzadzeniem UE 2022/2065 (Digital Services Act):
-
-| Wymog | Artykul | Implementacja |
-|-------|---------|---------------|
-| Przejrzystosc zrodel | Art. 14 | Dane z oficjalnego API Sejmu RP |
-| Oznaczanie AI | Art. 26 | Wyrazne etykiety dla tresci AI |
-| Brak dark patterns | Art. 25 | Uczciwy interfejs uzytkownika |
-| Dostepnosc | Art. 14(4) | Pelna zgodnosc z WCAG 2.2 |
-
-## Dostepnosc (WCAG 2.2)
-
-Aplikacja oferuje opcje dostepnosci:
-- Wysoki kontrast
-- Powiekszony tekst
-- Ograniczenie animacji
-- Podkreslenie linkow
-
-## Materialy
-
-- `Legistacja-Prezentacja.pdf` - Prezentacja projektu (10 stron)
-- `Legistacja-Prezentacja.pptx` - Prezentacja PowerPoint
-- `PITCH_SCRIPT.md` - Skrypt do pitchu
-
-## Licencja
-
-Projekt stworzony na Hackathon 2025.
+**Legistacja** to polska platforma do monitorowania legislacji, zbudowana, aby w jak najprzystępniejszej dla każdego formie pomagać obywatelom Polski rozumieć, śledzić i angażować się w proces ustawodawczy w dostępny i nowoczesny sposób.
 
 ---
 
-**Legistacja** - Bo prawo dotyczy kazdego z nas.
+### Główny Cel
+
+Platforma upraszcza obywatelom dostęp do procesu ustawodawczego w Polsce, w bezstronnej i prostej do zrozumienia formie.
+
+- Informuje użytkownika o nowych inicjatywach legislacyjnych w Sejmie w najbardziej wygodny dla niego sposób.
+- **Dla zainteresowanych i zaawansowanych:** przewijana strona "Dla ciebie" z najnowszymi, personalizowanymi zmianami w interesujących go projektach oraz głosowaniem w konsultacjach społecznych.
+- **Dla preferujących informacje w pigułce:** Podsumowanie okresu od ostatniej wizyty w formie animowanych, przystępnych i przyjemnych dla oka zajawek, z możliwością dowiedzenia się więcej (bez potrzeby posiadania konta!).
+- **Dla trzymających się tradycji:** Lista nowości od ostatniej wizyty z podsumowaniami.
+
+---
+
+### Legislacyjna sekcja 'Dla Ciebie'
+
+Chronologiczna oś czasu z aktualizacjami o projektach ustaw. Każda zmiana zawiera automatycznie wygenerowane podsumowanie AI.
+
+### Inteligentne wyszukiwanie
+
+Znajdź ustawy, które Cię dotyczą – nawet bez znajomości terminologii prawniczej.
+
+### Szczegóły ustawy
+
+- Status procesu legislacyjnego w czasie rzeczywistym.
+- Sekcja "Co się zmieni?" z analizą wpływu na obywateli.
+- Szczegółowa analiza AI.
+- Dostęp do dokumentów źródłowych.
+
+### Zmiany w pigułce
+
+Inspirowane Spotify Wrapped – spersonalizowane podsumowanie najważniejszych zmian w prawie od ostatniej wizyty.
+
+### Konsultacje społeczne
+
+Przeglądaj aktywne konsultacje i weź udział w kształtowaniu prawa. Logowanie Profilem Zaufanym.
+
+### Powiadomienia
+
+Otrzymuj powiadomienia o zmianach w śledzonych ustawach, nowych konsultacjach i ważnych głosowaniach.
+
+### Śledzenie zmian w projekcie
+
+Kompleksowa strona projektu zawiera wszystkie akty i zmiany go dotyczące. Użytkownik w prosty sposób może dowiedzieć się o aktualnym stanie projektu.
+
+### Analiza AI nastrojów społecznych
+
+W widoku urzędnika dostępny jest przegląd nastrojów konsultacji społecznych przygotowany przez AI. Innowacyjny algorytm będzie sprawdzać utworzone uwagi, dopasowywać je do stanowisk, a następnie przedstawiać w przyjaznej graficznie formie, co pozwoli zaoszczędzić dużo czasu na czytaniu opinii po konsultacjach.
+
+### System Personalizacji
+
+Sekcja 'Dla Ciebie' jest przygotowana pod personalizację – użytkownik będzie otrzymywać aktualizacje prawne dopasowane do jego zainteresowań i trendów. Trochę jak na Instagramie.
+
+---
+
+### Funkcje Dostępności
+
+Funkcje zgodne z wytycznymi dostępności cyfrowej oraz ustawą o zapewnianiu dostępności osobom ze szczególnymi potrzebami:
+
+- Tryb wysokiego kontrastu.
+- Przełącznik powiększenia tekstu.
+- Redukcja ruchu (dla osób z zaburzeniami błędnika).
+- Opcja podkreślania linków.
+- Design zgodny ze standardami WCAG.
+
+---
+
+### Model Danych (dostępny szczegółowo w pliku schema.prisma)
+
+| Podmiot               | Opis                                                                  |
+| :-------------------- | :-------------------------------------------------------------------- |
+| **Ustawa**            | Ustawa/projekt ze statusem, ministerstwem, dokumentami i kategoriami. |
+| **Konsultacja**       | Konsultacje publiczne z pytaniami i odpowiedziami.                    |
+| **LegislativeUpdate** | Zmiany/aktualizacje ustaw z podsumowaniami AI.                        |
+| **UserPreferences**   | Ustawienia personalizacji.                                            |
+| **Notification**      | Alerty użytkownika o zmianach w prawie.                               |
+
+**Statusy Legislacyjne:**
+
+1.  Prekonsultacje
+2.  Konsultacje
+3.  Prace rządowe
+4.  Sejm
+5.  Senat
+6.  Prezydent
+7.  Uchwalona
+8.  Odrzucona
+
+---
+
+### Stos Technologiczny (Tech Stack)
+
+- **Framework:** Next.js 16 z App Router.
+- **UI:** React 19, Tailwind CSS 4, Radix UI.
+- **Wykresy:** Recharts.
+- **Ikony:** Lucide React.
+- **Przechowywanie:** localStorage dla preferencji użytkownika.
+- **Markdown:** React Markdown do treści.
+
+---
+
+### Kluczowe Innowacje
+
+Platforma łączy w sobie:
+
+- **Transparentność:** pełny wgląd w proces legislacyjny.
+- **Personalizację:** treści dopasowane do sytuacji życiowej użytkownika.
+- **Zaangażowanie:** aktywny udział poprzez konsultacje.
+- **Ujednolicenie źródeł informacji:** wszystkie dane zunifikowane w jednym, przystępnym miejscu.
+- **Wsparcie AI:** Tłumaczenia z języka urzędowego na polski.
+- **Dostępność:** najwyższej klasy wsparcie dla wszystkich grup użytkowników.

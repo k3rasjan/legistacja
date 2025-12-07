@@ -1,699 +1,772 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Scale, ArrowDown, ArrowRight, ExternalLink, Rss, Search, FileText, Gift, Sparkles, MessageSquare, Bell, FileCheck, Code, Users } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Scale, Sparkles, List, Newspaper, ArrowRight, Lightbulb } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
+import {
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+} from 'recharts';
 
-const sections = [
-  {
-    id: 'hero',
-    title: 'Legistacja',
-    subtitle: 'Śledź zmiany w prawie jak posty w social media',
-    description: 'Platforma, która demokratyzuje dostęp do informacji o procesie legislacyjnym w Polsce.',
-    screenshot: null,
-    link: '/',
-    icon: Scale,
-  },
-  {
-    id: 'problem',
-    title: 'Problem',
-    subtitle: 'Proces legislacyjny jest nieprzejrzysty',
-    description: 'Obywatele nie wiedzą o zmianach w prawie, które ich dotyczą. Informacje są rozproszone po wielu stronach rządowych, a język prawniczy jest niezrozumiały dla przeciętnego użytkownika.',
-    screenshot: null,
-    stats: [
-      { value: '3000+', label: 'aktów prawnych rocznie' },
-      { value: '< 1%', label: 'obywateli śledzi proces legislacyjny' },
-      { value: '72h', label: 'średni czas na konsultacje' },
-    ],
-  },
-  {
-    id: 'solution',
-    title: 'Rozwiązanie',
-    subtitle: 'Legistacja - Twój osobisty asystent legislacyjny',
-    description: 'Agregujemy dane z oficjalnych źródeł, wykorzystujemy AI do generowania przystępnych podsumowań i dostarczamy spersonalizowane powiadomienia.',
-    screenshot: '/ss/1.png',
-    link: '/',
-    icon: Sparkles,
-  },
-  {
-    id: 'feed',
-    title: 'Feed legislacyjny',
-    subtitle: 'Śledź ustawy jak posty w mediach społecznościowych',
-    description: 'Przejrzysta oś czasu z aktualizacjami o projektach ustaw. AI generuje krótkie, zrozumiałe podsumowania każdej zmiany.',
-    screenshot: '/ss/image copy 5.png',
-    link: '/feed',
-    icon: Rss,
-    features: ['Chronologiczna oś czasu', 'AI-generowane podsumowania', 'Filtrowanie po kategoriach'],
-  },
-  {
-    id: 'search',
-    title: 'Inteligentne wyszukiwanie',
-    subtitle: 'Znajdź ustawy, które Cię dotyczą',
-    description: 'Wyszukiwanie semantyczne pozwala znaleźć projekty ustaw nawet bez znajomości dokładnej terminologii prawniczej.',
-    screenshot: '/ss/image copy 4.png',
-    link: '/szukaj',
-    icon: Search,
-    features: ['Wyszukiwanie semantyczne', 'Filtry po statusie i kategorii', 'Sortowanie po aktualności'],
-  },
-  {
-    id: 'details',
-    title: 'Szczegóły ustawy',
-    subtitle: 'Wszystko w jednym miejscu',
-    description: 'Pełna historia projektu, analiza AI, dokumenty źródłowe i możliwość śledzenia zmian - wszystko dostępne na jednej stronie.',
-    screenshot: '/ss/image copy 6.png',
-    link: '/ustawa/3',
-    icon: FileText,
-    features: ['Status procesu legislacyjnego', 'Analiza AI wpływu na obywateli', 'Historia dokumentów'],
-  },
-  {
-    id: 'wrapped',
-    title: 'Zmiany w pigułce',
-    subtitle: 'Twój osobisty raport legislacyjny',
-    description: 'Inspirowane Spotify Wrapped - spersonalizowane podsumowanie najważniejszych zmian w prawie od Twojej ostatniej wizyty.',
-    screenshot: '/ss/image.png',
-    link: '/wrapped',
-    icon: Gift,
-    features: ['Nowe projekty ustaw', 'Zmiany w śledzonych ustawach', 'AI-generowane podsumowania'],
-  },
-  {
-    id: 'summary',
-    title: 'Podsumowanie AI',
-    subtitle: 'Kompleksowy przegląd zmian',
-    description: 'AI analizuje wszystkie zmiany i generuje przystępne podsumowanie, które pozwala szybko zorientować się w najważniejszych wydarzeniach.',
-    screenshot: '/ss/image copy 3.png',
-    link: '/wrapped/podsumowanie',
-    icon: Sparkles,
-  },
-  {
-    id: 'consultations',
-    title: 'Konsultacje publiczne',
-    subtitle: 'Twój głos ma znaczenie',
-    description: 'Przeglądaj aktywne konsultacje społeczne i weź udział w kształtowaniu prawa. Platforma ułatwia zgłaszanie opinii.',
-    screenshot: '/ss/image copy 7.png',
-    link: '/konsultacje',
-    icon: MessageSquare,
-    features: ['Lista aktywnych konsultacji', 'Terminy i statystyki', 'Prosty formularz zgłaszania uwag'],
-  },
-  {
-    id: 'notifications',
-    title: 'Powiadomienia',
-    subtitle: 'Bądź na bieżąco',
-    description: 'Otrzymuj powiadomienia o zmianach w śledzonych ustawach, nowych konsultacjach i ważnych głosowaniach.',
-    screenshot: '/ss/image copy 8.png',
-    link: '/powiadomienia',
-    icon: Bell,
-  },
-  {
-    id: 'followed',
-    title: 'Obserwowane ustawy',
-    subtitle: 'Twoja spersonalizowana lista',
-    description: 'Śledź wybrane projekty ustaw i otrzymuj powiadomienia o każdej zmianie. Wszystkie ważne dla Ciebie regulacje w jednym miejscu.',
-    screenshot: '/ss/image copy 9.png',
-    link: '/obserwowane',
-    icon: FileCheck,
-    features: ['Personalizowana lista ustaw', 'Powiadomienia o zmianach', 'Szybki dostęp do szczegółów'],
-  },
-  {
-    id: 'tech',
-    title: 'Technologia',
-    subtitle: 'Nowoczesny stack',
-    description: 'Zbudowane z wykorzystaniem najnowszych technologii dla najlepszej wydajności i doświadczenia użytkownika.',
-    screenshot: null,
-    icon: Code,
-    tech: [
-      { name: 'Next.js 15', desc: 'React framework' },
-      { name: 'TypeScript', desc: 'Type safety' },
-      { name: 'Tailwind CSS', desc: 'Styling' },
-      { name: 'Sejm API', desc: 'Dane legislacyjne' },
-      { name: 'AI/LLM', desc: 'Podsumowania' },
-      { name: 'Prisma', desc: 'ORM (ready)' },
-    ],
-  },
-  {
-    id: 'team',
-    title: 'Zespół',
-    subtitle: 'Hackathon 2025',
-    description: 'Projekt stworzony z pasją do transparentności i demokratyzacji dostępu do informacji publicznej.',
-    screenshot: null,
-    link: '/',
-    icon: Users,
-  },
+const CHART_COLORS = {
+  primary: '#171717',
+  secondary: '#525252',
+  tertiary: '#a3a3a3',
+  grid: '#e5e5e5',
+};
+
+const pieData = [
+  { name: 'Pozytywne', value: 456 },
+  { name: 'Neutralne', value: 111 },
+  { name: 'Negatywne', value: 342 },
 ];
 
+const lineData = [
+  { date: '2024-01-01', count: 45 },
+  { date: '2024-01-02', count: 78 },
+  { date: '2024-01-03', count: 52 },
+  { date: '2024-01-04', count: 95 },
+  { date: '2024-01-05', count: 68 },
+  { date: '2024-01-06', count: 82 },
+  { date: '2024-01-07', count: 110 },
+];
+import { TrainStatusBar } from '@/components/ustawa/TrainStatusBar';
+import { UstawaAvatar } from '@/components/ustawa/UstawaAvatar';
+import { AIAnalysisSection } from '@/components/ustawa/AIAnalysisSection';
+import { statusLabels, statusColors } from '@/types';
+
+const teamMembers = [
+  'Mateusz Borach',
+  'Wojciech Choros',
+  'Alexander Gese',
+  'Mateusz Gliszczynski',
+  'Mateusz Najsarek',
+  'Dawid Szymaniak',
+];
+
+
+// Browser mockup component
+function BrowserMockup({ children, url = 'legislacja-tracker.vercel.app', className = '' }: { children: React.ReactNode; url?: string; className?: string }) {
+  return (
+    <div className={`rounded-xl overflow-hidden shadow-2xl border border-border bg-card ${className}`}>
+      <div className="bg-muted px-4 py-3 flex items-center gap-3 border-b border-border">
+        <div className="flex gap-2">
+          <div className="w-3 h-3 rounded-full bg-red-400" />
+          <div className="w-3 h-3 rounded-full bg-yellow-400" />
+          <div className="w-3 h-3 rounded-full bg-green-400" />
+        </div>
+        <div className="flex-1 flex justify-center">
+          <div className="bg-background rounded-md px-4 py-1 text-sm text-muted-foreground border border-border max-w-md w-full text-center">
+            {url}
+          </div>
+        </div>
+        <div className="w-16" />
+      </div>
+      <div className="relative">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+// Mock UpdateCard matching app style
+function MockUpdateCard() {
+  return (
+    <Card className="hover:bg-accent/50 transition-colors max-w-md">
+      <CardContent className="pt-4">
+        <div className="flex gap-3">
+          <UstawaAvatar shortTitle="Moja Legistacja" status="sejm" />
+          <div className="flex-1 min-w-0">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <span className="font-semibold">Moja Legistacja</span>
+                <span className="text-muted-foreground text-sm ml-2">@ministerstwocyfryzacji</span>
+                <span className="text-muted-foreground text-sm ml-2">·</span>
+                <span className="text-muted-foreground text-sm ml-2">2 min temu</span>
+              </div>
+            </div>
+            <Badge className={statusColors['sejm']} variant="secondary">
+              {statusLabels['sejm']}
+            </Badge>
+
+            <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
+              <Sparkles className="h-4 w-4" />
+              <span>Podsumowanie AI</span>
+            </div>
+
+            <h3 className="mt-2 font-medium">Innowacyjny projekt dla obywateli</h3>
+            <p className="mt-1 text-muted-foreground text-sm">Platforma monitorowania legislacji pomaga obywatelom Polski rozumieć i śledzić proces ustawodawczy.</p>
+
+            <Separator className="my-3" />
+            <div className="bg-primary/5 rounded-lg p-3 border border-primary/10">
+              <div className="flex items-center gap-2 text-primary mb-2">
+                <Sparkles className="h-4 w-4" />
+                <span className="text-sm font-medium">Podsumowanie AI</span>
+              </div>
+              <p className="text-sm">Aplikacja demokratyzuje dostęp do informacji o procesie legislacyjnym w Polsce.</p>
+            </div>
+
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
 export default function PrezentacjaPage() {
-  const [activeSection, setActiveSection] = useState(0);
-  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const totalSlides = 10;
+
+  const goToSlide = useCallback((index: number) => {
+    if (isAnimating || index < 0 || index >= totalSlides) return;
+    setIsAnimating(true);
+    setCurrentSlide(index);
+    setTimeout(() => setIsAnimating(false), 600);
+  }, [isAnimating, totalSlides]);
 
   useEffect(() => {
-    const observers = sectionRefs.current.map((ref, index) => {
-      if (!ref) return null;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        goToSlide(currentSlide + 1);
+      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        goToSlide(currentSlide - 1);
+      }
+    };
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(index);
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (Math.abs(e.deltaY) > 30) {
+        if (e.deltaY > 0) {
+          goToSlide(currentSlide + 1);
+        } else {
+          goToSlide(currentSlide - 1);
+        }
+      }
+    };
 
-      observer.observe(ref);
-      return observer;
-    });
+    window.addEventListener('keydown', handleKeyDown);
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false });
+    }
 
     return () => {
-      observers.forEach((observer) => observer?.disconnect());
+      window.removeEventListener('keydown', handleKeyDown);
+      if (container) {
+        container.removeEventListener('wheel', handleWheel);
+      }
     };
-  }, []);
+  }, [currentSlide, goToSlide]);
 
-  const renderSection = (section: typeof sections[0], index: number) => {
-    const Icon = section.icon;
+  return (
+    <div ref={containerRef} className="fixed inset-0 overflow-hidden bg-background">
 
-    switch (section.id) {
-      case 'hero':
-        return (
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="p-4 bg-primary/10 rounded-2xl">
-                <Scale className="h-16 w-16 text-primary" />
-              </div>
-            </div>
-            <h1 className="text-6xl md:text-8xl font-black tracking-tight text-foreground mb-4">{section.title}</h1>
-            <p className="text-2xl md:text-4xl text-muted-foreground mb-6 font-medium">{section.subtitle}</p>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">{section.description}</p>
-            {section.link && (
-              <Link href={section.link}>
-                <Button size="lg" className="mb-12">
-                  Otwórz aplikację
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            )}
-            <div className="animate-bounce">
-              <ArrowDown className="h-8 w-8 mx-auto text-muted-foreground" />
-            </div>
-          </div>
-        );
-
-      case 'problem':
-        return (
-          <div className="text-center">
-            <div className="inline-block px-3 py-1.5 bg-red-100 text-red-700 rounded-full text-sm font-medium mb-4">
-              Wyzwanie
-            </div>
-            <h2 className="text-3xl md:text-5xl font-black mb-3 text-foreground">{section.title}</h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-4">{section.subtitle}</p>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto mb-8">{section.description}</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {section.stats?.map((stat, i) => (
-                <div
-                  key={stat.label}
-                  className="relative overflow-hidden bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 border border-red-100"
-                  style={{ animationDelay: `${i * 0.1}s` }}
-                >
-                  <div className="text-4xl md:text-5xl font-black text-red-500 mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-
-      case 'solution':
-        return (
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 rounded-2xl" />
-            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-6">
+      {/* Slides container */}
+      <div
+        className="transition-transform duration-500 ease-out"
+        style={{ transform: `translateY(-${currentSlide * 100}vh)` }}
+      >
+        {/* Slide 1: Title with MockUpdateCard */}
+        <section className="h-[100vh] min-h-[100vh] max-h-[100vh] flex items-center px-8 lg:px-16 overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-                  <Sparkles className="h-4 w-4" />
-                  Nasza odpowiedź
+                <div className="flex items-center gap-3 mb-4">
+                  <Scale className="h-12 w-12 text-primary" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-black mb-3 text-foreground">{section.title}</h2>
-                <p className="text-lg text-muted-foreground mb-3">{section.subtitle}</p>
-                <p className="text-base text-muted-foreground mb-4">{section.description}</p>
-                {section.link && (
-                  <Link href={section.link}>
-                    <Button>
-                      Wypróbuj teraz
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                )}
+                <h1 className="text-6xl lg:text-7xl font-black tracking-tight">
+                  <span className="text-foreground">Moja</span>
+                  <br />
+                  <span className="text-primary">Legi</span>
+                  <span className="text-foreground">stacja</span>
+                </h1>
+                <p className="text-xl text-muted-foreground mt-4 italic">Nowe prawo wszystkich Polaków</p>
               </div>
-              {section.screenshot && (
-                <div className="relative">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl blur-xl" />
-                  <div className="relative rounded-xl overflow-hidden shadow-xl border border-border">
-                    <Image
-                      src={section.screenshot}
-                      alt={section.title}
-                      width={600}
-                      height={450}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              )}
+
+              <div className="space-y-1">
+                {teamMembers.map((name) => (
+                  <p key={name} className="text-base text-muted-foreground italic">{name}</p>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative">
+              <MockUpdateCard />
             </div>
           </div>
-        );
+        </section>
 
-      case 'feed':
-        return (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="flex items-center gap-2 mb-3">
-                {Icon && <Icon className="h-6 w-6 text-primary" />}
-                <span className="text-xs font-medium text-primary uppercase tracking-wide">Funkcja</span>
-              </div>
-              <h2 className="text-2xl md:text-4xl font-black mb-2 text-foreground">{section.title}</h2>
-              <p className="text-base text-muted-foreground mb-2">{section.subtitle}</p>
-              <p className="text-sm text-muted-foreground mb-4">{section.description}</p>
-              {section.features && (
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {section.features.map((feature) => (
-                    <span key={feature} className="px-2 py-1 bg-muted rounded-full text-xs font-medium">
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              )}
-              {section.link && (
-                <Link href={section.link}>
-                  <Button variant="outline" size="sm">
-                    Zobacz feed
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
-            </div>
-            <div className="lg:col-span-7 order-1 lg:order-2">
-              {section.screenshot && (
-                <div className="relative -rotate-1 hover:rotate-0 transition-transform duration-500">
-                  <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-2xl -z-10" />
-                  <div className="rounded-xl overflow-hidden shadow-xl border border-border">
-                    <Image
-                      src={section.screenshot}
-                      alt={section.title}
-                      width={600}
-                      height={450}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        );
+        {/* Slide 2: Informacje w pigułce */}
+        <section className="h-[100vh] min-h-[100vh] max-h-[100vh] flex items-center px-8 lg:px-16 bg-muted/30 overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full">
+            <h2 className="text-3xl lg:text-4xl font-black text-foreground mb-8">
+              Informacje w pigułce
+            </h2>
 
-      case 'search':
-        return (
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
-              <Search className="h-8 w-8 text-primary" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">{section.title}</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">{section.subtitle}</p>
-            {section.screenshot && (
-              <div className="relative max-w-4xl mx-auto mb-8">
-                <div className="absolute inset-x-0 -bottom-10 h-40 bg-gradient-to-t from-background to-transparent z-10" />
-                <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+              {/* Stacked screenshots */}
+              <div className="relative h-[55vh]">
+                <BrowserMockup className="absolute top-0 left-0 w-[85%] transform -rotate-2 hover:rotate-0 transition-transform duration-500 z-10">
                   <Image
-                    src={section.screenshot}
-                    alt={section.title}
-                    width={1000}
-                    height={600}
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-            )}
-            <p className="text-lg text-muted-foreground mb-6">{section.description}</p>
-            {section.link && (
-              <Link href={section.link}>
-                <Button>
-                  Szukaj ustaw
-                  <Search className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            )}
-          </div>
-        );
-
-      case 'details':
-        return (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              {section.screenshot && (
-                <div className="relative rotate-1 hover:rotate-0 transition-transform duration-500">
-                  <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
-                    <Image
-                      src={section.screenshot}
-                      alt={section.title}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-muted rounded-full text-sm font-medium mb-4">
-                <FileText className="h-4 w-4" />
-                Strona ustawy
-              </div>
-              <h2 className="text-3xl md:text-5xl font-black mb-4 text-foreground">{section.title}</h2>
-              <p className="text-xl text-muted-foreground mb-4">{section.subtitle}</p>
-              <p className="text-lg text-muted-foreground mb-6">{section.description}</p>
-              {section.features && (
-                <ul className="space-y-3 mb-6">
-                  {section.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3 text-foreground">
-                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-primary" />
-                      </div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {section.link && (
-                <Link href={section.link}>
-                  <Button variant="outline">
-                    Zobacz przykład
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
-            </div>
-          </div>
-        );
-
-      case 'wrapped':
-        return (
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-8 md:p-12">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-violet-200/50 to-fuchsia-200/50 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-purple-200/50 to-violet-200/50 rounded-full blur-3xl" />
-            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur rounded-full text-sm font-medium mb-6 text-purple-700">
-                  <Gift className="h-4 w-4" />
-                  Inspirowane Spotify Wrapped
-                </div>
-                <h2 className="text-3xl md:text-5xl font-black mb-4 text-foreground">{section.title}</h2>
-                <p className="text-xl text-purple-700 mb-4">{section.subtitle}</p>
-                <p className="text-lg text-muted-foreground mb-6">{section.description}</p>
-                {section.link && (
-                  <Link href={section.link}>
-                    <Button className="bg-purple-600 hover:bg-purple-700">
-                      Zobacz swój raport
-                      <Gift className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                )}
-              </div>
-              {section.screenshot && (
-                <div className="relative">
-                  <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                    <Image
-                      src={section.screenshot}
-                      alt={section.title}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        );
-
-      case 'summary':
-        return (
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-3xl mb-6">
-                <Sparkles className="h-10 w-10 text-amber-600" />
-              </div>
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">{section.title}</h2>
-              <p className="text-xl text-muted-foreground">{section.subtitle}</p>
-            </div>
-            {section.screenshot && (
-              <div className="relative mb-8">
-                <div className="absolute -inset-4 bg-gradient-to-r from-amber-100 to-orange-100 rounded-3xl -z-10" />
-                <div className="rounded-2xl overflow-hidden shadow-xl border border-amber-200">
-                  <Image
-                    src={section.screenshot}
-                    alt={section.title}
-                    width={1000}
-                    height={600}
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-            )}
-            <p className="text-center text-lg text-muted-foreground mb-6">{section.description}</p>
-            {section.link && (
-              <div className="text-center">
-                <Link href={section.link}>
-                  <Button variant="outline">
-                    Zobacz podsumowanie
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            )}
-          </div>
-        );
-
-      case 'consultations':
-        return (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7">
-              {section.screenshot && (
-                <div className="relative -rotate-1 hover:rotate-0 transition-transform duration-500">
-                  <div className="absolute -inset-2 bg-green-100 rounded-3xl -z-10" />
-                  <div className="rounded-2xl overflow-hidden shadow-2xl border border-green-200">
-                    <Image
-                      src={section.screenshot}
-                      alt={section.title}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-            <div className="lg:col-span-5">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-4">
-                <MessageSquare className="h-4 w-4" />
-                Partycypacja
-              </div>
-              <h2 className="text-3xl md:text-4xl font-black mb-4 text-foreground">{section.title}</h2>
-              <p className="text-xl text-green-700 mb-4">{section.subtitle}</p>
-              <p className="text-lg text-muted-foreground mb-6">{section.description}</p>
-              {section.features && (
-                <div className="space-y-2 mb-6">
-                  {section.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-2 text-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {section.link && (
-                <Link href={section.link}>
-                  <Button className="bg-green-600 hover:bg-green-700">
-                    Weź udział
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
-            </div>
-          </div>
-        );
-
-      case 'notifications':
-        return (
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-6">
-                <Bell className="h-8 w-8 text-blue-600" />
-              </div>
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">{section.title}</h2>
-              <p className="text-xl text-blue-600 mb-4">{section.subtitle}</p>
-              <p className="text-lg text-muted-foreground mb-6">{section.description}</p>
-              {section.link && (
-                <Link href={section.link}>
-                  <Button variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50">
-                    Skonfiguruj powiadomienia
-                    <Bell className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
-            </div>
-            {section.screenshot && (
-              <div className="flex-1 relative">
-                <div className="absolute inset-0 bg-blue-100 rounded-[3rem] -rotate-6 -z-10" />
-                <div className="rounded-2xl overflow-hidden shadow-2xl border border-blue-200 rotate-3 hover:rotate-0 transition-transform duration-500">
-                  <Image
-                    src={section.screenshot}
-                    alt={section.title}
+                    src="/ss/wrapped-projects.png"
+                    alt="Lista projektów"
                     width={500}
-                    height={400}
-                    className="w-full h-auto"
+                    height={350}
+                    className="w-full h-auto max-h-[38vh] object-cover object-top"
                   />
+                </BrowserMockup>
+
+                <BrowserMockup className="absolute bottom-0 right-0 w-[85%] transform rotate-2 hover:rotate-0 transition-transform duration-500 z-20 shadow-2xl">
+                  <Image
+                    src="/ss/wrapped-intro.png"
+                    alt="Zmiany w pigułce"
+                    width={500}
+                    height={350}
+                    className="w-full h-auto max-h-[38vh] object-cover object-top"
+                  />
+                </BrowserMockup>
+              </div>
+
+              <div className="space-y-4">
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Użytkownik, po wejściu na stronę w ciągu kilku sekund dowiaduje się o tym,
+                  <span className="font-bold text-foreground"> co ostatnio działo się w procesie legislacyjnym.</span>
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Dzieje się to dzięki wpadającym w oko hasłom,
+                  <span className="font-bold text-primary"> generowanym przez modele AI</span>.
+                  Ich pełne wersje może następnie przeglądać.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Slide 3: Dla każdego - mimicking homepage bento grid */}
+        <section className="h-[100vh] min-h-[100vh] max-h-[100vh] flex items-center px-8 lg:px-16 overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full">
+            <h2 className="text-4xl lg:text-5xl font-black text-foreground mb-10">
+              Dla każdego, w najprzystępniejszej formie
+            </h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              {/* Zmiany w pigułce card with annotation */}
+              <div className="lg:col-span-4 flex flex-col gap-3">
+                <div
+                  className="rounded-2xl p-6 flex flex-col relative overflow-hidden min-h-[280px]"
+                  style={{
+                    background: 'linear-gradient(135deg, #18181b 0%, #27272a 50%, #3f3f46 100%)',
+                  }}
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white/25 flex items-center justify-center">
+                    <Sparkles className="h-5 w-5 text-white" />
+                  </div>
+                  <div className="mt-auto">
+                    <h3 className="text-lg font-bold text-white mb-1">Zmiany w pigułce</h3>
+                    <p className="text-white/80 text-sm">AI przeanalizowało zmiany w prawie i przygotowało dla Ciebie spersonalizowane podsumowanie.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ArrowRight className="h-5 w-5 text-foreground rotate-[-90deg]" />
+                  <div>
+                    <p className="font-bold text-foreground">Dla leniwych,</p>
+                    <p className="text-muted-foreground text-sm">w pigułce</p>
+                  </div>
                 </div>
               </div>
-            )}
-          </div>
-        );
 
-      case 'followed':
-        return (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-                <FileCheck className="h-4 w-4" />
-                Personalizacja
+              {/* Lista ustaw card with annotation */}
+              <div className="lg:col-span-4 flex flex-col gap-3">
+                <Card className="min-h-[280px] flex flex-col">
+                  <CardContent className="p-5 flex flex-col flex-1">
+                    <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center mb-4">
+                      <List className="h-5 w-5 text-muted-foreground" />
+                    </div>
+                    <div className="mt-auto">
+                      <h3 className="text-base font-bold mb-1">Lista ustaw</h3>
+                      <p className="text-muted-foreground text-xs">Przeszukuj projekty ustaw z pomocą AI.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                <div className="flex items-center gap-2">
+                  <ArrowRight className="h-5 w-5 text-foreground rotate-[-90deg]" />
+                  <div>
+                    <p className="font-bold text-foreground">Dla tradycjonalistów,</p>
+                    <p className="text-muted-foreground text-sm">tradycyjnie</p>
+                  </div>
+                </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-black mb-3 text-foreground">{section.title}</h2>
-              <p className="text-lg text-muted-foreground mb-3">{section.subtitle}</p>
-              <p className="text-base text-muted-foreground mb-4">{section.description}</p>
-              {section.features && (
-                <ul className="space-y-2 mb-4">
-                  {section.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-foreground text-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {section.link && (
-                <Link href={section.link}>
-                  <Button variant="outline" size="sm">
-                    Zobacz obserwowane
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
+
+              {/* Dla ciebie card with annotation */}
+              <div className="lg:col-span-4 flex flex-col gap-3">
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/40 dark:to-teal-950/40 border border-emerald-200 dark:border-emerald-800/50 rounded-2xl p-5 min-h-[280px] flex flex-col">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center mb-4">
+                    <Newspaper className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                  </div>
+                  <div className="mt-auto">
+                    <h3 className="text-base font-bold text-emerald-900 dark:text-emerald-100 mb-1">Dla ciebie</h3>
+                    <p className="text-emerald-700/70 dark:text-emerald-300/70 text-xs">Śledź postępy ustaw jak posty w social media.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ArrowRight className="h-5 w-5 text-emerald-600 rotate-[-90deg]" />
+                  <div>
+                    <p className="font-bold text-emerald-600">Dla ciekawskich,</p>
+                    <p className="text-muted-foreground text-sm">zajmująco</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            {section.screenshot && (
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-xl border border-border">
+          </div>
+        </section>
+
+        {/* Slide 4: Gdy ustawa zaciekawi */}
+        <section className="h-[100vh] min-h-[100vh] max-h-[100vh] flex items-center px-8 lg:px-16 bg-muted/30 overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full">
+            <h2 className="text-3xl lg:text-4xl font-black text-foreground mb-8">
+              Gdy ustawa zaciekawi
+            </h2>
+
+            {/* Recreate ustawa page layout */}
+            <div className="bg-background rounded-2xl border border-border shadow-xl overflow-hidden">
+              <div className="flex">
+                {/* Sidebar */}
+                <aside className="w-56 border-r border-border bg-background p-4 flex-shrink-0">
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <UstawaAvatar shortTitle="Podatek cyfrowy" status="sejm" size="lg" />
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold text-sm truncate">Podatek cyfrowy</h3>
+                      <p className="text-xs text-muted-foreground truncate">Ministerstwo Finansów</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    <Badge variant="outline" className="text-[10px]">Finanse</Badge>
+                    <Badge variant="outline" className="text-[10px]">Technologia</Badge>
+                    <Badge variant="outline" className="text-[10px]">Biznes</Badge>
+                  </div>
+
+                  <button className="w-full mb-4 px-3 py-1.5 bg-primary text-primary-foreground rounded-md text-xs font-medium">
+                    Obserwuj
+                  </button>
+
+                  <div className="border-t border-border pt-3">
+                    <p className="text-[10px] font-semibold text-muted-foreground mb-2">Status procesu</p>
+                    <TrainStatusBar
+                      currentStatus="sejm"
+                      statusLabels={statusLabels}
+                      statusColors={statusColors}
+                    />
+                  </div>
+                </aside>
+
+                {/* Main content */}
+                <main className="flex-1 p-4">
+                  <div className="mb-4">
+                    <h3 className="text-base font-bold mb-1">Projekt ustawy o podatku od usług cyfrowych</h3>
+                    <p className="text-xs text-muted-foreground">
+                      Wprowadzenie podatku od przychodów z usług cyfrowych dla dużych firm technologicznych.
+                    </p>
+                  </div>
+
+                  {/* Co się zmieni? */}
+                  <div className="mb-4 p-3 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <Lightbulb className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+                      <span className="font-semibold text-xs text-amber-800 dark:text-amber-200">
+                        Co się zmieni?
+                      </span>
+                    </div>
+                    <p className="text-xs text-amber-900 dark:text-amber-100">
+                      Duże firmy technologiczne zapłacą 3% podatek od przychodów generowanych w Polsce z reklam online i pośrednictwa cyfrowego.
+                    </p>
+                  </div>
+
+                  {/* AI Analysis */}
+                  <AIAnalysisSection
+                    analysis={`**Główne założenia:**
+• Stawka 3% od przychodów powyżej 750 mln EUR
+• Objęte: reklamy online, pośrednictwo cyfrowe
+• Szacowane wpływy: 2 mld zł rocznie
+
+**Kogo dotyczy:** Google, Meta, Amazon i inne big-tech`}
+                  />
+
+                  <h4 className="font-semibold text-xs mt-4 mb-2">Aktualizacje (3)</h4>
+                  <div className="space-y-2">
+                    <div className="p-2 bg-muted/50 rounded-lg">
+                      <p className="text-[10px] text-muted-foreground">2 dni temu</p>
+                      <p className="text-xs">Projekt przekazany do Komisji Finansów Publicznych</p>
+                    </div>
+                  </div>
+                </main>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Slide 5: Konsultacje społeczne */}
+        <section className="h-[100vh] min-h-[100vh] max-h-[100vh] flex items-center px-8 lg:px-16 overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full">
+            <h2 className="text-3xl lg:text-4xl font-black text-foreground mb-1">
+              Konsultacje społeczne –
+            </h2>
+            <h2 className="text-3xl lg:text-4xl font-black text-foreground mb-8">
+              w końcu w jednym miejscu!
+            </h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+              {/* Two screenshots overlapping */}
+              <div className="relative h-[55vh]">
+                <BrowserMockup className="absolute top-0 left-0 w-[85%] transform -rotate-2 hover:rotate-0 transition-transform duration-500 z-10">
                   <Image
-                    src={section.screenshot}
-                    alt={section.title}
+                    src="/ss/consultations.png"
+                    alt="Lista konsultacji"
+                    width={500}
+                    height={350}
+                    className="w-full h-auto max-h-[40vh] object-cover object-top"
+                  />
+                </BrowserMockup>
+                <BrowserMockup className="absolute bottom-0 right-0 w-[85%] transform rotate-2 hover:rotate-0 transition-transform duration-500 z-20 shadow-2xl">
+                  <Image
+                    src="/ss/consultation-page.png"
+                    alt="Strona konsultacji"
+                    width={500}
+                    height={350}
+                    className="w-full h-auto max-h-[40vh] object-cover object-top"
+                  />
+                </BrowserMockup>
+              </div>
+
+              <div className="space-y-4">
+                {/* AI Summary card matching app style */}
+                <div className="bg-primary/5 rounded-lg p-4 border border-primary/10">
+                  <div className="flex items-center gap-2 text-primary mb-2">
+                    <Sparkles className="h-5 w-5" />
+                    <span className="font-semibold">Podsumowanie AI</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-3">Przeczytaj podsumowanie przed udziałem w konsultacjach</p>
+
+                  <div className="space-y-3">
+                    <div>
+                      <p className="font-bold text-foreground text-sm">O czym jest ta ustawa?</p>
+                      <p className="text-muted-foreground text-xs">Projekt ma na celu zwiększenie przejrzystości tworzenia prawa w Polsce.</p>
+                    </div>
+                    <div>
+                      <p className="font-bold text-foreground text-sm">Proponowane rozwiązania</p>
+                      <ul className="text-muted-foreground text-xs space-y-1">
+                        <li>• Centralny portal legislacyjny</li>
+                        <li>• Obowiązek publikacji w czasie rzeczywistym</li>
+                        <li>• Ułatwiony udział w konsultacjach</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-sm text-muted-foreground italic">
+                  Dzięki zapoznaniu użytkownika z treścią ustawy przed konsultacją, sprawiamy, że jego odpowiedzi są świadome, a udzielenie ich – prostsze
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Slide 6: Prosty feedback dla urzędników */}
+        <section className="h-[100vh] min-h-[100vh] max-h-[100vh] flex items-center px-8 lg:px-16 bg-muted/30 overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full">
+            <h2 className="text-3xl lg:text-4xl font-black text-foreground mb-2">
+              Prosty feedback dla urzędników
+            </h2>
+            <p className="text-base text-muted-foreground mb-8">
+              AI podsumowuje i grupuje odpowiedzi na pytania otwarte z konsultacji społecznych
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {/* Admin screenshot */}
+              <BrowserMockup className="transform -rotate-1 hover:rotate-0 transition-transform duration-500">
+                <Image
+                  src="/ss/admin-new.png"
+                  alt="Panel administracyjny"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto max-h-[50vh] object-cover object-top"
+                />
+              </BrowserMockup>
+
+              {/* Charts and stats */}
+              <div className="space-y-3">
+                {/* Stats grid - matching admin page style */}
+                <div className="grid grid-cols-4 gap-2">
+                  <div className="text-center p-2 rounded-xl bg-neutral-50 dark:bg-neutral-900">
+                    <span className="text-xl font-bold tracking-tight">909</span>
+                    <p className="text-[10px] text-muted-foreground">Wszystkich</p>
+                  </div>
+                  <div className="text-center p-2 rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                    <span className="text-xl font-bold tracking-tight">456</span>
+                    <p className="text-[10px] text-muted-foreground">Pozytywnych</p>
+                  </div>
+                  <div className="text-center p-2 rounded-xl bg-neutral-200 dark:bg-neutral-700">
+                    <span className="text-xl font-bold tracking-tight">111</span>
+                    <p className="text-[10px] text-muted-foreground">Neutralnych</p>
+                  </div>
+                  <div className="text-center p-2 rounded-xl bg-neutral-300 dark:bg-neutral-600">
+                    <span className="text-xl font-bold tracking-tight">342</span>
+                    <p className="text-[10px] text-muted-foreground">Negatywnych</p>
+                  </div>
+                </div>
+
+                {/* Charts - using Recharts like admin page */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-2xl p-3 bg-neutral-50 dark:bg-neutral-900">
+                    <h3 className="font-medium text-[10px] uppercase tracking-wide text-muted-foreground mb-2">
+                      Rozkład sentymentu
+                    </h3>
+                    <div className="h-24">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <PieChart>
+                          <Pie
+                            data={pieData}
+                            cx="50%"
+                            cy="50%"
+                            innerRadius={28}
+                            outerRadius={42}
+                            paddingAngle={3}
+                            dataKey="value"
+                            strokeWidth={0}
+                          >
+                            <Cell fill={CHART_COLORS.primary} />
+                            <Cell fill={CHART_COLORS.tertiary} />
+                            <Cell fill={CHART_COLORS.secondary} />
+                          </Pie>
+                        </PieChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                  <div className="rounded-2xl p-3 bg-neutral-50 dark:bg-neutral-900">
+                    <h3 className="font-medium text-[10px] uppercase tracking-wide text-muted-foreground mb-2">
+                      Odpowiedzi w czasie
+                    </h3>
+                    <div className="h-24">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <LineChart data={lineData}>
+                          <CartesianGrid strokeDasharray="0" stroke={CHART_COLORS.grid} vertical={false} />
+                          <XAxis dataKey="date" hide />
+                          <YAxis hide />
+                          <Line
+                            type="monotone"
+                            dataKey="count"
+                            stroke={CHART_COLORS.primary}
+                            strokeWidth={2}
+                            dot={{ fill: CHART_COLORS.primary, strokeWidth: 0, r: 2 }}
+                          />
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-sm text-muted-foreground italic">
+                  Zorientowanie się w trendach społecznych zajmuje tylko kilka sekund
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Slide 7: Dla bardziej zainteresowanych */}
+        <section className="h-[100vh] min-h-[100vh] max-h-[100vh] flex items-center px-8 lg:px-16 overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full">
+            <h2 className="text-4xl lg:text-5xl font-black text-foreground mb-2">
+              Dla bardziej zainteresowanych
+            </h2>
+
+            <p className="text-lg text-muted-foreground max-w-3xl mb-10 italic">
+              Odkryj prace Sejmu na nowo w zakładce Dla Ciebie. To Twoje nowoczesne centrum informacji:
+              przeglądaj aktualności, zgłębiaj poselskie inicjatywy i miej realny wpływ na prawo.
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Scale className="h-10 w-10 text-primary" />
+                  <span className="text-2xl font-bold">Legistacja</span>
+                </div>
+                <div>
+                  <h3 className="text-5xl font-black">
+                    <span className="text-foreground">Moja</span>
+                    <br />
+                    <span className="text-primary">Legi</span>
+                    <span className="text-foreground">stacja</span>
+                  </h3>
+                  <p className="text-xl text-muted-foreground italic mt-4">Dla Ciebie</p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="bg-muted/50 rounded-3xl p-4 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <BrowserMockup>
+                    <Image
+                      src="/ss/feed.png"
+                      alt="Feed legislacyjny"
+                      width={600}
+                      height={450}
+                      className="w-full h-auto"
+                    />
+                  </BrowserMockup>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Slide 8: mObywatel */}
+        <section className="h-[100vh] min-h-[100vh] max-h-[100vh] flex items-center px-8 lg:px-16 bg-gradient-to-br from-red-50 to-white dark:from-red-950/20 dark:to-background overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <h2 className="text-4xl lg:text-5xl font-black text-foreground">
+                  Logowanie przez
+                  <span className="text-[#DC143C]"> mObywatel</span>
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Bezpieczna autoryzacja z wykorzystaniem aplikacji mObywatel - cyfrowej tożsamości każdego Polaka.
+                </p>
+
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[#DC143C]/10 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-[#DC143C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-bold text-foreground">Bezpieczna weryfikacja</p>
+                      <p className="text-muted-foreground text-sm">Potwierdzenie tożsamości na poziomie e-dowodu</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[#DC143C]/10 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-[#DC143C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-bold text-foreground">Szybkie logowanie</p>
+                      <p className="text-muted-foreground text-sm">Jeden klik w aplikacji mObywatel</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[#DC143C]/10 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-[#DC143C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-bold text-foreground">Zaufany profil</p>
+                      <p className="text-muted-foreground text-sm">Integracja z systemami rządowymi</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* mObywatel screenshot */}
+              <div className="flex justify-center">
+                <BrowserMockup className="transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                  <Image
+                    src="/ss/mobywatel.png"
+                    alt="Logowanie przez mObywatel"
                     width={600}
                     height={400}
                     className="w-full h-auto"
                   />
-                </div>
+                </BrowserMockup>
               </div>
-            )}
-          </div>
-        );
-
-      case 'tech':
-        return (
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-slate-900 rounded-xl mb-4">
-              <Code className="h-7 w-7 text-white" />
             </div>
-            <h2 className="text-3xl md:text-5xl font-black mb-3 text-foreground">{section.title}</h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-4">{section.subtitle}</p>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto mb-8">{section.description}</p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
-              {section.tech?.map((t) => (
-                <div
-                  key={t.name}
-                  className="group relative bg-white rounded-xl p-4 border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative">
-                    <div className="text-lg font-bold text-foreground mb-0.5">{t.name}</div>
-                    <div className="text-xs text-muted-foreground">{t.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-
-      case 'team':
-        return (
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
-              <Users className="h-8 w-8 text-primary" />
-            </div>
-            <h2 className="text-3xl md:text-5xl font-black mb-3 text-foreground">{section.title}</h2>
-            <p className="text-lg md:text-xl text-primary mb-4 font-medium">{section.subtitle}</p>
-            <p className="text-base text-muted-foreground max-w-xl mx-auto mb-6">{section.description}</p>
-            <div className="flex items-center justify-center gap-3 p-4 bg-muted/50 rounded-xl inline-flex mb-6">
-              <Scale className="h-10 w-10 text-primary" />
-              <span className="text-2xl font-black text-foreground">Legistacja</span>
-            </div>
-            {section.link && (
-              <div className="mb-6">
-                <Link href={section.link}>
-                  <Button>
-                    Wypróbuj aplikację
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            )}
-            <p className="text-xl font-medium text-muted-foreground">Dziękujemy za uwagę!</p>
-          </div>
-        );
-
-      default:
-        return null;
-    }
-  };
-
-  return (
-    <div
-      ref={containerRef}
-      className="h-screen overflow-y-scroll snap-y snap-mandatory bg-background"
-    >
-      {/* Progress indicator */}
-      <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-2">
-        {sections.map((section, index) => (
-          <button
-            key={section.id}
-            onClick={() => sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth' })}
-            className={`w-2 h-2 rounded-full transition-all ${
-              activeSection === index ? 'bg-foreground scale-150' : 'bg-foreground/30 hover:bg-foreground/50'
-            }`}
-            title={section.title}
-          />
-        ))}
-      </div>
-
-      {/* Sections */}
-      {sections.map((section, index) => (
-        <section
-          key={section.id}
-          ref={(el) => { sectionRefs.current[index] = el; }}
-          className="h-screen flex items-center justify-center px-4 md:px-6 py-10 md:py-16 snap-start snap-always overflow-hidden"
-        >
-          <div className="max-w-5xl w-full max-h-[85vh]">
-            {renderSection(section, index)}
           </div>
         </section>
-      ))}
+
+        {/* Slide 9: Dalsze wdrożenia */}
+        <section className="h-[100vh] min-h-[100vh] max-h-[100vh] flex items-center px-8 lg:px-16 bg-muted/30 overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full">
+            <h2 className="text-4xl lg:text-5xl font-black text-foreground mb-2">
+              Dalsze wdrożenia
+            </h2>
+            <p className="text-lg text-muted-foreground mb-10">
+              Projekt powstał z myślą o realnym wdrożeniu.<br />
+              Proces ten jest przemyślany dzięki:
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+              {/* Prisma Diagram */}
+              <div className="rounded-xl overflow-hidden border border-border shadow-lg">
+                <Image
+                  src="/ss/prisma-diagram.png"
+                  alt="Prisma Database Schema"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
+                />
+              </div>
+
+              {/* Implementation points */}
+              <div className="space-y-3">
+                {[
+                  'Kompleksowy projekt bazy danych przystosowanej pod integrację z sejm.gov i RCL.',
+                  'Miejsce na integrację z profilem zaufanym.',
+                  'Przygotowanie pod hostowane lokalnie modele AI typu open-source.',
+                  'Zgodność z WCAG 2.2 i Aktami o usługach cyfrowych',
+                  'Pełna modułowość projektu umożliwiająca dalsze tworzenie feature\'ów.',
+                ].map((point, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <p className="text-muted-foreground text-sm">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Slide 10: Thank you */}
+        <section className="h-[100vh] min-h-[100vh] max-h-[100vh] flex items-center justify-center px-8 lg:px-16 overflow-hidden">
+          <div className="text-center space-y-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Scale className="h-16 w-16 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-6xl lg:text-8xl font-black">
+                <span className="text-foreground">Moja</span>
+                <br />
+                <span className="text-primary">Legi</span>
+                <span className="text-foreground">stacja</span>
+              </h2>
+              <p className="text-xl text-muted-foreground mt-6 italic">Nowe prawo wszystkich Polaków</p>
+            </div>
+
+            <p className="text-2xl font-bold text-foreground">Dziękujemy za uwagę!</p>
+
+            <p className="text-base text-muted-foreground">
+              Ministerstwo Cyfryzacji • Hackathon 2025
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
