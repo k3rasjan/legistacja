@@ -17,8 +17,8 @@ interface NavItem {
 const navItems: NavItem[] = [
   { icon: Home, label: 'Strona główna', href: '/' },
   { icon: List, label: 'Lista ustaw', href: '/szukaj' },
-  { icon: Newspaper, label: 'Feed', href: '/feed' },
-  { icon: Sparkles, label: 'Wrapped', href: '/wrapped', requiresUpdates: true },
+  { icon: Newspaper, label: 'Dla ciebie', href: '/feed' },
+  { icon: Sparkles, label: 'Zmiany w pigułce', href: '/wrapped', requiresUpdates: true },
   { icon: MessageSquare, label: 'Konsultacje', href: '/konsultacje' },
   { icon: Bell, label: 'Powiadomienia', href: '/powiadomienia' },
   { icon: Bookmark, label: 'Obserwowane', href: '/obserwowane' },

@@ -87,7 +87,7 @@ export function WrappedFirstVisit({ onContinue }: WrappedFirstVisitProps) {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          Twoje Wrapped
+          Zmiany w pigułce
         </h1>
 
         {/* Period indicator */}

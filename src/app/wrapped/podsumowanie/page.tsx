@@ -1,12 +1,10 @@
 'use client';
 
 import { useMemo, useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Home } from 'lucide-react';
 import { mockUstawy, mockUpdates } from '@/data/mock';
-import { LegislativeUpdate, Ustawa, statusLabels } from '@/types';
-import { useWrappedUpdates } from '@/hooks/useWrappedUpdates';
+import { LegislativeUpdate, Ustawa } from '@/types';
 
 interface ConsolidatedCard {
   id: string;
@@ -83,27 +81,20 @@ const getAccentColor = (id: string) => {
 };
 
 export default function WrappedSummaryPage() {
-  const router = useRouter();
-  const { hasUpdates } = useWrappedUpdates();
   const [sessionData, setSessionData] = useState<{
     startDate: string;
     endDate: string;
     daysCovered: number;
   } | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const stored = sessionStorage.getItem('wrapped_session');
     if (stored) {
       setSessionData(JSON.parse(stored));
     }
+    setIsLoading(false);
   }, []);
-
-  // Redirect if no updates available
-  useEffect(() => {
-    if (!hasUpdates) {
-      router.replace('/');
-    }
-  }, [hasUpdates, router]);
 
   const dateRange = useMemo(() => {
     if (sessionData) {
@@ -147,9 +138,36 @@ export default function WrappedSummaryPage() {
 
   const daysCovered = sessionData?.daysCovered ?? 30;
 
-  // Don't render while redirecting
-  if (!hasUpdates) {
-    return null;
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <Sparkles className="w-12 h-12 text-primary mx-auto mb-4 animate-pulse" />
+          <p className="text-muted-foreground">Ładowanie podsumowania...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Show empty state if no data
+  if (cards.length === 0) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center px-4">
+          <Sparkles className="w-16 h-16 text-muted-foreground mx-auto mb-6" />
+          <h1 className="text-2xl font-bold mb-2">Brak danych do wyświetlenia</h1>
+          <p className="text-muted-foreground mb-6">Najpierw przejdź przez Zmiany w pigułce, aby zobaczyć podsumowanie.</p>
+          <Link
+            href="/wrapped"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 transition-opacity"
+          >
+            Przejdź do Zmian w pigułce
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -158,12 +176,11 @@ export default function WrappedSummaryPage() {
       <header className="border-b border-border sticky top-0 bg-background/80 backdrop-blur-sm z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           <Link
-            href="/wrapped"
-            className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base"
+            href="/"
+            className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base"
           >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="hidden sm:inline">Wróć do Wrapped</span>
-            <span className="sm:hidden">Wróć</span>
+            <Home className="w-4 h-4" />
+            <span className="hidden sm:inline">Strona główna</span>
           </Link>
           <div className="text-xs sm:text-sm text-muted-foreground">
             Ostatnie {daysCovered} dni

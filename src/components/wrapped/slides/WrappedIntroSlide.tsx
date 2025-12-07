@@ -69,7 +69,7 @@ export function WrappedIntroSlide({ daysCovered, isFirstVisit }: WrappedIntroSli
             WebkitTextFillColor: 'transparent',
           }}
         >
-          Wrapped
+          Zmiany w pigułce
         </h1>
 
         {/* Days counter */}
