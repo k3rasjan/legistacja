@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { UstawaAvatar } from '@/components/ustawa/UstawaAvatar';
 import { TrainStatusBar } from '@/components/ustawa/TrainStatusBar';
 import { DocumentHistory } from '@/components/ustawa/DocumentHistory';
+import { AIAnalysisSection } from '@/components/ustawa/AIAnalysisSection';
 import { PostCard } from '@/components/feed/PostCard';
 import { HamburgerMenu } from '@/components/layout/HamburgerMenu';
 import { mockUstawy, mockUpdates, mockConsultations } from '@/data/mock';
@@ -124,6 +125,12 @@ export default async function UstawaPage({ params }: PageProps) {
             </div>
           )}
 
+          {ustawa.aiAnalysis && (
+            <div className="mb-4 sm:mb-6">
+              <AIAnalysisSection analysis={ustawa.aiAnalysis} />
+            </div>
+          )}
+
           <h3 className="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Aktualizacje ({updates.length})</h3>
 
           <div className="space-y-3 sm:space-y-4">
@@ -229,6 +236,12 @@ export default async function UstawaPage({ params }: PageProps) {
                 <p className="text-amber-900 dark:text-amber-100">
                   {ustawa.userBenefits}
                 </p>
+              </div>
+            )}
+
+            {ustawa.aiAnalysis && (
+              <div className="mb-6">
+                <AIAnalysisSection analysis={ustawa.aiAnalysis} />
               </div>
             )}
 

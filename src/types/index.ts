@@ -163,6 +163,7 @@ export interface Ustawa {
   documentVersions?: DocumentVersion[];
   categories: UstawaCategory[];
   userBenefits?: string;
+  aiAnalysis?: string;
 }
 
 export type UpdateType =
