@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import { HamburgerMenu } from '@/components/layout/HamburgerMenu';
 import { UstawaSearchCard } from '@/components/search/UstawaSearchCard';
 import { SearchFilters } from '@/components/search/SearchFilters';
-import { mockUstawy } from '@/data/mock';
+import { mockUstawy, mockFollowedIds } from '@/data/mock';
 import { LegislativeStatus } from '@/types';
 import { Search, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -145,6 +145,7 @@ export default function SzukajPage() {
                 ustawa={ustawa}
                 searchQuery={query}
                 lastVisit={lastVisit}
+                isFollowed={mockFollowedIds.includes(ustawa.id)}
               />
             ))}
 

@@ -1,5 +1,8 @@
 import { Ustawa, LegislativeUpdate, Consultation } from '@/types';
 
+// Mock followed ustawy IDs (in a real app this would come from user state/backend)
+export const mockFollowedIds = ['1', '3', '6', '8', '12', '14', '18', '22', '26', '30', '34', '38'];
+
 export const mockUstawy: Ustawa[] = [
   {
     id: '1',

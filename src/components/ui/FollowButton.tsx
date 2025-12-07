@@ -10,6 +10,7 @@ interface FollowButtonProps {
   size?: 'sm' | 'lg' | 'default';
   className?: string;
   fullWidth?: boolean;
+  initialFollowed?: boolean;
 }
 
 export function FollowButton({
@@ -17,8 +18,9 @@ export function FollowButton({
   size = 'sm',
   className,
   fullWidth = false,
+  initialFollowed = false,
 }: FollowButtonProps) {
-  const [isFollowing, setIsFollowing] = useState(false);
+  const [isFollowing, setIsFollowing] = useState(initialFollowed);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleClick = () => {

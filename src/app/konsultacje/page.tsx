@@ -4,13 +4,10 @@ import { useRef, useState, useEffect, useMemo } from 'react';
 import { HamburgerMenu } from '@/components/layout/HamburgerMenu';
 import { ConsultationCard } from '@/components/consultation/ConsultationCard';
 import { SearchFilters } from '@/components/search/SearchFilters';
-import { mockConsultations } from '@/data/mock';
+import { mockConsultations, mockFollowedIds } from '@/data/mock';
 import { LegislativeStatus } from '@/types';
 import { MessageSquare, Search, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-// Mock followed consultation IDs (in real app, from user state/backend)
-const followedIds = ['1', '2', '5'];
 
 const categories = [
   { id: 'following', label: 'Obserwowane', color: 'bg-primary' },
@@ -65,8 +62,8 @@ export default function KonsultacjePage() {
   }, [query, selectedStatuses, selectedMinistries]);
 
   const activeConsultations = filteredConsultations.filter((c) => c.isActive);
-  const followingConsultations = activeConsultations.filter((c) => followedIds.includes(c.id));
-  const otherConsultations = activeConsultations.filter((c) => !followedIds.includes(c.id));
+  const followingConsultations = activeConsultations.filter((c) => mockFollowedIds.includes(c.id));
+  const otherConsultations = activeConsultations.filter((c) => !mockFollowedIds.includes(c.id));
   const closedConsultations = filteredConsultations.filter((c) => !c.isActive);
 
   const handleStatusToggle = (status: LegislativeStatus) => {

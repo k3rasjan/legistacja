@@ -2,14 +2,11 @@
 
 import { HamburgerMenu } from '@/components/layout/HamburgerMenu';
 import { UstawaSearchCard } from '@/components/search/UstawaSearchCard';
-import { mockUstawy } from '@/data/mock';
+import { mockUstawy, mockFollowedIds } from '@/data/mock';
 import { Bookmark } from 'lucide-react';
 
-// Mock followed ustawy (in a real app this would come from user state/backend)
-const followedIds = ['1', '3', '6', '8', '12', '14', '18', '22', '26', '30', '34', '38'];
-
 export default function ObserwowanePage() {
-  const followedUstawy = mockUstawy.filter((u) => followedIds.includes(u.id));
+  const followedUstawy = mockUstawy.filter((u) => mockFollowedIds.includes(u.id));
 
   return (
     <div className="min-h-screen">
@@ -32,7 +29,7 @@ export default function ObserwowanePage() {
 
         <div className="space-y-2 sm:space-y-3">
           {followedUstawy.map((ustawa) => (
-            <UstawaSearchCard key={ustawa.id} ustawa={ustawa} />
+            <UstawaSearchCard key={ustawa.id} ustawa={ustawa} isFollowed={true} />
           ))}
 
           {followedUstawy.length === 0 && (

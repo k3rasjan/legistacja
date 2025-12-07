@@ -12,6 +12,7 @@ interface UstawaSearchCardProps {
   ustawa: Ustawa;
   searchQuery?: string;
   lastVisit?: Date | null;
+  isFollowed?: boolean;
 }
 
 function highlightText(text: string, query: string): React.ReactNode {
@@ -39,7 +40,7 @@ function formatDate(date: Date): string {
   });
 }
 
-export function UstawaSearchCard({ ustawa, searchQuery = '', lastVisit }: UstawaSearchCardProps) {
+export function UstawaSearchCard({ ustawa, searchQuery = '', lastVisit, isFollowed = false }: UstawaSearchCardProps) {
   const isNew = lastVisit && ustawa.updatedAt > lastVisit;
 
   return (
@@ -98,7 +99,7 @@ export function UstawaSearchCard({ ustawa, searchQuery = '', lastVisit }: Ustawa
                   <span className="text-primary hidden sm:inline">{ustawa.drukNumber}</span>
                 )}
               </div>
-              <FollowButton size="sm" />
+              <FollowButton size="sm" initialFollowed={isFollowed} />
             </div>
           </div>
         </div>
