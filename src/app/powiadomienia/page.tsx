@@ -195,13 +195,13 @@ export default function PowiadomieniaPage() {
     <div className="min-h-screen">
       <HamburgerMenu />
 
-      <div className="max-w-4xl mx-auto p-6 pt-16">
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3">
-            <Bell className="h-8 w-8 text-primary" />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-14 sm:pt-16 pb-6">
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Bell className="h-6 w-6 sm:h-8 sm:w-8 text-primary flex-shrink-0" />
             <div>
-              <h1 className="text-2xl font-bold">Powiadomienia</h1>
-              <p className="text-muted-foreground">
+              <h1 className="text-xl sm:text-2xl font-bold">Powiadomienia</h1>
+              <p className="text-muted-foreground text-sm sm:text-base">
                 {unreadCount > 0
                   ? `${unreadCount} nieprzeczytanych`
                   : 'Wszystko przeczytane'}
@@ -209,18 +209,20 @@ export default function PowiadomieniaPage() {
             </div>
           </div>
           {unreadCount > 0 && (
-            <Button variant="outline" size="sm" onClick={markAllAsRead}>
-              <CheckCheck className="h-4 w-4 mr-2" />
-              Oznacz wszystkie
+            <Button variant="outline" size="sm" onClick={markAllAsRead} className="text-xs sm:text-sm">
+              <CheckCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
+              <span className="hidden sm:inline">Oznacz wszystkie</span>
+              <span className="sm:hidden">Oznacz</span>
             </Button>
           )}
         </div>
 
-        <div className="flex gap-2 mb-6">
+        <div className="flex gap-2 mb-4 sm:mb-6">
           <Button
             variant={filter === 'all' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setFilter('all')}
+            className="text-xs sm:text-sm"
           >
             Wszystkie
           </Button>
@@ -228,17 +230,18 @@ export default function PowiadomieniaPage() {
             variant={filter === 'unread' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setFilter('unread')}
+            className="text-xs sm:text-sm"
           >
             Nieprzeczytane
             {unreadCount > 0 && (
-              <span className="ml-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+              <span className="ml-1.5 sm:ml-2 bg-red-500 text-white text-[10px] sm:text-xs px-1 sm:px-1.5 py-0.5 rounded-full">
                 {unreadCount}
               </span>
             )}
           </Button>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {filteredNotifications.map((notification) => {
             const ustawa = getUstawa(notification.ustawaId);
             const Icon = notificationIcons[notification.type];
@@ -253,7 +256,7 @@ export default function PowiadomieniaPage() {
                 className="block"
               >
                 <div
-                  className={`flex gap-4 p-4 rounded-xl border transition-colors hover:bg-accent/50 ${
+                  className={`flex gap-2.5 sm:gap-4 p-3 sm:p-4 rounded-lg sm:rounded-xl border transition-colors hover:bg-accent/50 ${
                     notification.isRead
                       ? 'bg-background border-border'
                       : 'bg-primary/5 border-primary/20'
@@ -263,30 +266,31 @@ export default function PowiadomieniaPage() {
                     <UstawaAvatar
                       shortTitle={ustawa.shortTitle}
                       status={ustawa.status}
+                      className="w-8 h-8 sm:w-10 sm:h-10"
                     />
                   </div>
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
                         <span
-                          className={`p-1 rounded ${notificationColors[notification.type]}`}
+                          className={`p-0.5 sm:p-1 rounded ${notificationColors[notification.type]}`}
                         >
-                          <Icon className="h-3.5 w-3.5" />
+                          <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                         </span>
-                        <span className="font-medium">{notification.title}</span>
+                        <span className="font-medium text-sm sm:text-base">{notification.title}</span>
                         {!notification.isRead && (
-                          <span className="w-2 h-2 bg-primary rounded-full" />
+                          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full" />
                         )}
                       </div>
-                      <span className="text-xs text-muted-foreground whitespace-nowrap">
+                      <span className="text-[10px] sm:text-xs text-muted-foreground whitespace-nowrap">
                         {formatRelativeTime(notification.createdAt)}
                       </span>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 sm:mt-1">
                       {notification.description}
                     </p>
-                    <p className="text-xs text-muted-foreground mt-2">
+                    <p className="text-[10px] sm:text-xs text-muted-foreground mt-1.5 sm:mt-2">
                       {ustawa.shortTitle}
                     </p>
                   </div>
@@ -296,10 +300,10 @@ export default function PowiadomieniaPage() {
           })}
 
           {filteredNotifications.length === 0 && (
-            <div className="text-center py-12">
-              <Bell className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <p className="text-lg font-medium">Brak powiadomień</p>
-              <p className="text-muted-foreground mt-1">
+            <div className="text-center py-8 sm:py-12">
+              <Bell className="h-10 w-10 sm:h-12 sm:w-12 text-muted-foreground mx-auto mb-3 sm:mb-4" />
+              <p className="text-base sm:text-lg font-medium">Brak powiadomień</p>
+              <p className="text-muted-foreground text-sm mt-1">
                 {filter === 'unread'
                   ? 'Wszystkie powiadomienia zostały przeczytane'
                   : 'Obserwuj ustawy, aby otrzymywać powiadomienia'}
@@ -309,9 +313,9 @@ export default function PowiadomieniaPage() {
         </div>
 
         {filteredNotifications.length > 0 && (
-          <div className="mt-8 p-4 bg-muted/50 rounded-xl">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Calendar className="h-4 w-4" />
+          <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-muted/50 rounded-lg sm:rounded-xl">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-muted-foreground">
+              <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               <span>Powiadomienia z ostatnich 7 dni</span>
             </div>
           </div>

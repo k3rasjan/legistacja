@@ -30,7 +30,7 @@ export function WrappedConsolidatedSlide({ card, index, total }: WrappedConsolid
   const accentColor = getAccentColor();
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-6 py-20 text-white relative overflow-hidden bg-[#1a1a2e]">
+    <div className="w-full h-full flex flex-col items-center justify-center px-4 sm:px-6 py-16 sm:py-20 text-white relative overflow-hidden bg-[#1a1a2e]">
       {/* Accent gradient */}
       <div
         className="absolute inset-0"
@@ -41,7 +41,7 @@ export function WrappedConsolidatedSlide({ card, index, total }: WrappedConsolid
 
       {/* Floating orb */}
       <div
-        className="absolute w-[500px] h-[500px] rounded-full blur-[150px] opacity-30"
+        className="absolute w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] rounded-full blur-[100px] sm:blur-[120px] md:blur-[150px] opacity-30"
         style={{
           background: accentColor,
           top: '20%',
@@ -53,21 +53,21 @@ export function WrappedConsolidatedSlide({ card, index, total }: WrappedConsolid
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
         {/* Card number & Title - secondary */}
-        <div className="mb-8">
-          <span className="text-white/40 text-sm tracking-widest uppercase font-medium">
+        <div className="mb-4 sm:mb-6 md:mb-8">
+          <span className="text-white/40 text-xs sm:text-sm tracking-widest uppercase font-medium">
             {index} / {total}
           </span>
-          <h2 className="text-2xl md:text-3xl font-medium text-white/60 mt-2">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-white/60 mt-1 sm:mt-2">
             {card.title}
           </h2>
         </div>
 
         {/* Items - big and prominent */}
-        <div className="space-y-6">
+        <div className="space-y-3 sm:space-y-4 md:space-y-6">
           {card.items.map((item) => (
             <div
               key={item.ustawa.id}
-              className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight"
               style={{
                 color: 'white',
                 textShadow: '0 0 60px rgba(255,255,255,0.3)',
@@ -80,7 +80,7 @@ export function WrappedConsolidatedSlide({ card, index, total }: WrappedConsolid
 
         {/* Subtitle - count at bottom */}
         {card.subtitle && (
-          <p className="text-white/40 text-lg font-medium mt-10">
+          <p className="text-white/40 text-sm sm:text-base md:text-lg font-medium mt-6 sm:mt-8 md:mt-10">
             {card.subtitle}
           </p>
         )}

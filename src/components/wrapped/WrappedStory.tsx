@@ -166,7 +166,7 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
       style={{ fontFamily: 'var(--font-geist-sans), system-ui, sans-serif' }}
     >
       {/* Progress bar */}
-      <div className="absolute top-0 left-0 right-0 z-50 flex gap-1 p-4">
+      <div className="absolute top-0 left-0 right-0 z-50 flex gap-0.5 sm:gap-1 p-2 sm:p-4">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -179,7 +179,7 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
                 }, 400);
               }
             }}
-            className="flex-1 h-1.5 rounded-full overflow-hidden bg-white/20 hover:bg-white/30 transition-colors"
+            className="flex-1 h-1 sm:h-1.5 rounded-full overflow-hidden bg-white/20 hover:bg-white/30 transition-colors"
           >
             <div
               className="h-full rounded-full transition-all duration-500 bg-white"
@@ -209,9 +209,9 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
           onClick={goToPrevSlide}
           className="absolute left-0 top-0 bottom-0 w-1/4 z-40 cursor-pointer group"
         >
-          <div className="absolute left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0 -translate-x-2">
-            <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center rotate-180">
-              <ChevronRight className="w-6 h-6 text-white/70" />
+          <div className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0 -translate-x-2">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center rotate-180">
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white/70" />
             </div>
           </div>
         </button>
@@ -229,17 +229,17 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
       {currentSlide < totalSlides - 1 && (
         <button
           onClick={goToNextSlide}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 group"
+          className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-50 group"
         >
-          <div className="flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg transition-all hover:bg-white/20 hover:scale-105 active:scale-95">
+          <div className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-base sm:text-lg transition-all hover:bg-white/20 hover:scale-105 active:scale-95">
             <span>Dalej</span>
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </div>
         </button>
       )}
 
       {/* Slide counter */}
-      <div className="absolute bottom-8 right-6 z-50 text-white/40 text-sm font-medium tabular-nums">
+      <div className="absolute bottom-6 sm:bottom-8 right-3 sm:right-6 z-50 text-white/40 text-xs sm:text-sm font-medium tabular-nums">
         {currentSlide + 1} / {totalSlides}
       </div>
     </div>

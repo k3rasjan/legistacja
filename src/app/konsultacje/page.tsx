@@ -123,41 +123,41 @@ export default function KonsultacjePage() {
     <div className="min-h-screen">
       <HamburgerMenu />
 
-      <div className="max-w-4xl mx-auto p-6 pt-16 pl-44 relative">
-        <div className="flex items-center gap-3 mb-6">
-          <MessageSquare className="h-8 w-8 text-primary" />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-14 sm:pt-16 lg:pl-44 relative pb-6">
+        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <MessageSquare className="h-6 w-6 sm:h-8 sm:w-8 text-primary flex-shrink-0" />
           <div>
-            <h1 className="text-2xl font-bold">Konsultacje społeczne</h1>
-            <p className="text-muted-foreground">
-              Weź udział w tworzeniu prawa - Twój głos ma znaczenie
+            <h1 className="text-xl sm:text-2xl font-bold">Konsultacje społeczne</h1>
+            <p className="text-muted-foreground text-sm sm:text-base">
+              Weź udział w tworzeniu prawa
             </p>
           </div>
         </div>
 
         {/* Search and Filters */}
-        <div className="sticky top-0 bg-background z-10 pb-4">
+        <div className="sticky top-0 bg-background z-10 pb-3 sm:pb-4">
           <div className="flex gap-2">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
               <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Szukaj konsultacji..."
-                className="w-full pl-10 pr-4 py-3 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
+                className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
             </div>
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className={`relative px-4 border rounded-lg transition-colors ${
+              className={`relative px-3 sm:px-4 border rounded-lg transition-colors ${
                 showFilters
                   ? 'bg-primary text-primary-foreground border-primary'
                   : 'border-border hover:bg-accent'
               }`}
             >
-              <SlidersHorizontal className="h-5 w-5" />
+              <SlidersHorizontal className="h-4 w-4 sm:h-5 sm:w-5" />
               {activeFiltersCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 h-5 w-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
+                <span className="absolute -top-1.5 -right-1.5 h-4 w-4 sm:h-5 sm:w-5 bg-red-500 text-white text-[10px] sm:text-xs rounded-full flex items-center justify-center font-medium">
                   {activeFiltersCount}
                 </span>
               )}
@@ -165,7 +165,7 @@ export default function KonsultacjePage() {
           </div>
 
           {showFilters && (
-            <div className="mt-3 p-5 border border-border rounded-xl bg-card">
+            <div className="mt-2 sm:mt-3 p-3 sm:p-5 border border-border rounded-lg sm:rounded-xl bg-card">
               <SearchFilters
                 selectedStatuses={selectedStatuses}
                 selectedMinistries={selectedMinistries}
@@ -180,13 +180,13 @@ export default function KonsultacjePage() {
 
         {/* Results count when filtering */}
         {hasFiltersOrSearch && (
-          <p className="text-sm text-muted-foreground mb-4">
+          <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
             Znaleziono {filteredConsultations.length} z {mockConsultations.length} konsultacji
           </p>
         )}
 
-        {/* Dot Navigation */}
-        <div className="fixed left-6 top-1/2 -translate-y-1/2 flex flex-col z-20">
+        {/* Dot Navigation - hidden on mobile */}
+        <div className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 flex-col z-20">
           {categories.map((category, index) => (
             <div key={category.id} className="flex flex-col">
               <button
@@ -218,18 +218,18 @@ export default function KonsultacjePage() {
         {/* Following */}
         <section
           ref={(el) => { sectionRefs.current[0] = el; }}
-          className="mb-10 scroll-mt-20"
+          className="mb-8 sm:mb-10 scroll-mt-16 sm:scroll-mt-20"
         >
-          <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+          <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
             Obserwowane ({followingConsultations.length})
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {followingConsultations.map((consultation) => (
               <ConsultationCard key={consultation.id} consultation={consultation} searchQuery={query} />
             ))}
             {followingConsultations.length === 0 && (
-              <p className="text-center text-muted-foreground py-8">
+              <p className="text-center text-muted-foreground text-sm py-6 sm:py-8">
                 {hasFiltersOrSearch
                   ? 'Brak obserwowanych konsultacji spełniających kryteria.'
                   : 'Nie obserwujesz żadnych konsultacji.'}
@@ -241,18 +241,18 @@ export default function KonsultacjePage() {
         {/* Other Active */}
         <section
           ref={(el) => { sectionRefs.current[1] = el; }}
-          className="mb-10 scroll-mt-20"
+          className="mb-8 sm:mb-10 scroll-mt-16 sm:scroll-mt-20"
         >
-          <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+          <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full"></span>
             Pozostałe aktywne ({otherConsultations.length})
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {otherConsultations.map((consultation) => (
               <ConsultationCard key={consultation.id} consultation={consultation} searchQuery={query} />
             ))}
             {otherConsultations.length === 0 && (
-              <p className="text-center text-muted-foreground py-8">
+              <p className="text-center text-muted-foreground text-sm py-6 sm:py-8">
                 {hasFiltersOrSearch
                   ? 'Brak innych aktywnych konsultacji spełniających kryteria.'
                   : 'Brak innych aktywnych konsultacji.'}
@@ -264,18 +264,18 @@ export default function KonsultacjePage() {
         {/* Finished */}
         <section
           ref={(el) => { sectionRefs.current[2] = el; }}
-          className="scroll-mt-20 mb-20"
+          className="scroll-mt-16 sm:scroll-mt-20 mb-16 sm:mb-20"
         >
-          <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+          <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center gap-2">
             <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
             Zakończone ({closedConsultations.length})
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {closedConsultations.map((consultation) => (
               <ConsultationCard key={consultation.id} consultation={consultation} searchQuery={query} />
             ))}
             {closedConsultations.length === 0 && (
-              <p className="text-center text-muted-foreground py-8">
+              <p className="text-center text-muted-foreground text-sm py-6 sm:py-8">
                 {hasFiltersOrSearch
                   ? 'Brak zakończonych konsultacji spełniających kryteria.'
                   : 'Brak zakończonych konsultacji.'}
@@ -286,15 +286,15 @@ export default function KonsultacjePage() {
 
         {/* No results at all */}
         {filteredConsultations.length === 0 && hasFiltersOrSearch && (
-          <div className="text-center py-12">
-            <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-            <p className="text-lg font-medium">Nie znaleziono konsultacji</p>
-            <p className="text-muted-foreground mt-1">
+          <div className="text-center py-8 sm:py-12">
+            <Search className="h-10 w-10 sm:h-12 sm:w-12 text-muted-foreground mx-auto mb-3 sm:mb-4" />
+            <p className="text-base sm:text-lg font-medium">Nie znaleziono konsultacji</p>
+            <p className="text-muted-foreground text-sm mt-1">
               Spróbuj zmienić kryteria wyszukiwania
             </p>
             <Button
               variant="outline"
-              className="mt-4"
+              className="mt-3 sm:mt-4"
               onClick={() => {
                 setQuery('');
                 handleClearAll();

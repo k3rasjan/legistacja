@@ -41,10 +41,10 @@ export function HamburgerMenu({ offsetLeft = false }: HamburgerMenuProps) {
       <Button
         variant="ghost"
         size="icon"
-        className={`fixed top-4 z-50 bg-background rounded-lg ${offsetLeft ? 'left-14' : 'left-4'}`}
+        className={`fixed top-3 sm:top-4 z-50 bg-background rounded-lg h-9 w-9 sm:h-10 sm:w-10 ${offsetLeft ? 'left-12 sm:left-14' : 'left-3 sm:left-4'}`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        {isOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
       </Button>
 
       {isOpen && (
@@ -55,25 +55,25 @@ export function HamburgerMenu({ offsetLeft = false }: HamburgerMenuProps) {
       )}
 
       <aside
-        className={`fixed top-0 left-0 h-full w-72 bg-background border-r border-border z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-64 sm:w-72 bg-background border-r border-border z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="px-6 pt-14">
+        <div className="px-4 sm:px-6 pt-12 sm:pt-14">
           <Link
             href="/"
-            className="flex items-center gap-3 mb-8"
+            className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8"
             onClick={() => setIsOpen(false)}
           >
-            <Scale className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">Legislacja</span>
+            <Scale className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+            <span className="text-lg sm:text-xl font-bold">Legislacja</span>
           </Link>
 
-          <nav className="space-y-1">
+          <nav className="space-y-0.5 sm:space-y-1">
             {filteredNavItems.map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
-                <Button variant="ghost" className="w-full justify-start gap-3 text-base h-12 px-4">
-                  <item.icon className="h-5 w-5" />
+                <Button variant="ghost" className="w-full justify-start gap-2 sm:gap-3 text-sm sm:text-base h-10 sm:h-12 px-3 sm:px-4">
+                  <item.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                   {item.label}
                 </Button>
               </Link>
@@ -81,7 +81,7 @@ export function HamburgerMenu({ offsetLeft = false }: HamburgerMenuProps) {
           </nav>
         </div>
 
-        <div className="absolute bottom-6 left-6 text-xs text-muted-foreground">
+        <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 text-[10px] sm:text-xs text-muted-foreground">
           <p>Legislacja Tracker v0.1</p>
         </div>
       </aside>

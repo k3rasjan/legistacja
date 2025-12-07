@@ -18,9 +18,10 @@ interface UstawaAvatarProps {
   shortTitle: string;
   status: LegislativeStatus;
   size?: 'sm' | 'md' | 'lg';
+  className?: string;
 }
 
-export function UstawaAvatar({ shortTitle, status, size = 'md' }: UstawaAvatarProps) {
+export function UstawaAvatar({ shortTitle, status, size = 'md', className }: UstawaAvatarProps) {
   const initials = shortTitle
     .split(' ')
     .slice(0, 2)
@@ -35,7 +36,7 @@ export function UstawaAvatar({ shortTitle, status, size = 'md' }: UstawaAvatarPr
   };
 
   return (
-    <Avatar className={sizeClasses[size]}>
+    <Avatar className={`${sizeClasses[size]} ${className || ''}`}>
       <AvatarFallback className={`${statusBgColors[status]} text-white font-semibold`}>
         {initials}
       </AvatarFallback>

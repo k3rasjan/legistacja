@@ -48,10 +48,10 @@ export function WrappedIntroSlide({ daysCovered, isFirstVisit }: WrappedIntroSli
         }}
       />
 
-      <div className="relative z-10 max-w-5xl">
+      <div className="relative z-10 max-w-5xl px-4">
         {/* Welcome text */}
         <p
-          className={`text-2xl md:text-3xl text-white/60 mb-6 font-medium tracking-wide transition-all duration-1000 ${
+          className={`text-lg sm:text-2xl md:text-3xl text-white/60 mb-4 md:mb-6 font-medium tracking-wide transition-all duration-1000 ${
             step >= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}
         >
@@ -60,7 +60,7 @@ export function WrappedIntroSlide({ daysCovered, isFirstVisit }: WrappedIntroSli
 
         {/* Main title - HUGE */}
         <h1
-          className={`text-8xl md:text-9xl lg:text-[12rem] font-black mb-8 tracking-tighter transition-all duration-1000 ${
+          className={`text-5xl sm:text-7xl md:text-9xl lg:text-[12rem] font-black mb-6 md:mb-8 tracking-tighter transition-all duration-1000 ${
             step >= 2 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`}
           style={{
@@ -78,12 +78,12 @@ export function WrappedIntroSlide({ daysCovered, isFirstVisit }: WrappedIntroSli
             step >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}
         >
-          <div className="inline-flex items-baseline gap-4">
-            <span className="text-white/50 text-2xl font-medium">
+          <div className="inline-flex items-baseline gap-2 sm:gap-4 flex-wrap justify-center">
+            <span className="text-white/50 text-lg sm:text-2xl font-medium">
               {isFirstVisit ? 'Ostatnie' : 'Minęło'}
             </span>
             <span
-              className="text-7xl md:text-8xl font-black"
+              className="text-5xl sm:text-7xl md:text-8xl font-black"
               style={{
                 background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)',
                 WebkitBackgroundClip: 'text',
@@ -92,7 +92,7 @@ export function WrappedIntroSlide({ daysCovered, isFirstVisit }: WrappedIntroSli
             >
               {isFirstVisit ? '30' : daysCovered}
             </span>
-            <span className="text-white/50 text-2xl font-medium">
+            <span className="text-white/50 text-lg sm:text-2xl font-medium">
               dni
             </span>
           </div>

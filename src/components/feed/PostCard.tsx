@@ -60,35 +60,35 @@ export function PostCard({ update }: PostCardProps) {
 
   return (
     <Card>
-      <CardContent className="pt-4">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-          <Icon className="h-4 w-4" />
+      <CardContent className="pt-3 sm:pt-4 px-3 sm:px-6">
+        <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-3">
+          <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           <span>{updateTypeLabels[update.type]}</span>
           <span>·</span>
           <span>{formatRelativeTime(update.createdAt)}</span>
         </div>
 
-        <h3 className="font-semibold mb-2">{update.title}</h3>
-        <p className="text-muted-foreground text-sm mb-4">{update.content}</p>
+        <h3 className="font-semibold text-sm sm:text-base mb-1.5 sm:mb-2">{update.title}</h3>
+        <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">{update.content}</p>
 
         {update.aiSummary && (
-          <div className="bg-primary/5 rounded-lg p-4 border border-primary/10 mb-4">
-            <div className="flex items-center gap-2 text-primary mb-2">
-              <Sparkles className="h-4 w-4" />
-              <span className="text-sm font-medium">Podsumowanie AI</span>
+          <div className="bg-primary/5 rounded-lg p-3 sm:p-4 border border-primary/10 mb-3 sm:mb-4">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-primary mb-1.5 sm:mb-2">
+              <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <span className="text-xs sm:text-sm font-medium">Podsumowanie AI</span>
             </div>
-            <p className="text-sm">{update.aiSummary}</p>
+            <p className="text-xs sm:text-sm">{update.aiSummary}</p>
           </div>
         )}
 
         {/* Expanded detailed AI summary */}
         {isExpanded && update.aiDetailedSummary && (
-          <div className="bg-muted/50 rounded-lg p-4 border border-border mb-4">
-            <div className="flex items-center gap-2 text-foreground mb-3">
-              <Sparkles className="h-4 w-4" />
-              <span className="text-sm font-medium">Szczegółowa analiza AI</span>
+          <div className="bg-muted/50 rounded-lg p-3 sm:p-4 border border-border mb-3 sm:mb-4">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-foreground mb-2 sm:mb-3">
+              <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <span className="text-xs sm:text-sm font-medium">Szczegółowa analiza AI</span>
             </div>
-            <div className="text-sm space-y-2 whitespace-pre-line">
+            <div className="text-xs sm:text-sm space-y-2 whitespace-pre-line">
               {update.aiDetailedSummary}
             </div>
           </div>
@@ -96,26 +96,26 @@ export function PostCard({ update }: PostCardProps) {
 
         {/* Diff display */}
         {update.diff && (
-          <div className="mb-4 rounded-lg border border-border overflow-hidden font-mono text-xs">
-            <div className="bg-muted px-3 py-2 border-b border-border flex items-center gap-2">
-              <FileText className="h-3.5 w-3.5" />
-              <span className="font-medium">{update.diff.fileName}</span>
+          <div className="mb-3 sm:mb-4 rounded-lg border border-border overflow-hidden font-mono text-[10px] sm:text-xs">
+            <div className="bg-muted px-2 sm:px-3 py-1.5 sm:py-2 border-b border-border flex items-center gap-1.5 sm:gap-2">
+              <FileText className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+              <span className="font-medium truncate">{update.diff.fileName}</span>
             </div>
             <div className="bg-background">
               {update.diff.deletions.map((line, i) => (
                 <div key={`del-${i}`} className="flex bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-400">
-                  <span className="w-8 flex-shrink-0 text-center py-1 bg-red-100 dark:bg-red-900/50 select-none">
-                    <Minus className="h-3 w-3 inline" />
+                  <span className="w-6 sm:w-8 flex-shrink-0 text-center py-1 bg-red-100 dark:bg-red-900/50 select-none">
+                    <Minus className="h-2.5 w-2.5 sm:h-3 sm:w-3 inline" />
                   </span>
-                  <span className="px-2 py-1 overflow-x-auto">{line}</span>
+                  <span className="px-1.5 sm:px-2 py-1 overflow-x-auto">{line}</span>
                 </div>
               ))}
               {update.diff.additions.map((line, i) => (
                 <div key={`add-${i}`} className="flex bg-green-50 dark:bg-green-950/30 text-green-700 dark:text-green-400">
-                  <span className="w-8 flex-shrink-0 text-center py-1 bg-green-100 dark:bg-green-900/50 select-none">
-                    <Plus className="h-3 w-3 inline" />
+                  <span className="w-6 sm:w-8 flex-shrink-0 text-center py-1 bg-green-100 dark:bg-green-900/50 select-none">
+                    <Plus className="h-2.5 w-2.5 sm:h-3 sm:w-3 inline" />
                   </span>
-                  <span className="px-2 py-1 overflow-x-auto">{line}</span>
+                  <span className="px-1.5 sm:px-2 py-1 overflow-x-auto">{line}</span>
                 </div>
               ))}
             </div>
@@ -128,36 +128,36 @@ export function PostCard({ update }: PostCardProps) {
             href={currentDocument.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 p-3 mb-4 bg-muted/50 rounded-lg border border-border hover:bg-muted transition-colors"
+            className="flex items-center gap-2 sm:gap-3 p-2.5 sm:p-3 mb-3 sm:mb-4 bg-muted/50 rounded-lg border border-border hover:bg-muted transition-colors"
           >
-            <div className="p-2 bg-primary/10 rounded">
-              <FileText className="h-4 w-4 text-primary" />
+            <div className="p-1.5 sm:p-2 bg-primary/10 rounded">
+              <FileText className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium">Wersja {currentDocument.version}</p>
-              <p className="text-xs text-muted-foreground">{currentDocument.description}</p>
+              <p className="text-xs sm:text-sm font-medium">Wersja {currentDocument.version}</p>
+              <p className="text-[10px] sm:text-xs text-muted-foreground">{currentDocument.description}</p>
             </div>
-            <Download className="h-4 w-4 text-muted-foreground" />
+            <Download className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-muted-foreground" />
           </a>
         )}
 
 
         {/* Read more button */}
-        <div className="flex justify-center pt-3 border-t border-border mt-4">
+        <div className="flex justify-center pt-2 sm:pt-3 border-t border-border mt-3 sm:mt-4">
           <Button
             variant="ghost"
             size="sm"
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-muted-foreground"
+            className="text-muted-foreground text-xs sm:text-sm"
           >
             {isExpanded ? (
               <>
-                <ChevronUp className="h-4 w-4 mr-1" />
+                <ChevronUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1" />
                 Zwiń
               </>
             ) : (
               <>
-                <ChevronDown className="h-4 w-4 mr-1" />
+                <ChevronDown className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1" />
                 Czytaj więcej
               </>
             )}

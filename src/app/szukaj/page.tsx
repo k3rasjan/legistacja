@@ -77,40 +77,40 @@ export default function SzukajPage() {
     <div className="min-h-screen">
       <HamburgerMenu />
 
-      <div className="max-w-4xl mx-auto p-6 pt-16">
-        <div className="flex items-center gap-3 mb-6">
-          <Search className="h-8 w-8 text-primary" />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-14 sm:pt-16 pb-6">
+        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <Search className="h-6 w-6 sm:h-8 sm:w-8 text-primary flex-shrink-0" />
           <div>
-            <h1 className="text-2xl font-bold">Szukaj ustaw</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-xl sm:text-2xl font-bold">Szukaj ustaw</h1>
+            <p className="text-muted-foreground text-sm sm:text-base">
               Przeszukaj wszystkie projekty ustaw
             </p>
           </div>
         </div>
 
-        <div className="sticky top-0 bg-background z-10 pb-4">
+        <div className="sticky top-0 bg-background z-10 pb-3 sm:pb-4">
           <div className="flex gap-2">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
               <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Szukaj po nazwie, opisie lub ministerstwie..."
-                className="w-full pl-10 pr-4 py-3 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
+                placeholder="Szukaj po nazwie, opisie..."
+                className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
             </div>
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className={`relative px-4 border rounded-lg transition-colors ${
+              className={`relative px-3 sm:px-4 border rounded-lg transition-colors ${
                 showFilters
                   ? 'bg-primary text-primary-foreground border-primary'
                   : 'border-border hover:bg-accent'
               }`}
             >
-              <SlidersHorizontal className="h-5 w-5" />
+              <SlidersHorizontal className="h-4 w-4 sm:h-5 sm:w-5" />
               {activeFiltersCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 h-5 w-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
+                <span className="absolute -top-1.5 -right-1.5 h-4 w-4 sm:h-5 sm:w-5 bg-red-500 text-white text-[10px] sm:text-xs rounded-full flex items-center justify-center font-medium">
                   {activeFiltersCount}
                 </span>
               )}
@@ -118,7 +118,7 @@ export default function SzukajPage() {
           </div>
 
           {showFilters && (
-            <div className="mt-3 p-5 border border-border rounded-xl bg-card">
+            <div className="mt-2 sm:mt-3 p-3 sm:p-5 border border-border rounded-lg sm:rounded-xl bg-card">
               <SearchFilters
                 selectedStatuses={selectedStatuses}
                 selectedMinistries={selectedMinistries}
@@ -131,14 +131,14 @@ export default function SzukajPage() {
           )}
         </div>
 
-        <div className="mt-4">
-          <p className="text-sm text-muted-foreground mb-4">
+        <div className="mt-3 sm:mt-4">
+          <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
             {filteredUstawy.length === mockUstawy.length
               ? `Wszystkie ustawy (${mockUstawy.length})`
               : `Znaleziono ${filteredUstawy.length} z ${mockUstawy.length} ustaw`}
           </p>
 
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             {filteredUstawy.map((ustawa) => (
               <UstawaSearchCard
                 key={ustawa.id}
@@ -149,15 +149,15 @@ export default function SzukajPage() {
             ))}
 
             {filteredUstawy.length === 0 && (
-              <div className="text-center py-12">
-                <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-lg font-medium">Nie znaleziono wyników</p>
-                <p className="text-muted-foreground mt-1">
+              <div className="text-center py-8 sm:py-12">
+                <Search className="h-10 w-10 sm:h-12 sm:w-12 text-muted-foreground mx-auto mb-3 sm:mb-4" />
+                <p className="text-base sm:text-lg font-medium">Nie znaleziono wyników</p>
+                <p className="text-muted-foreground text-sm mt-1">
                   Spróbuj zmienić kryteria wyszukiwania
                 </p>
                 <Button
                   variant="outline"
-                  className="mt-4"
+                  className="mt-3 sm:mt-4"
                   onClick={() => {
                     setQuery('');
                     handleClearAll();

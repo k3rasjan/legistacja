@@ -156,63 +156,64 @@ export default function WrappedSummaryPage() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border sticky top-0 bg-background/80 backdrop-blur-sm z-10">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           <Link
             href="/wrapped"
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Wróć do Wrapped</span>
+            <span className="hidden sm:inline">Wróć do Wrapped</span>
+            <span className="sm:hidden">Wróć</span>
           </Link>
-          <div className="text-sm text-muted-foreground">
+          <div className="text-xs sm:text-sm text-muted-foreground">
             Ostatnie {daysCovered} dni
           </div>
         </div>
       </header>
 
       {/* Content */}
-      <main className="max-w-4xl mx-auto px-6 py-8">
-        <h1 className="text-3xl font-bold mb-2">Podsumowanie</h1>
-        <p className="text-muted-foreground mb-8">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">Podsumowanie</h1>
+        <p className="text-muted-foreground text-sm sm:text-base mb-6 sm:mb-8">
           {activeUstawy.length} ustaw z {filteredUpdates.length} zmianami
         </p>
 
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {cards.map((card) => {
             const accentColor = getAccentColor(card.id);
             return (
               <section key={card.id}>
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                   <div
-                    className="w-3 h-3 rounded-full"
+                    className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full flex-shrink-0"
                     style={{ backgroundColor: accentColor }}
                   />
-                  <h2 className="text-xl font-bold">{card.title}</h2>
-                  <span className="text-muted-foreground text-sm">
+                  <h2 className="text-lg sm:text-xl font-bold">{card.title}</h2>
+                  <span className="text-muted-foreground text-xs sm:text-sm">
                     {card.subtitle}
                   </span>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   {card.items.map((item) => (
                     <Link
                       key={item.ustawa.id}
                       href={`/ustawa/${item.ustawa.id}`}
-                      className="block bg-card border border-border rounded-xl p-4 hover:border-primary/50 hover:shadow-sm transition-all"
+                      className="block bg-card border border-border rounded-lg sm:rounded-xl p-3 sm:p-4 hover:border-primary/50 hover:shadow-sm transition-all"
                     >
-                      <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-start justify-between gap-3 sm:gap-4">
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-semibold mb-1">
+                          <h3 className="font-semibold text-sm sm:text-base mb-0.5 sm:mb-1">
                             {item.ustawa.shortTitle}
                           </h3>
-                          <p className="text-muted-foreground text-sm line-clamp-2">
+                          <p className="text-muted-foreground text-xs sm:text-sm line-clamp-2">
                             {item.summary}
                           </p>
                         </div>
-                        <div className="flex items-center gap-2 flex-shrink-0">
+                        <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
                           {item.updateCount > 0 && (
                             <span
-                              className="px-2 py-1 rounded-full text-xs font-medium"
+                              className="px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium whitespace-nowrap"
                               style={{
                                 background: `${accentColor}20`,
                                 color: accentColor,
@@ -221,7 +222,7 @@ export default function WrappedSummaryPage() {
                               {item.updateCount} {item.updateCount === 1 ? 'zmiana' : item.updateCount < 5 ? 'zmiany' : 'zmian'}
                             </span>
                           )}
-                          <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                          <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-muted-foreground" />
                         </div>
                       </div>
                     </Link>
@@ -233,13 +234,13 @@ export default function WrappedSummaryPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 pt-8 border-t border-border text-center">
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-border text-center">
           <Link
             href="/szukaj"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-primary text-primary-foreground rounded-full text-sm sm:text-base font-medium hover:opacity-90 transition-opacity"
           >
             Przeglądaj wszystkie ustawy
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </Link>
         </div>
       </main>
