@@ -132,7 +132,7 @@ export default function KonsultacjePage() {
         </div>
 
         {/* Search and Filters */}
-        <div className="sticky top-0 bg-background z-10 pb-3 sm:pb-4">
+        <div className="sticky top-0 bg-background z-10 pt-3 sm:pt-4 pb-3 sm:pb-4 -mx-4 sm:-mx-6 px-4 sm:px-6">
           <div className="flex gap-2">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
