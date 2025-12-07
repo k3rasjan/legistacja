@@ -1,0 +1,308 @@
+// Prisma schema for Legislacja Tracker
+// Polish legislation tracking application
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum LegislativeStatus {
+  prekonsultacje    // Pre-consultations
+  konsultacje       // Public consultations
+  prace_rzadowe     // Government work
+  sejm              // Lower house (Sejm)
+  senat             // Upper house (Senate)
+  prezydent         // Presidential review
+  uchwalona         // Enacted
+  odrzucona         // Rejected
+}
+
+enum UstawaCategory {
+  technologia
+  zdrowie
+  edukacja
+  srodowisko
+  transport
+  bezpieczenstwo
+  prawo_pracy
+  finanse
+  rolnictwo
+  kultura
+  rodzina
+  pomoc_spoleczna
+  biznes
+}
+
+enum UpdateType {
+  nowy_projekt           // New project
+  zmiana_tresci          // Content change
+  zmiana_etapu           // Stage change
+  konsultacje            // Consultation started
+  glosowanie             // Voting
+  opinia                 // Opinion/statement
+  raport                 // Report
+}
+
+enum NotificationType {
+  stage_change           // Legislation stage changed
+  new_update             // New update posted
+  consultation_started   // Public consultation started
+  consultation_ending    // Consultation ending soon
+  voting_scheduled       // Voting scheduled
+  document_updated       // New document version
+}
+
+// ============================================
+// CORE MODELS
+// ============================================
+
+model User {
+  id                String   @id @default(cuid())
+  email             String   @unique
+  name              String?
+  avatarUrl         String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  // Preferences
+  emailNotifications    Boolean @default(true)
+  pushNotifications     Boolean @default(true)
+  weeklyDigest          Boolean @default(true)
+  categoriesOfInterest  UstawaCategory[]
+
+  // Relations
+  followedUstawy    UserFollowedUstawa[]
+  notifications     Notification[]
+  comments          ConsultationComment[]
+  lastVisit         DateTime?
+
+  @@map("users")
+}
+
+model Ustawa {
+  id              String            @id @default(cuid())
+  title           String
+  shortTitle      String
+  description     String
+  status          LegislativeStatus
+  ministry        String
+  drukNumber      String?
+  categories      UstawaCategory[]
+  userBenefits    String?           @db.Text
+  aiAnalysis      String?           @db.Text
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  // Sejm API integration
+  sejmEli         String?           @unique  // e.g., "DU/2024/1946"
+  sejmAddress     String?                    // e.g., "WDU20240001946"
+
+  // Relations
+  documentVersions  DocumentVersion[]
+  updates           LegislativeUpdate[]
+  consultations     Consultation[]
+  followers         UserFollowedUstawa[]
+  notifications     Notification[]
+
+  @@index([status])
+  @@index([ministry])
+  @@map("ustawy")
+}
+
+model DocumentVersion {
+  id          String   @id @default(cuid())
+  version     String                         // e.g., "1.0", "2.1"
+  description String
+  url         String                         // PDF URL (can be Sejm API URL)
+  date        DateTime
+  createdAt   DateTime @default(now())
+
+  // Relations
+  ustawaId    String
+  ustawa      Ustawa   @relation(fields: [ustawaId], references: [id], onDelete: Cascade)
+
+  @@index([ustawaId])
+  @@map("document_versions")
+}
+
+model LegislativeUpdate {
+  id                String     @id @default(cuid())
+  type              UpdateType
+  title             String
+  content           String     @db.Text
+  aiSummary         String?    @db.Text    // Short AI-generated summary
+  aiDetailedSummary String?    @db.Text    // Detailed AI-generated summary
+  sourceUrl         String?                 // Link to official source
+  createdAt         DateTime   @default(now())
+
+  // Relations
+  ustawaId          String
+  ustawa            Ustawa     @relation(fields: [ustawaId], references: [id], onDelete: Cascade)
+
+  @@index([ustawaId])
+  @@index([createdAt])
+  @@index([type])
+  @@map("legislative_updates")
+}
+
+model Consultation {
+  id                String    @id @default(cuid())
+  title             String
+  description       String    @db.Text
+  startDate         DateTime
+  endDate           DateTime
+  isActive          Boolean   @default(true)
+  participantsCount Int       @default(0)
+  submissionsCount  Int       @default(0)
+  externalUrl       String?                   // Link to official consultation page
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  // Relations
+  ustawaId          String
+  ustawa            Ustawa    @relation(fields: [ustawaId], references: [id], onDelete: Cascade)
+  comments          ConsultationComment[]
+
+  @@index([ustawaId])
+  @@index([isActive])
+  @@index([endDate])
+  @@map("consultations")
+}
+
+model ConsultationComment {
+  id              String       @id @default(cuid())
+  content         String       @db.Text
+  isAnonymous     Boolean      @default(false)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  // Relations
+  consultationId  String
+  consultation    Consultation @relation(fields: [consultationId], references: [id], onDelete: Cascade)
+  userId          String?
+  user            User?        @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([consultationId])
+  @@index([userId])
+  @@map("consultation_comments")
+}
+
+// ============================================
+// JUNCTION TABLES
+// ============================================
+
+model UserFollowedUstawa {
+  userId      String
+  ustawaId    String
+  followedAt  DateTime @default(now())
+
+  // Notification preferences for this specific ustawa
+  notifyOnStageChange   Boolean @default(true)
+  notifyOnNewUpdate     Boolean @default(true)
+  notifyOnConsultation  Boolean @default(true)
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ustawa      Ustawa   @relation(fields: [ustawaId], references: [id], onDelete: Cascade)
+
+  @@id([userId, ustawaId])
+  @@map("user_followed_ustawy")
+}
+
+// ============================================
+// NOTIFICATIONS
+// ============================================
+
+model Notification {
+  id          String           @id @default(cuid())
+  type        NotificationType
+  title       String
+  message     String
+  isRead      Boolean          @default(false)
+  actionUrl   String?                          // URL to navigate to
+  createdAt   DateTime         @default(now())
+
+  // Relations
+  userId      String
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ustawaId    String?
+  ustawa      Ustawa?          @relation(fields: [ustawaId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isRead])
+  @@index([createdAt])
+  @@map("notifications")
+}
+
+// ============================================
+// ANALYTICS & TRACKING
+// ============================================
+
+model UstawaView {
+  id          String   @id @default(cuid())
+  ustawaId    String
+  userId      String?              // null for anonymous views
+  sessionId   String?              // for tracking anonymous sessions
+  viewedAt    DateTime @default(now())
+
+  @@index([ustawaId])
+  @@index([viewedAt])
+  @@map("ustawa_views")
+}
+
+model SearchQuery {
+  id          String   @id @default(cuid())
+  query       String
+  filters     Json?                // Store applied filters as JSON
+  resultsCount Int
+  userId      String?
+  searchedAt  DateTime @default(now())
+
+  @@index([searchedAt])
+  @@map("search_queries")
+}
+
+// ============================================
+// AI PROCESSING
+// ============================================
+
+model AiProcessingJob {
+  id            String   @id @default(cuid())
+  type          String               // "summary", "analysis", "translation"
+  status        String   @default("pending")  // pending, processing, completed, failed
+  input         Json                 // Input data for the job
+  output        Json?                // Output/result from AI
+  errorMessage  String?
+  createdAt     DateTime @default(now())
+  startedAt     DateTime?
+  completedAt   DateTime?
+
+  // Reference to the entity being processed
+  entityType    String               // "ustawa", "update", "consultation"
+  entityId      String
+
+  @@index([status])
+  @@index([entityType, entityId])
+  @@map("ai_processing_jobs")
+}
+
+// ============================================
+// EXTERNAL DATA SYNC
+// ============================================
+
+model SejmApiSync {
+  id            String   @id @default(cuid())
+  lastSyncAt    DateTime
+  syncType      String               // "full", "incremental"
+  itemsSynced   Int
+  errors        Json?                // Array of error messages
+  createdAt     DateTime @default(now())
+
+  @@map("sejm_api_syncs")
+}
