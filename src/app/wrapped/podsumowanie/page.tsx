@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo, useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Sparkles, Home } from 'lucide-react';
 import { mockUstawy, mockUpdates } from '@/data/mock';
@@ -87,6 +87,8 @@ export default function WrappedSummaryPage() {
     daysCovered: number;
   } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeCategory, setActiveCategory] = useState(0);
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const stored = sessionStorage.getItem('wrapped_session');
@@ -95,6 +97,36 @@ export default function WrappedSummaryPage() {
     }
     setIsLoading(false);
   }, []);
+
+  // Track scroll position to update active dot
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (let i = sectionRefs.current.length - 1; i >= 0; i--) {
+        const section = sectionRefs.current[i];
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          const sectionTop = rect.top + window.scrollY;
+          if (scrollPosition >= sectionTop) {
+            setActiveCategory(i);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (index: number) => {
+    const section = sectionRefs.current[index];
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   const dateRange = useMemo(() => {
     if (sessionData) {
@@ -188,18 +220,54 @@ export default function WrappedSummaryPage() {
         </div>
       </header>
 
+      {/* Dot Navigation - hidden on mobile */}
+      <div className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 flex-col z-20">
+        {cards.map((card, index) => {
+          const accentColor = getAccentColor(card.id);
+          return (
+            <div key={card.id} className="flex flex-col">
+              <button
+                onClick={() => scrollToSection(index)}
+                className="flex items-center gap-3 group"
+              >
+                <div
+                  className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                    activeCategory === index ? 'scale-150' : 'opacity-30 group-hover:opacity-60'
+                  }`}
+                  style={{ backgroundColor: accentColor }}
+                />
+                <span
+                  className={`text-sm transition-all ${
+                    activeCategory === index ? 'font-semibold text-foreground' : 'text-muted-foreground group-hover:text-foreground'
+                  }`}
+                >
+                  {card.title}
+                </span>
+              </button>
+              {index < cards.length - 1 && (
+                <div className="w-0.5 h-24 bg-black/20 ml-[5px] my-2" />
+              )}
+            </div>
+          );
+        })}
+      </div>
+
       {/* Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 lg:pl-44">
         <h1 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">Podsumowanie</h1>
         <p className="text-muted-foreground text-sm sm:text-base mb-6 sm:mb-8">
           {activeUstawy.length} ustaw z {filteredUpdates.length} zmianami
         </p>
 
         <div className="space-y-6 sm:space-y-8">
-          {cards.map((card) => {
+          {cards.map((card, cardIndex) => {
             const accentColor = getAccentColor(card.id);
             return (
-              <section key={card.id}>
+              <section
+                key={card.id}
+                ref={(el) => { sectionRefs.current[cardIndex] = el; }}
+                className="scroll-mt-20"
+              >
                 <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                   <div
                     className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full flex-shrink-0"
@@ -215,7 +283,7 @@ export default function WrappedSummaryPage() {
                   {card.items.map((item) => (
                     <Link
                       key={item.ustawa.id}
-                      href={`/ustawa/${item.ustawa.id}`}
+                      href={`/ustawa/${item.ustawa.id}?from=summary`}
                       className="block bg-card border border-border rounded-lg sm:rounded-xl p-3 sm:p-4 hover:border-primary/50 hover:shadow-sm transition-all"
                     >
                       <div className="flex items-start justify-between gap-3 sm:gap-4">

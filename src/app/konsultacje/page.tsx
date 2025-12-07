@@ -192,7 +192,7 @@ export default function KonsultacjePage() {
               >
                 <div
                   className={`
-                    w-3 h-3 rounded-full bg-black transition-all cursor-pointer
+                    w-3 h-3 rounded-full ${category.color} transition-all cursor-pointer
                     ${activeCategory === index ? 'scale-150' : 'opacity-30 group-hover:opacity-60'}
                   `}
                 />

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 import { UstawaAvatar } from '@/components/ustawa/UstawaAvatar';
 import { TrainStatusBar } from '@/components/ustawa/TrainStatusBar';
 import { DocumentHistory } from '@/components/ustawa/DocumentHistory';
@@ -9,7 +10,8 @@ import { categoryLabels } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { FollowButton } from '@/components/ui/FollowButton';
-import { ArrowLeft, MessageSquare, Lightbulb, Settings } from 'lucide-react';
+import { BackButton } from '@/components/ui/BackButton';
+import { MessageSquare, Lightbulb, Settings } from 'lucide-react';
 import Link from 'next/link';
 
 interface PageProps {
@@ -37,11 +39,9 @@ export default async function UstawaPage({ params }: PageProps) {
       <HamburgerMenu offsetLeft />
 
       {/* Back arrow next to hamburger menu */}
-      <Link href="/" className="fixed top-3 sm:top-4 left-3 sm:left-4 z-40">
-        <Button variant="ghost" size="icon" className="bg-background rounded-lg h-9 w-9 sm:h-10 sm:w-10">
-          <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
-        </Button>
-      </Link>
+      <Suspense fallback={null}>
+        <BackButton defaultHref="/" className="fixed top-3 sm:top-4 left-3 sm:left-4 z-40" />
+      </Suspense>
 
       {/* Document History - Top Right */}
       {ustawa.documentVersions && ustawa.documentVersions.length > 0 && (
