@@ -44,11 +44,6 @@ export default async function UstawaPage({ params }: PageProps) {
         <BackButton defaultHref="/" className="fixed top-3 sm:top-4 left-3 sm:left-4 z-40" />
       </Suspense>
 
-      {/* Document History - Top Right */}
-      {ustawa.documentVersions && ustawa.documentVersions.length > 0 && (
-        <DocumentHistory versions={ustawa.documentVersions} />
-      )}
-
       {/* Mobile Layout */}
       <div className="lg:hidden">
         <div className="px-4 pt-14 pb-6">
@@ -128,6 +123,12 @@ export default async function UstawaPage({ params }: PageProps) {
           {ustawa.aiAnalysis && (
             <div className="mb-4 sm:mb-6">
               <AIAnalysisSection analysis={ustawa.aiAnalysis} />
+            </div>
+          )}
+
+          {ustawa.documentVersions && ustawa.documentVersions.length > 0 && (
+            <div className="mb-4 sm:mb-6">
+              <DocumentHistory versions={ustawa.documentVersions} />
             </div>
           )}
 
@@ -242,6 +243,12 @@ export default async function UstawaPage({ params }: PageProps) {
             {ustawa.aiAnalysis && (
               <div className="mb-6">
                 <AIAnalysisSection analysis={ustawa.aiAnalysis} />
+              </div>
+            )}
+
+            {ustawa.documentVersions && ustawa.documentVersions.length > 0 && (
+              <div className="mb-6">
+                <DocumentHistory versions={ustawa.documentVersions} />
               </div>
             )}
 

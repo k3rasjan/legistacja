@@ -73,15 +73,6 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
     }
 
     slides.push({ type: 'card', data: card });
-
-    // Add text breaks between some cards
-    if (i === 1 && cards.length > 3) {
-      slides.push({
-        type: 'text',
-        textLines: ['Jest tego więcej...'],
-        accentColor: 'rgba(113, 113, 122, 0.5)',
-      });
-    }
   });
 
   // Outro
