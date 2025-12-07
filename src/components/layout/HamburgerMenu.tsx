@@ -1,14 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { Menu, X, Home, Search, Bell, Bookmark, Settings, Scale, MessageSquare } from 'lucide-react';
+import { Menu, X, Home, Search, Bell, Bookmark, Settings, Scale, MessageSquare, List, Newspaper, Sparkles, LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useWrappedUpdates } from '@/hooks/useWrappedUpdates';
 
-const navItems = [
+interface NavItem {
+  icon: LucideIcon;
+  label: string;
+  href: string;
+  requiresUpdates?: boolean;
+}
+
+const navItems: NavItem[] = [
   { icon: Home, label: 'Strona główna', href: '/' },
+  { icon: List, label: 'Lista ustaw', href: '/szukaj' },
+  { icon: Newspaper, label: 'Feed', href: '/feed' },
+  { icon: Sparkles, label: 'Wrapped', href: '/wrapped', requiresUpdates: true },
   { icon: MessageSquare, label: 'Konsultacje', href: '/konsultacje' },
-  { icon: Search, label: 'Szukaj', href: '/szukaj' },
   { icon: Bell, label: 'Powiadomienia', href: '/powiadomienia' },
   { icon: Bookmark, label: 'Obserwowane', href: '/obserwowane' },
   { icon: Settings, label: 'Ustawienia', href: '/ustawienia' },
@@ -20,6 +30,11 @@ interface HamburgerMenuProps {
 
 export function HamburgerMenu({ offsetLeft = false }: HamburgerMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { hasUpdates } = useWrappedUpdates();
+
+  const filteredNavItems = useMemo(() => {
+    return navItems.filter(item => !item.requiresUpdates || hasUpdates);
+  }, [hasUpdates]);
 
   return (
     <>
@@ -55,7 +70,7 @@ export function HamburgerMenu({ offsetLeft = false }: HamburgerMenuProps) {
           </Link>
 
           <nav className="space-y-1">
-            {navItems.map((item) => (
+            {filteredNavItems.map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
                 <Button variant="ghost" className="w-full justify-start gap-3 text-base h-12 px-4">
                   <item.icon className="h-5 w-5" />

@@ -11,6 +11,7 @@ import { Calendar, Building2 } from 'lucide-react';
 interface UstawaSearchCardProps {
   ustawa: Ustawa;
   searchQuery?: string;
+  lastVisit?: Date | null;
 }
 
 function highlightText(text: string, query: string): React.ReactNode {
@@ -38,7 +39,9 @@ function formatDate(date: Date): string {
   });
 }
 
-export function UstawaSearchCard({ ustawa, searchQuery = '' }: UstawaSearchCardProps) {
+export function UstawaSearchCard({ ustawa, searchQuery = '', lastVisit }: UstawaSearchCardProps) {
+  const isNew = lastVisit && ustawa.updatedAt > lastVisit;
+
   return (
     <Card className="hover:bg-accent/50 transition-colors">
       <CardContent className="px-5 py-3">
@@ -54,12 +57,19 @@ export function UstawaSearchCard({ ustawa, searchQuery = '' }: UstawaSearchCardP
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
-                <Link
-                  href={`/ustawa/${ustawa.id}`}
-                  className="font-semibold text-lg hover:underline block"
-                >
-                  {highlightText(ustawa.shortTitle, searchQuery)}
-                </Link>
+                <div className="flex items-center gap-2">
+                  <Link
+                    href={`/ustawa/${ustawa.id}`}
+                    className="font-semibold text-lg hover:underline"
+                  >
+                    {highlightText(ustawa.shortTitle, searchQuery)}
+                  </Link>
+                  {isNew && (
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-500 text-white shrink-0">
+                      Nowe
+                    </span>
+                  )}
+                </div>
                 <p className="text-sm text-muted-foreground line-clamp-1">
                   {highlightText(ustawa.title, searchQuery)}
                 </p>

@@ -289,3 +289,12 @@ export interface ConsultationStats {
   responsesByDay: { date: string; count: number }[];
   topConcerns: { topic: string; count: number }[];
 }
+
+// Wrapped feature types
+export interface WrappedSummary {
+  id: string;
+  ustawa: Ustawa;
+  updates: LegislativeUpdate[];
+  basicSummary: string;
+  detailedSummary: string;
+}

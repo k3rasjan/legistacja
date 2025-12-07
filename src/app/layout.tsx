@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AccessibilityProvider } from "@/contexts/AccessibilityContext";
-import { OnboardingRedirect } from "@/components/OnboardingRedirect";
+import { DebugPanel } from "@/components/debug/DebugPanel";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,9 +30,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AccessibilityProvider>
-          <OnboardingRedirect>
-            {children}
-          </OnboardingRedirect>
+          {children}
+          <DebugPanel />
         </AccessibilityProvider>
       </body>
     </html>

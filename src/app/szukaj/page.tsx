@@ -8,8 +8,10 @@ import { mockUstawy } from '@/data/mock';
 import { LegislativeStatus } from '@/types';
 import { Search, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLastVisit } from '@/hooks/useLastVisit';
 
 export default function SzukajPage() {
+  const { lastVisit } = useLastVisit();
   const [query, setQuery] = useState('');
   const [selectedStatuses, setSelectedStatuses] = useState<LegislativeStatus[]>([]);
   const [selectedMinistries, setSelectedMinistries] = useState<string[]>([]);
@@ -142,6 +144,7 @@ export default function SzukajPage() {
                 key={ustawa.id}
                 ustawa={ustawa}
                 searchQuery={query}
+                lastVisit={lastVisit}
               />
             ))}
 
