@@ -58,7 +58,7 @@ export function UpdateCard({ update }: UpdateCardProps) {
     <Card className="hover:bg-accent/50 transition-colors">
       <CardContent className="pt-4">
         <div className="flex gap-3">
-          <Link href={`/ustawa/${update.ustawaId}`}>
+          <Link href={`/ustawa/${update.ustawaId}?from=feed&postId=${update.id}`}>
             <UstawaAvatar
               shortTitle={update.ustawa.shortTitle}
               status={update.ustawa.status}
@@ -69,7 +69,7 @@ export function UpdateCard({ update }: UpdateCardProps) {
             <div className="flex items-start justify-between gap-2">
               <div>
                 <Link
-                  href={`/ustawa/${update.ustawaId}`}
+                  href={`/ustawa/${update.ustawaId}?from=feed&postId=${update.id}`}
                   className="font-semibold hover:underline"
                 >
                   {update.ustawa.shortTitle}

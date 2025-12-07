@@ -5,6 +5,13 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from './button';
 
+const fromRoutes: Record<string, string> = {
+  summary: '/wrapped/podsumowanie',
+  szukaj: '/szukaj',
+  obserwowane: '/obserwowane',
+  feed: '/feed',
+};
+
 interface BackButtonProps {
   defaultHref?: string;
   className?: string;
@@ -12,9 +19,15 @@ interface BackButtonProps {
 
 export function BackButton({ defaultHref = '/', className = '' }: BackButtonProps) {
   const searchParams = useSearchParams();
-  const fromSummary = searchParams.get('from') === 'summary';
+  const from = searchParams.get('from');
+  const postId = searchParams.get('postId');
 
-  const href = fromSummary ? '/wrapped/podsumowanie' : defaultHref;
+  let href = from && fromRoutes[from] ? fromRoutes[from] : defaultHref;
+
+  // For feed, add the post hash for scroll restoration
+  if (from === 'feed' && postId) {
+    href = `${href}#post-${postId}`;
+  }
 
   return (
     <Link href={href} className={className}>

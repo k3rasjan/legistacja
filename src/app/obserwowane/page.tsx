@@ -29,7 +29,7 @@ export default function ObserwowanePage() {
 
         <div className="space-y-2 sm:space-y-3">
           {followedUstawy.map((ustawa) => (
-            <UstawaSearchCard key={ustawa.id} ustawa={ustawa} isFollowed={true} />
+            <UstawaSearchCard key={ustawa.id} ustawa={ustawa} isFollowed={true} fromPage="obserwowane" />
           ))}
 
           {followedUstawy.length === 0 && (

@@ -146,6 +146,7 @@ export default function SzukajPage() {
                 searchQuery={query}
                 lastVisit={lastVisit}
                 isFollowed={mockFollowedIds.includes(ustawa.id)}
+                fromPage="szukaj"
               />
             ))}
 

@@ -53,10 +53,10 @@ export function FullscreenPost({ update }: FullscreenPostProps) {
   const Icon = updateTypeIcons[update.type];
 
   return (
-    <div className="h-screen w-full snap-start flex flex-col justify-center px-4 sm:px-6 py-12 sm:py-16">
+    <div id={`post-${update.id}`} className="h-screen w-full snap-start flex flex-col justify-center px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-2xl mx-auto w-full">
         <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6">
-          <Link href={`/ustawa/${update.ustawaId}`} className="flex-shrink-0">
+          <Link href={`/ustawa/${update.ustawaId}?from=feed&postId=${update.id}`} className="flex-shrink-0">
             <UstawaAvatar
               shortTitle={update.ustawa.shortTitle}
               status={update.ustawa.status}
@@ -66,7 +66,7 @@ export function FullscreenPost({ update }: FullscreenPostProps) {
           </Link>
           <div className="flex-1 min-w-0">
             <Link
-              href={`/ustawa/${update.ustawaId}`}
+              href={`/ustawa/${update.ustawaId}?from=feed&postId=${update.id}`}
               className="font-semibold text-base sm:text-lg hover:underline block truncate"
             >
               {update.ustawa.shortTitle}

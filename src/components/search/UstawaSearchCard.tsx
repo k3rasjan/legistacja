@@ -13,6 +13,7 @@ interface UstawaSearchCardProps {
   searchQuery?: string;
   lastVisit?: Date | null;
   isFollowed?: boolean;
+  fromPage?: string;
 }
 
 function highlightText(text: string, query: string): React.ReactNode {
@@ -40,14 +41,15 @@ function formatDate(date: Date): string {
   });
 }
 
-export function UstawaSearchCard({ ustawa, searchQuery = '', lastVisit, isFollowed = false }: UstawaSearchCardProps) {
+export function UstawaSearchCard({ ustawa, searchQuery = '', lastVisit, isFollowed = false, fromPage }: UstawaSearchCardProps) {
   const isNew = lastVisit && ustawa.updatedAt > lastVisit;
+  const ustawaHref = fromPage ? `/ustawa/${ustawa.id}?from=${fromPage}` : `/ustawa/${ustawa.id}`;
 
   return (
     <Card className="hover:bg-accent/50 transition-colors">
       <CardContent className="px-3 sm:px-5 py-2.5 sm:py-3">
         <div className="flex gap-2.5 sm:gap-4">
-          <Link href={`/ustawa/${ustawa.id}`} className="flex-shrink-0">
+          <Link href={ustawaHref} className="flex-shrink-0">
             <UstawaAvatar
               shortTitle={ustawa.shortTitle}
               status={ustawa.status}
@@ -61,7 +63,7 @@ export function UstawaSearchCard({ ustawa, searchQuery = '', lastVisit, isFollow
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
                   <Link
-                    href={`/ustawa/${ustawa.id}`}
+                    href={ustawaHref}
                     className="font-semibold text-base sm:text-lg hover:underline"
                   >
                     {highlightText(ustawa.shortTitle, searchQuery)}
