@@ -116,7 +116,7 @@ export default async function UstawaPage({ params }: PageProps) {
               <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
                 <Lightbulb className="h-4 w-4 sm:h-5 sm:w-5 text-amber-600 dark:text-amber-400" />
                 <span className="font-semibold text-sm sm:text-base text-amber-800 dark:text-amber-200">
-                  Co zyskujesz?
+                  Co się zmieni?
                 </span>
               </div>
               <p className="text-sm sm:text-base text-amber-900 dark:text-amber-100">
@@ -230,7 +230,7 @@ export default async function UstawaPage({ params }: PageProps) {
                 <div className="flex items-center gap-2 mb-2">
                   <Lightbulb className="h-5 w-5 text-amber-600 dark:text-amber-400" />
                   <span className="font-semibold text-amber-800 dark:text-amber-200">
-                    Co zyskujesz?
+                    Co się zmieni?
                   </span>
                 </div>
                 <p className="text-amber-900 dark:text-amber-100">

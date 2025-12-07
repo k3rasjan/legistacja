@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -42,9 +43,9 @@ export function AIAnalysisSection({ analysis }: AIAnalysisSectionProps) {
 
       {isExpanded && (
         <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-primary/10">
-          <p className="text-sm sm:text-base leading-relaxed whitespace-pre-line">
-            {analysis}
-          </p>
+          <div className="text-sm sm:text-base leading-relaxed prose prose-sm dark:prose-invert max-w-none prose-p:my-2 prose-ul:my-2 prose-li:my-0.5 prose-strong:text-foreground">
+            <ReactMarkdown>{analysis}</ReactMarkdown>
+          </div>
         </div>
       )}
     </div>

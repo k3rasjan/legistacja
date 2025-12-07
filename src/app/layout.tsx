@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Legislacja Tracker - Śledź zmiany w prawie",
-  description: "Kompleksowe narzędzie do monitorowania procesów legislacyjnych w Polsce",
+  title: "Legistacja - Nowe prawo wszystkich polaków",
+  description:
+    "Kompleksowe narzędzie do monitorowania procesów legislacyjnych w Polsce",
 };
 
 export default function RootLayout({

@@ -73,11 +73,11 @@ function createConsolidatedCards(
 }
 
 const getAccentColor = (id: string) => {
-  if (id.includes('projekty')) return '#a855f7';
-  if (id.includes('konsultacje')) return '#3b82f6';
-  if (id.includes('zmiany-tresci')) return '#f97316';
-  if (id.includes('zmiany-etapu')) return '#22c55e';
-  return '#ec4899';
+  if (id.includes('projekty')) return '#71717a';
+  if (id.includes('konsultacje')) return '#a1a1aa';
+  if (id.includes('zmiany-tresci')) return '#52525b';
+  if (id.includes('zmiany-etapu')) return '#d4d4d8';
+  return '#71717a';
 };
 
 export default function WrappedSummaryPage() {

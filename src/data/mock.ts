@@ -3637,6 +3637,37 @@ Dostawca usług chmurowych:
     title: 'Dodano wymóg publikacji w czasie rzeczywistym',
     content: 'Wprowadzono obowiązek publikacji dokumentów legislacyjnych w ciągu 24 godzin od ich powstania.',
     aiSummary: 'Nowy wymóg transparentności: wszystkie dokumenty muszą być publikowane w ciągu 24h, dotyczy to również protokołów z posiedzeń komisji i opinii prawnych.',
+    aiDetailedSummary: `Szczegółowa analiza wymogu publikacji w czasie rzeczywistym:
+
+**NOWY OBOWIĄZEK 24-GODZINNY:**
+• Publikacja w Centralnym Portalu Legislacyjnym
+• Dotyczy wszystkich organów uczestniczących w procesie
+• Liczy się od momentu powstania dokumentu
+• System automatycznych powiadomień dla zainteresowanych
+
+**OBJĘTE DOKUMENTY:**
+
+1. Projekty ustaw:
+   - Wszystkie wersje robocze
+   - Uzasadnienia i OSR
+   - Tabele zgodności z UE
+
+2. Protokoły z posiedzeń:
+   - Komisje sejmowe i senackie
+   - Zespoły parlamentarne
+   - Konferencje uzgodnieniowe
+
+3. Opinie i stanowiska:
+   - Opinie prawne
+   - Stanowiska resortów
+   - Uwagi partnerów społecznych
+
+**SANKCJE:**
+• Kara administracyjna do 50 000 zł
+• Możliwe postępowanie dyscyplinarne
+• Publikacja informacji o naruszeniu
+
+**CEL:** Zwiększenie transparentności i udziału obywateli w procesie legislacyjnym.`,
     createdAt: new Date('2025-12-04T11:00:00'),
     diff: {
       fileName: 'Art. 6 - Obowiązki publikacyjne',
@@ -3658,6 +3689,38 @@ Dostawca usług chmurowych:
     title: 'Wzmocniono zabezpieczenia biometryczne',
     content: 'Na wniosek MSWiA dodano wymóg weryfikacji biometrycznej przy korzystaniu z cyfrowej tożsamości.',
     aiSummary: 'Bezpieczeństwo e-Tożsamości: obowiązkowa weryfikacja biometryczna (odcisk palca lub rozpoznawanie twarzy), limit 3 prób uwierzytelnienia, automatyczna blokada po przekroczeniu.',
+    aiDetailedSummary: `Szczegółowa analiza zabezpieczeń biometrycznych e-Tożsamości:
+
+**METODY WERYFIKACJI:**
+
+1. Rozpoznawanie odcisku palca:
+   - Skanowanie przy każdym logowaniu
+   - Zgodność z normą ISO 19795
+   - Dokładność 99.9%
+
+2. Rozpoznawanie twarzy:
+   - Technologia 3D anti-spoofing
+   - Wykrywanie żywości (liveness detection)
+   - Zgodność z normą ISO 30107
+
+**MECHANIZM BEZPIECZEŃSTWA:**
+• 3 próby uwierzytelnienia
+• Blokada 30 minut po przekroczeniu
+• Powiadomienie SMS o próbach
+• Możliwość zdalnego zablokowania
+
+**PRYWATNOŚĆ DANYCH:**
+• Dane biometryczne tylko na urządzeniu
+• Brak transferu do systemów centralnych
+• Szyfrowanie AES-256
+• Automatyczne usunięcie po 5 latach nieaktywności
+
+**ALTERNATYWY:**
+• PIN 6-cyfrowy jako backup
+• Kod jednorazowy SMS
+• Token sprzętowy (dla instytucji)
+
+**WDROŻENIE:** Obowiązkowe od 1.07.2025 dla wszystkich użytkowników.`,
     createdAt: new Date('2025-12-01T15:00:00'),
     diff: {
       fileName: 'Art. 18 - Uwierzytelnianie',
@@ -3680,6 +3743,41 @@ Dostawca usług chmurowych:
     title: 'Skrócono czas raportowania incydentów',
     content: 'Zmniejszono czas na zgłoszenie incydentu cyberbezpieczeństwa z 72 do 24 godzin.',
     aiSummary: 'Szybsza reakcja na cyberataki: obowiązek zgłoszenia incydentu w ciągu 24h (zamiast 72h), kary do 2% obrotu za opóźnienia, utworzenie całodobowej linii alarmowej.',
+    aiDetailedSummary: `Szczegółowa analiza skrócenia czasu raportowania incydentów:
+
+**ZMIANA TERMINU:**
+• Było: 72 godziny od wykrycia
+• Jest: 24 godziny od wykrycia
+• Redukcja o 66%
+
+**UZASADNIENIE ZMIANY:**
+• Średni czas wykrycia ataku: 207 dni
+• Kluczowe pierwsze 24h dla powstrzymania szkód
+• Wymóg zgodności z dyrektywą NIS2
+
+**NOWE KARY:**
+• Do 2% rocznego obrotu za opóźnienie
+• Dla dużych firm: nawet 10-20 mln zł
+• Kary progresywne za powtarzające się naruszenia
+
+**CAŁODOBOWA LINIA ALARMOWA:**
+• Numer: 800-XXX-XXX (bezpłatny)
+• Obsługa 24/7/365
+• Czas reakcji: max 15 minut
+• Wsparcie techniczne i prawne
+
+**PROCEDURA ZGŁOSZENIA:**
+
+1. Wstępne powiadomienie (natychmiast):
+   - Typ incydentu
+   - Szacowany wpływ
+
+2. Pełny raport (w ciągu 24h):
+   - Opis techniczny
+   - Podjęte działania
+   - Plan naprawczy
+
+**WEJŚCIE W ŻYCIE:** 1 marca 2025`,
     createdAt: new Date('2025-12-01T10:00:00'),
     diff: {
       fileName: 'Art. 24 - Zgłaszanie incydentów',
@@ -3702,6 +3800,37 @@ Dostawca usług chmurowych:
     title: 'Rozszerzono katalog otwartych danych',
     content: 'Dodano dane o jakości powietrza i statystyki edukacyjne do katalogu danych obowiązkowo udostępnianych.',
     aiSummary: 'Więcej otwartych danych: dane o jakości powietrza w czasie rzeczywistym, wyniki egzaminów (zanonimizowane), dane o dostępności lekarzy specjalistów.',
+    aiDetailedSummary: `Szczegółowa analiza rozszerzenia katalogu otwartych danych:
+
+**NOWE KATEGORIE DANYCH:**
+
+1. Jakość powietrza:
+   - Wszystkie stacje pomiarowe GIOŚ
+   - Aktualizacja co godzinę
+   - PM2.5, PM10, NO2, O3, SO2
+   - Format: JSON, CSV, API REST
+
+2. Wyniki egzaminów:
+   - Egzamin ósmoklasisty
+   - Matura
+   - Egzaminy zawodowe
+   - Agregacja: region/powiat
+
+3. Dostępność lekarzy:
+   - Czas oczekiwania NFZ
+   - Podział na specjalizacje
+   - Aktualizacja tygodniowa
+
+4. Rejestry umów:
+   - Umowy powyżej 5000 zł
+   - Strony, kwoty, przedmiot
+   - Format ustrukturyzowany
+
+**KORZYŚCI:**
+• Aplikacje mobilne o smogu
+• Rankingi szkół i regionów
+• Wyszukiwarki lekarzy
+• Kontrola obywatelska wydatków`,
     createdAt: new Date('2025-11-30T14:00:00'),
     diff: {
       fileName: 'Art. 7 - Katalog danych',
@@ -3722,6 +3851,32 @@ Dostawca usług chmurowych:
     title: 'Dodano zasady refundacji teleporad',
     content: 'NFZ będzie refundował teleporady na takich samych zasadach jak wizyty stacjonarne.',
     aiSummary: 'Teleporady refundowane: pełna refundacja jak wizyta stacjonarna, limit 30% teleporad w POZ, obowiązek oferowania alternatywy stacjonarnej.',
+    aiDetailedSummary: `Szczegółowa analiza zasad refundacji teleporad:
+
+**ZMIANA FINANSOWANIA:**
+• Było: teleporady ze środków własnych przychodni
+• Jest: pełna refundacja NFZ jak wizyta stacjonarna
+• Stawka: ok. 150 zł za teleporadę
+
+**LIMITY I ZASADY:**
+• Max 30% teleporad w POZ rocznie
+• Obowiązek oferowania alternatywy stacjonarnej
+• Pacjent wybiera formę wizyty
+• Niektóre przypadki wymagają wizyty osobistej
+
+**E-RECEPTA Z TELEPORADY:**
+• Pełna moc prawna
+• Realizacja w każdej aptece
+• Ważność: jak standardowa recepta
+• Elektroniczny podpis lekarza
+
+**WYMOGI TECHNICZNE:**
+• Połączenie wideo (nie tylko głos)
+• Dokumentacja medyczna online
+• Szyfrowane połączenie
+• Identyfikacja pacjenta
+
+**WEJŚCIE W ŻYCIE:** 1 stycznia 2026`,
     createdAt: new Date('2025-11-25T09:00:00'),
     diff: {
       fileName: 'Art. 34 - Finansowanie',
@@ -3744,6 +3899,38 @@ Dostawca usług chmurowych:
     title: 'Ustalono wysokość kaucji',
     content: 'Określono ostateczne kwoty kaucji dla różnych rodzajów opakowań.',
     aiSummary: 'Stawki kaucji: 50 gr za butelki PET i puszki aluminiowe, 1 zł za butelki szklane wielorazowe, zwrot w każdym sklepie powyżej 200 m².',
+    aiDetailedSummary: `Szczegółowa analiza systemu kaucyjnego:
+
+**STAWKI KAUCJI:**
+
+Opakowania jednorazowe (50 gr):
+• Butelki PET do 3 litrów
+• Puszki aluminiowe do 1 litra
+• Kartoniki z nakrętką plastikową
+
+Opakowania wielorazowe (1 zł):
+• Butelki szklane do 1,5 litra
+• Butelki zwrotne na piwo i napoje
+
+**PUNKTY ZWROTU:**
+• Sklepy > 200 m²: obowiązkowo
+• Sklepy mniejsze: dobrowolnie
+• Automaty zwrotne: zachęty podatkowe
+• Punkty skupu: do 5% prowizji
+
+**HARMONOGRAM:**
+• 1.01.2025: start systemu
+• 30.06.2025: pełne pokrycie sieci
+• 2027: cel 90% zwrotów
+
+**KARY ZA BRAK SYSTEMU:**
+• Dla sklepów: do 500 zł/dzień
+• Dla producentów: do 5% obrotu
+
+**SZACOWANE EFEKTY:**
+• 3 mld opakowań rocznie w obiegu
+• 50 tys. nowych automatów
+• Redukcja śmieci o 20%`,
     createdAt: new Date('2025-10-01T12:00:00'),
     diff: {
       fileName: 'Art. 12 - Wysokość kaucji',
@@ -3766,6 +3953,38 @@ Dostawca usług chmurowych:
     title: 'Podwyższono kary za znęcanie się nad zwierzętami',
     content: 'Senat zaproponował zwiększenie maksymalnej kary pozbawienia wolności z 5 do 8 lat.',
     aiSummary: 'Surowsze kary: do 8 lat więzienia za znęcanie ze szczególnym okrucieństwem, publiczny rejestr sprawców, zakaz posiadania zwierząt do 15 lat.',
+    aiDetailedSummary: `Szczegółowa analiza zaostrzenia kar za znęcanie się nad zwierzętami:
+
+**NOWE SANKCJE:**
+
+1. Kara pozbawienia wolności:
+   - Było: do 5 lat
+   - Jest: do 8 lat (szczególne okrucieństwo)
+   - Od 1 roku: za przypadki kwalifikowane
+
+2. Zakaz posiadania zwierząt:
+   - Było: do 10 lat (fakultatywnie)
+   - Jest: 5-15 lat (obligatoryjnie)
+   - Kontrole: Inspekcja Weterynaryjna
+
+**PUBLICZNY REJESTR SPRAWCÓW:**
+• Prowadzony przez Ministra Sprawiedliwości
+• Wpis automatyczny po wyroku
+• Dane: imię, nazwisko, czyn, wyrok
+• Dostęp online dla wszystkich
+• Wykreślenie po 15 latach
+
+**DODATKOWE ŚRODKI:**
+• Nawiązka 10-100 tys. zł na schroniska
+• Przepadek zwierząt
+• Zakaz pracy ze zwierzętami
+
+**STATYSTYKI:**
+• 8000+ przypadków rocznie
+• Wzrost o 40% w 5 lat
+• 70% - psy i koty
+
+**WEJŚCIE W ŻYCIE:** 1 marca 2025`,
     createdAt: new Date('2025-12-03T16:00:00'),
     diff: {
       fileName: 'Art. 35 - Kary',
@@ -3789,6 +4008,39 @@ Dostawca usług chmurowych:
     title: 'Wprowadzono net-billing zamiast net-meteringu',
     content: 'Zmieniono system rozliczeń dla prosumentów - przejście z net-meteringu na net-billing.',
     aiSummary: 'Nowy system dla prosumentów: rozliczenie wg cen rynkowych zamiast 1:1, magazyny energii zwolnione z akcyzy, uproszczona procedura dla instalacji do 50 kW.',
+    aiDetailedSummary: `Szczegółowa analiza przejścia na net-billing:
+
+**PORÓWNANIE SYSTEMÓW:**
+
+Net-metering (stary):
+• Rozliczenie ilościowe 1:0.8 lub 1:0.7
+• Energia "magazynowana" w sieci
+• 15 lat gwarancji
+
+Net-billing (nowy):
+• Rozliczenie wartościowe
+• Ceny rynkowe (godzinowe)
+• Sprzedaż nadwyżek wg giełdy
+
+**KOSZTY/ZYSKI DLA PROSUMENTA:**
+• Sprzedaż: cena hurtowa (~0.40 zł/kWh)
+• Zakup: cena detaliczna (~0.85 zł/kWh)
+• Opłata dystrybucyjna: 15%
+
+**MAGAZYNY ENERGII:**
+• Zwolnienie z akcyzy (do 50 kWh)
+• Dotacja: do 50% kosztów
+• Zwiększenie autokonsumpcji do 80%
+• Szacowany koszt: 20-40 tys. zł
+
+**UPROSZCZENIA DO 50 kW:**
+• Zgłoszenie zamiast pozwolenia
+• Procedura online
+• 14 dni na decyzję
+• Brak projektu budowlanego
+
+**OCHRONA DOTYCHCZASOWYCH:**
+15 lat gwarancji net-metering dla istniejących instalacji.`,
     createdAt: new Date('2025-11-20T11:00:00'),
     diff: {
       fileName: 'Art. 4 - Rozliczenia prosumenckie',
@@ -3812,6 +4064,37 @@ Dostawca usług chmurowych:
     title: 'Skrócono termin wydania pozwolenia na budowę',
     content: 'Maksymalny termin na wydanie decyzji o pozwoleniu na budowę skrócono z 65 do 30 dni.',
     aiSummary: 'Szybsze pozwolenia: decyzja w 30 dni, milcząca zgoda po przekroczeniu terminu, jeden wniosek do wszystkich organów, automatyczna weryfikacja zgodności z planem.',
+    aiDetailedSummary: `Szczegółowa analiza skrócenia terminów pozwolenia na budowę:
+
+**ZMIANA TERMINU:**
+• Było: 65 dni
+• Jest: 30 dni
+• Redukcja: 54%
+
+**MILCZĄCA ZGODA:**
+• Po 30 dniach bez odpowiedzi
+• Automatyczne uznanie za zgodę
+• Zaświadczenie z systemu
+• Odpowiedzialność organu za opóźnienie
+
+**JEDEN WNIOSEK:**
+• Portal teleinformatyczny
+• Automatyczna dystrybucja do organów
+• Równoległe opiniowanie
+• Koniec z chodzeniem po urzędach
+
+**AUTOMATYCZNA WERYFIKACJA:**
+• System sprawdza zgodność z MPZP
+• Natychmiastowa informacja o błędach
+• Szablony dokumentów
+• Podpowiedzi dla inwestora
+
+**SZACOWANE OSZCZĘDNOŚCI:**
+• Czas: 2-3 miesiące krócej
+• Koszty: -30% (brak opóźnień)
+• Transparentność: pełna
+
+**WEJŚCIE W ŻYCIE:** 1 lipca 2025`,
     createdAt: new Date('2025-11-28T10:00:00'),
     diff: {
       fileName: 'Art. 35 - Terminy',
@@ -3835,6 +4118,37 @@ Dostawca usług chmurowych:
     title: 'Polski język migowy językiem urzędowym',
     content: 'Uznano PJM za język urzędowy RP z prawem do korzystania z niego w kontaktach z administracją.',
     aiSummary: 'PJM oficjalnym językiem: prawo do tłumacza w urzędach, napisy na żywo w TV publicznej, nauka PJM jako przedmiot do wyboru w szkołach.',
+    aiDetailedSummary: `Szczegółowa analiza uznania PJM za język urzędowy:
+
+**STATUS PRAWNY:**
+• PJM uznany za język naturalny
+• Społeczność Głuchych jako mniejszość językowa
+• Prawo do korzystania w kontaktach z państwem
+• Równy status z językiem polskim w administracji
+
+**PRAWA OSÓB GŁUCHYCH:**
+
+W urzędach:
+• Tłumacz PJM obowiązkowo (miasta 50 tys.+)
+• Tłumacz online dla mniejszych miejscowości
+• Dokumenty w wersji PJM (wideo)
+
+W mediach:
+• Napisy na żywo w TV publicznej
+• Tłumacz PJM w wiadomościach
+• Audiodeskrypcja w kinie
+
+W edukacji:
+• PJM jako przedmiot do wyboru
+• Szkolenia dla nauczycieli
+• Materiały edukacyjne w PJM
+
+**SZACOWANE KOSZTY:**
+• Tłumacze: 50 mln zł rocznie
+• Infrastruktura: 30 mln zł jednorazowo
+• Szkolenia: 20 mln zł/rok
+
+**BENEFICJENCI:** 50 tys. osób głuchych, 500 tys. niedosłyszących`,
     createdAt: new Date('2025-11-30T14:00:00'),
     diff: {
       fileName: 'Art. 2 - Status prawny',
@@ -3857,6 +4171,37 @@ Dostawca usług chmurowych:
     title: 'Rozszerzono listę leków onkologicznych',
     content: 'Na listę refundacyjną dodano 12 nowych leków stosowanych w terapii nowotworów.',
     aiSummary: 'Nowe leki refundowane: pembrolizumab, nivolumab i 10 innych preparatów onkologicznych, refundacja do 100% dla pacjentów z potwierdzoną diagnozą.',
+    aiDetailedSummary: `Szczegółowa analiza rozszerzenia listy leków onkologicznych:
+
+**NOWE LEKI (REFUNDACJA 100%):**
+
+Immunoterapia:
+• Pembrolizumab (Keytruda) - czerniak, rak płuca
+• Nivolumab (Opdivo) - rak nerki, czerniak
+• Atezolizumab (Tecentriq) - rak płuca, pęcherza
+
+Terapia celowana:
+• Olaparib (Lynparza) - rak jajnika, piersi (BRCA)
+• Palbociclib (Ibrance) - rak piersi HR+ (70%)
+
+**WSKAZANIA:**
+• Potwierdzona diagnoza onkologiczna
+• Karta DiLO obowiązkowa
+• Kwalifikacja przez onkologa
+• Program lekowy NFZ
+
+**SZACOWANE KOSZTY:**
+• Pembrolizumab: 15-20 tys. zł/miesiąc
+• Nivolumab: 12-18 tys. zł/miesiąc
+• Łączny budżet NFZ: +500 mln zł rocznie
+
+**BENEFICJENCI:**
+• 5000+ pacjentów rocznie
+• Nowotwory płuca: 40%
+• Czerniak: 25%
+• Rak piersi: 20%
+
+**WEJŚCIE W ŻYCIE:** 1 stycznia 2025`,
     createdAt: new Date('2025-11-01T09:00:00'),
     diff: {
       fileName: 'Załącznik 1 - Lista leków refundowanych',
@@ -3878,6 +4223,38 @@ Dostawca usług chmurowych:
     title: 'Wzmocniono ochronę sygnalistów',
     content: 'Dodano zakaz działań odwetowych wobec sygnalistów i ich rodzin.',
     aiSummary: 'Silniejsza ochrona: zakaz zwolnienia i degradacji, ochrona rozszerzona na rodzinę sygnalisty, możliwość zgłoszeń anonimowych, nagroda do 10% odzyskanych środków.',
+    aiDetailedSummary: `Szczegółowa analiza wzmocnienia ochrony sygnalistów:
+
+**ZAKAZY DZIAŁAŃ ODWETOWYCH:**
+• Zwolnienie z pracy
+• Degradacja stanowiskowa
+• Wstrzymanie awansu
+• Obniżenie wynagrodzenia
+• Mobbing i dyskryminacja
+• Zmiana miejsca pracy
+
+**ROZSZERZONA OCHRONA:**
+• Małżonek/partner sygnalisty
+• Dzieci (także dorosłe)
+• Rodzice
+• Osoby pomagające sygnaliście
+
+**ZGŁOSZENIA ANONIMOWE:**
+• Pełna anonimowość
+• Ochrona przez cały proces
+• Zakaz próby identyfikacji
+• Sankcje za ujawnienie tożsamości
+
+**NAGRODA ZA ZGŁOSZENIE:**
+• Do 10% odzyskanych środków
+• Maksymalnie 100 000 zł
+• Wypłata po zakończeniu postępowania
+• Zwolniona z podatku
+
+**KANAŁY ZGŁOSZEŃ:**
+• Wewnętrzny (pracodawca)
+• Zewnętrzny (RPO, CBA, NIK)
+• Publiczny (media - ostateczność)`,
     createdAt: new Date('2025-09-15T11:00:00'),
     diff: {
       fileName: 'Art. 15 - Ochrona przed działaniami odwetowymi',
@@ -3902,6 +4279,35 @@ Dostawca usług chmurowych:
     title: 'Zwiększono kary za naruszenie RODO',
     content: 'Podniesiono maksymalną karę finansową za naruszenie przepisów o ochronie danych.',
     aiSummary: 'Kary wzrosły: maksymalna kara do 50 mln EUR lub 6% obrotu, kary dla osób fizycznych do 500 tys. zł, obowiązkowe zawiadomienie poszkodowanych w 48h.',
+    aiDetailedSummary: `Szczegółowa analiza zwiększonych kar za naruszenie RODO:
+
+**ZMIANA KAR:**
+• Było: do 20 mln EUR lub 4% obrotu
+• Jest: do 50 mln EUR lub 6% obrotu
+• Wzrost: 150%
+
+**KARY DLA OSÓB FIZYCZNYCH:**
+• Nowe: do 500 tys. zł grzywny
+• Dotyczy: DPO, członków zarządu
+• Odpowiedzialność osobista
+
+**ZAWIADOMIENIE POSZKODOWANYCH:**
+• Było: "bez zbędnej zwłoki"
+• Jest: w ciągu 48 godzin
+• Kanały: email, SMS, poczta
+• Sankcje za opóźnienie
+
+**PRZYKŁADOWE KARY (szacunki):**
+• Duży bank: do 3 mld zł
+• Średnia firma IT: do 30 mln zł
+• Mały e-commerce: do 3 mln zł
+
+**OKOLICZNOŚCI ŁAGODZĄCE:**
+• Szybkie zgłoszenie naruszenia
+• Współpraca z UODO
+• Wdrożone zabezpieczenia
+
+**WEJŚCIE W ŻYCIE:** 1 kwietnia 2025`,
     createdAt: new Date('2025-11-28T14:00:00'),
     diff: {
       fileName: 'Art. 83 - Kary administracyjne',
@@ -3924,6 +4330,34 @@ Dostawca usług chmurowych:
     title: 'Prawo do cyfrowego zapomnienia',
     content: 'Wprowadzono szczegółowe przepisy dotyczące prawa do usunięcia danych osobowych.',
     aiSummary: 'Prawo do zapomnienia: usunięcie danych w 30 dni, obowiązek usunięcia z kopii zapasowych, wyjątki dla celów archiwizacyjnych i prawnych.',
+    aiDetailedSummary: `Szczegółowa analiza prawa do cyfrowego zapomnienia:
+
+**TERMIN USUNIĘCIA:**
+• Było: "bez zbędnej zwłoki"
+• Jest: 30 dni kalendarzowych
+• Potwierdzenie: pisemne lub email
+
+**ZAKRES USUNIĘCIA:**
+• Dane podstawowe (imię, adres, etc.)
+• Historia zakupów/aktywności
+• Kopie zapasowe (jeśli technicznie możliwe)
+• Cache i systemy analityczne
+
+**WYJĄTKI:**
+1. Cele archiwalne w interesie publicznym
+2. Wymogi przepisów prawa (np. faktury 5 lat)
+3. Ustalanie/dochodzenie roszczeń
+4. Wolność słowa i informacji
+
+**PROCEDURA:**
+• Żądanie online lub pisemne
+• Weryfikacja tożsamości
+• Odpowiedź w 30 dni
+• Możliwość przedłużenia o 60 dni (sprawy złożone)
+
+**SANKCJE ZA NIESPEŁNIENIE:**
+• Kara do 20 mln EUR
+• Zadośćuczynienie dla osoby`,
     createdAt: new Date('2025-11-20T10:00:00'),
     diff: {
       fileName: 'Art. 17 - Prawo do usunięcia danych',
@@ -3946,6 +4380,35 @@ Dostawca usług chmurowych:
     title: 'Standard WCAG 2.2 obowiązkowy',
     content: 'Wprowadzono wymóg zgodności ze standardem WCAG 2.2 na poziomie AA.',
     aiSummary: 'Nowy standard: WCAG 2.2 poziom AA obowiązkowy, audyt dostępności co 2 lata, deklaracja dostępności na każdej stronie.',
+    aiDetailedSummary: `Szczegółowa analiza wymogu WCAG 2.2:
+
+**ZMIANA STANDARDU:**
+• Było: WCAG 2.1 poziom A
+• Jest: WCAG 2.2 poziom AA
+• Nowe kryteria sukcesu: 9
+
+**KLUCZOWE WYMAGANIA:**
+• Kontrast: min. 4.5:1 dla tekstu
+• Nawigacja: pełna obsługa klawiaturą
+• Fokus: widoczny wskaźnik fokusa
+• Formularze: etykiety i instrukcje
+
+**AUDYT DOSTĘPNOŚCI:**
+• Obowiązkowy co 2 lata
+• Przez certyfikowanych audytorów
+• Raport publicznie dostępny
+• Plan naprawczy wymagany
+
+**DEKLARACJA DOSTĘPNOŚCI:**
+• Na każdej stronie (stopka)
+• Data ostatniej aktualizacji
+• Znane ograniczenia
+• Kontakt do wsparcia
+
+**HARMONOGRAM:**
+• Nowe strony: natychmiast
+• Istniejące: 12 miesięcy
+• Aplikacje mobilne: 18 miesięcy`,
     createdAt: new Date('2025-11-15T09:00:00'),
     diff: {
       fileName: 'Art. 5 - Wymagania techniczne',
@@ -3968,6 +4431,39 @@ Dostawca usług chmurowych:
     title: 'Aplikacje mobilne objęte ustawą',
     content: 'Rozszerzono zakres ustawy o aplikacje mobilne podmiotów publicznych.',
     aiSummary: 'Aplikacje mobilne: obowiązek dostępności dla iOS i Android, wsparcie czytników ekranu, alternatywne metody uwierzytelniania.',
+    aiDetailedSummary: `Szczegółowa analiza dostępności aplikacji mobilnych:
+
+**ZAKRES OBOWIĄZKU:**
+• Aplikacje iOS (App Store)
+• Aplikacje Android (Google Play)
+• Aplikacje webowe (PWA)
+• Hybrydowe (React Native, Flutter)
+
+**CZYTNIKI EKRANU:**
+• iOS: VoiceOver
+• Android: TalkBack
+• Pełna kompatybilność wymagana
+• Testowanie z użytkownikami niepełnosprawnymi
+
+**ALTERNATYWNE UWIERZYTELNIANIE:**
+• Biometria (odcisk, twarz)
+• PIN z dużym kontrastem
+• Kod SMS (odczyt głosowy)
+• Klucz sprzętowy
+
+**WYMAGANIA TECHNICZNE:**
+• Etykiety dla wszystkich elementów
+• Odpowiednia kolejność fokusa
+• Gesty alternatywne
+• Timeout konfigurowalne
+
+**PODMIOTY OBJĘTE:**
+• Ministerstwa i urzędy centralne
+• Samorządy
+• ZUS, NFZ, KRUS
+• Szkoły i uczelnie publiczne
+
+**TERMIN:** 18 miesięcy od wejścia ustawy`,
     createdAt: new Date('2025-10-20T11:00:00'),
     diff: {
       fileName: 'Art. 3 - Zakres stosowania',
@@ -3988,6 +4484,40 @@ Dostawca usług chmurowych:
     title: 'Zakaz automatycznych decyzji w sprawach istotnych',
     content: 'Wprowadzono zakaz podejmowania w pełni automatycznych decyzji bez udziału człowieka.',
     aiSummary: 'Ochrona przed AI: zakaz automatycznych decyzji w sprawach finansowych i prawnych, obowiązek wyjaśnienia decyzji AI, prawo do odwołania do człowieka.',
+    aiDetailedSummary: `Szczegółowa analiza zakazu automatycznych decyzji AI:
+
+**ZAKAZ AUTOMATYCZNYCH DECYZJI:**
+• Decyzje ze skutkami prawnymi
+• Bez udziału człowieka
+• Dotyczy: podatki, świadczenia, kary
+
+**SPRAWY WYMAGAJĄCE CZŁOWIEKA:**
+1. Świadczenia socjalne:
+   - Zasiłki i dodatki
+   - 500+, renta, emerytura
+   - Pomoc społeczna
+
+2. Podatki:
+   - Decyzje wymiarowe
+   - Kontrole podatkowe
+   - Ulgi i zwolnienia
+
+3. Kary administracyjne:
+   - Mandaty
+   - Kary porządkowe
+   - Sankcje administracyjne
+
+**PRAWO DO WYJAŚNIENIA:**
+• Jak AI wpłynęło na decyzję
+• Jakie dane wykorzystano
+• Jaką wagę miały czynniki
+
+**PRAWO DO ODWOŁANIA:**
+• Odwołanie do człowieka
+• Termin: 14 dni
+• Pełne rozpatrzenie sprawy
+
+**WEJŚCIE W ŻYCIE:** 1 czerwca 2025`,
     createdAt: new Date('2025-11-10T13:00:00'),
     diff: {
       fileName: 'Art. 22 - Ograniczenia stosowania AI',
@@ -4010,6 +4540,38 @@ Dostawca usług chmurowych:
     title: 'Rejestr algorytmów publicznych',
     content: 'Utworzono publiczny rejestr algorytmów AI używanych przez administrację.',
     aiSummary: 'Transparentność AI: publiczny rejestr algorytmów, opis działania każdego systemu AI, informacja o danych treningowych.',
+    aiDetailedSummary: `Szczegółowa analiza rejestru algorytmów publicznych:
+
+**PUBLICZNY REJESTR:**
+• Prowadzony przez MC
+• Dostępny dla wszystkich
+• Format: strona internetowa + API
+• Aktualizacja: ciągła
+
+**INFORMACJE W REJESTRZE:**
+1. Nazwa systemu AI
+2. Organ wykorzystujący
+3. Cel i przeznaczenie
+4. Opis działania algorytmu
+5. Dane treningowe (źródła)
+6. Wyniki audytów stronniczości
+
+**WYMAGANE AUDYTY:**
+• Co roku dla systemów wysokiego ryzyka
+• Co 2 lata dla pozostałych
+• Przez niezależne podmioty
+• Wyniki publikowane
+
+**PIERWSZEŃSTWO WPISU:**
+• Systemy decyzyjne: natychmiast
+• Systemy analityczne: 6 miesięcy
+• Chatboty i asystenci: 12 miesięcy
+
+**KARY ZA BRAK WPISU:**
+• Do 100 tys. zł
+• Zakaz użytkowania systemu
+
+**CEL:** Budowanie zaufania obywateli do AI w administracji.`,
     createdAt: new Date('2025-10-25T15:00:00'),
     diff: {
       fileName: 'Art. 28 - Rejestr algorytmów',
@@ -4030,6 +4592,38 @@ Dostawca usług chmurowych:
     title: 'Weryfikacja głosu przez blockchain',
     content: 'Wprowadzono technologię blockchain do weryfikacji oddanych głosów.',
     aiSummary: 'Blockchain w wyborach: niezmienialny zapis głosów, możliwość weryfikacji przez wyborcę, pełna anonimowość przy zachowaniu transparentności.',
+    aiDetailedSummary: `Szczegółowa analiza weryfikacji głosów przez blockchain:
+
+**TECHNOLOGIA BLOCKCHAIN:**
+• Rozproszony rejestr (distributed ledger)
+• Niezmienialność zapisów
+• Kryptograficzne zabezpieczenie
+• Brak centralnego punktu awarii
+
+**PROCES GŁOSOWANIA:**
+1. Wyborca oddaje głos elektronicznie
+2. Głos szyfrowany i anonimizowany
+3. Zapis w blockchainie
+4. Wydanie kodu weryfikacyjnego
+
+**WERYFIKACJA PRZEZ WYBORCĘ:**
+• Unikalny kod 16-znakowy
+• Sprawdzenie na stronie PKW
+• Potwierdzenie rejestracji głosu
+• Bez ujawniania treści głosu
+
+**ANONIMOWOŚĆ:**
+• Zero-knowledge proofs
+• Brak powiązania głos-wyborca
+• Kryptografia homomorficzna
+• Audyt przez ekspertów
+
+**TRANSPARENTNOŚĆ:**
+• Każdy może zweryfikować łańcuch
+• Obserwatorzy międzynarodowi
+• Kod źródłowy open source
+
+**BEZPIECZEŃSTWO:** Audyt NASK i zewnętrznych ekspertów`,
     createdAt: new Date('2025-11-25T10:00:00'),
     diff: {
       fileName: 'Art. 15 - Weryfikacja głosów',
@@ -4052,6 +4646,38 @@ Dostawca usług chmurowych:
     title: 'Pilotaż w 50 gminach',
     content: 'Określono szczegółowy zakres pilotażu e-głosowania.',
     aiSummary: 'Pilotaż 2026: 50 gmin, wybory samorządowe, zachowana opcja tradycyjna, monitoring międzynarodowy.',
+    aiDetailedSummary: `Szczegółowa analiza pilotażu e-głosowania:
+
+**ZAKRES PILOTAŻU:**
+• 50 gmin wybranych przez PKW
+• Różnorodność: miasto, wieś, region
+• Zróżnicowana wielkość populacji
+• Dobór losowy + kryteria techniczne
+
+**WYBORY SAMORZĄDOWE 2026:**
+• Rady gmin
+• Wójtowie/burmistrzowie/prezydenci
+• Rady powiatów (tam gdzie dotyczy)
+
+**SWOBODA WYBORU:**
+• Głosowanie elektroniczne LUB tradycyjne
+• Decyzja w dniu głosowania
+• Możliwość zmiany zdania (do oddania głosu)
+• Równoważność obu form
+
+**MONITORING MIĘDZYNARODOWY:**
+• Zaproszenie OBWE/ODIHR
+• Obserwatorzy z krajów UE
+• Eksperci cyberbezpieczeństwa
+• Organizacje pozarządowe
+
+**EWALUACJA:**
+• Raport PKW w 6 miesięcy
+• Frekwencja elektroniczna vs tradycyjna
+• Problemy techniczne
+• Opinie wyborców
+
+**DECYZJA O ROZSZERZENIU:** Sejm 2027`,
     createdAt: new Date('2025-11-01T14:00:00'),
     diff: {
       fileName: 'Art. 3 - Zakres pilotażu',
@@ -4075,6 +4701,39 @@ Dostawca usług chmurowych:
     title: 'AI do analizy ofert',
     content: 'Wprowadzono możliwość wykorzystania AI do wstępnej analizy ofert przetargowych.',
     aiSummary: 'AI w przetargach: automatyczna weryfikacja dokumentów, wykrywanie anomalii cenowych, flagowanie potencjalnych zmów przetargowych.',
+    aiDetailedSummary: `Szczegółowa analiza wykorzystania AI w przetargach:
+
+**AUTOMATYCZNA WERYFIKACJA:**
+• Sprawdzanie kompletności dokumentów
+• Weryfikacja podpisów elektronicznych
+• Kontrola terminów i dat
+• Wykrywanie braków formalnych
+
+**WYKRYWANIE ANOMALII CENOWYCH:**
+• Porównanie z cenami rynkowymi
+• Analiza historii ofert wykonawcy
+• Identyfikacja rażąco niskich cen
+• Alerty dla komisji przetargowej
+
+**WYKRYWANIE ZMÓW:**
+• Analiza wzorców ofertowania
+• Powiązania między firmami
+• Podobieństwa w dokumentacji
+• Korelacje w wycenach
+
+**WYNIKI DLA KOMISJI:**
+• Raport z flagami ryzyka
+• Ranking ofert wg ryzyka
+• Rekomendacje do weryfikacji
+• Historia alertów wykonawcy
+
+**LUDZKA WERYFIKACJA:**
+• AI tylko wspiera, nie decyduje
+• Każda flaga wymaga sprawdzenia
+• Protokół z analizy AI
+• Odpowiedzialność komisji
+
+**TRANSPARENTNOŚĆ:** Opis algorytmu w dokumentacji przetargu.`,
     createdAt: new Date('2025-11-20T09:00:00'),
     diff: {
       fileName: 'Art. 18 - Analiza ofert',
@@ -4096,6 +4755,34 @@ Dostawca usług chmurowych:
     title: 'Kontrowersyjna definicja dezinformacji',
     content: 'Projekt zawierał szeroką definicję dezinformacji, która wzbudziła obawy o cenzurę.',
     aiSummary: 'Odrzucona definicja: zbyt szeroka, mogła objąć satyrę i opinie, brak jasnych kryteriów weryfikacji prawdziwości.',
+    aiDetailedSummary: `Analiza przyczyn odrzucenia projektu o dezinformacji:
+
+**POWODY ODRZUCENIA:**
+• Zbyt szeroka definicja "dezinformacji"
+• Ryzyko ograniczenia wolności słowa
+• Brak jasnych kryteriów prawdziwości
+• Obawy organizacji dziennikarskich
+
+**KONTROWERSYJNA DEFINICJA:**
+• "Fałszywe lub wprowadzające w błąd"
+• "Z zamiarem wywołania szkody"
+• Kto ocenia prawdziwość?
+• Subiektywność "szkody publicznej"
+
+**ZAGROŻENIA:**
+• Cenzura satyrycznych treści
+• Ograniczenie krytyki władzy
+• Arbitralność decyzji
+• Efekt mrożący dla mediów
+
+**STANOWISKA:**
+• RPO: negatywna opinia
+• Helsińska Fundacja: sprzeciw
+• Izba Wydawców Prasy: protest
+• OBWE: obawy
+
+**DALSZE LOSY:**
+Projekt wycofany. Ministerstwo zapowiada konsultacje z branżą medialną.`,
     createdAt: new Date('2025-09-01T10:00:00'),
     diff: {
       fileName: 'Art. 2 - Definicje (ODRZUCONY)',
@@ -4115,6 +4802,38 @@ Dostawca usług chmurowych:
     title: 'Portal Cyfrowe Zbiory',
     content: 'Określono zasady funkcjonowania centralnego portalu dostępu do zdigitalizowanych zbiorów.',
     aiSummary: 'Portal kultury: darmowy dostęp dla wszystkich, wyszukiwanie AI, wirtualne wystawy, API dla badaczy.',
+    aiDetailedSummary: `Szczegółowa analiza portalu Cyfrowe Zbiory:
+
+**FUNKCJE PORTALU:**
+• Wyszukiwarka AI (semantyczna)
+• Wirtualne wystawy 3D
+• Kolekcje tematyczne
+• Ścieżki edukacyjne
+
+**DOSTĘP:**
+• Bezpłatny dla wszystkich
+• Bez rejestracji (podstawowy)
+• Konto rozszerzone dla badaczy
+• API publiczne
+
+**ZAWARTOŚĆ:**
+• Dzieła sztuki (zdjęcia HD)
+• Dokumenty historyczne
+• Nagrania audio/wideo
+• Mapy i plany architektoniczne
+
+**INSTYTUCJE UCZESTNICZĄCE:**
+• Muzea narodowe (14)
+• Biblioteki (500+)
+• Archiwa państwowe
+• Instytucje lokalne
+
+**OBOWIĄZKI INSTYTUCJI:**
+• Upload w 6 miesięcy od digitalizacji
+• Metadane wg standardów
+• Aktualizacja co kwartał
+
+**BUDŻET:** 150 mln zł na rozwój portalu 2025-2027`,
     createdAt: new Date('2025-12-04T11:00:00'),
     diff: {
       fileName: 'Art. 8 - Portal Cyfrowe Zbiory',
@@ -4136,6 +4855,38 @@ Dostawca usług chmurowych:
     title: 'Programowanie od pierwszej klasy',
     content: 'Wprowadzono naukę podstaw programowania od pierwszej klasy szkoły podstawowej.',
     aiSummary: 'Kodowanie w szkole: Scratch od klasy 1, myślenie algorytmiczne, nauka przez zabawę, 1h tygodniowo.',
+    aiDetailedSummary: `Szczegółowa analiza programowania od pierwszej klasy:
+
+**PROGRAM WG KLAS:**
+
+Klasy 1-3 (1h/tydzień):
+• Scratch Junior - programowanie wizualne
+• Roboty edukacyjne (Ozobot, Bee-Bot)
+• Myślenie algorytmiczne przez zabawy
+• Rozwiązywanie problemów
+
+Klasy 4-6 (2h/tydzień):
+• Scratch - projekty, gry, animacje
+• Podstawy algorytmiki
+• Współpraca nad projektami
+
+Klasy 7-8 (2h/tydzień):
+• Python - pierwsze kroki
+• Algorytmy sortowania i wyszukiwania
+• Podstawy baz danych
+
+**METODY NAUCZANIA:**
+• Nauka przez zabawę (gamifikacja)
+• Projekty grupowe
+• Rozwiązywanie realnych problemów
+• Prezentacje uczniowskie
+
+**WYPOSAŻENIE:**
+• Tablety/laptopy w każdej klasie
+• Zestawy robotów edukacyjnych
+• Licencje na oprogramowanie
+
+**CEL:** Przygotowanie do cyfrowego świata pracy`,
     createdAt: new Date('2025-11-25T10:00:00'),
     diff: {
       fileName: 'Załącznik - Podstawa programowa informatyki',
@@ -4159,6 +4910,38 @@ Dostawca usług chmurowych:
     title: 'Laptopy dla uczniów klas 4',
     content: 'Program wyposażenia uczniów klas czwartych w laptopy do nauki.',
     aiSummary: 'Laptop dla ucznia: każdy uczeń klasy 4 otrzyma laptop, oprogramowanie edukacyjne, serwis gwarancyjny.',
+    aiDetailedSummary: `Szczegółowa analiza programu Laptop dla Ucznia:
+
+**KOGO DOTYCZY:**
+• Każdy uczeń klasy 4 szkoły podstawowej
+• Ok. 350 000 laptopów rocznie
+• Laptopy jako własność ucznia
+
+**SPECYFIKACJA LAPTOPA:**
+• Wartość: ok. 2000 zł
+• Procesor: minimum 4 rdzenie
+• RAM: 8 GB
+• Dysk: 256 GB SSD
+• Ekran: 14-15 cali
+
+**OPROGRAMOWANIE:**
+• System operacyjny (Windows/Linux)
+• Pakiet biurowy
+• Środowisko programistyczne
+• Oprogramowanie edukacyjne
+
+**SERWIS I GWARANCJA:**
+• 3 lata gwarancji
+• Bezpłatny serwis w szkole
+• Ubezpieczenie od uszkodzeń
+• Hotline dla rodziców
+
+**BUDŻET:**
+• 1,5 mld zł rocznie
+• Finansowanie: budżet państwa
+• Koordynacja: MEiN + MC
+
+**START:** Wrzesień 2025`,
     createdAt: new Date('2025-11-18T14:00:00'),
     diff: {
       fileName: 'Art. 45 - Program Laptop dla Ucznia',
@@ -4180,6 +4963,34 @@ Dostawca usług chmurowych:
     title: 'Wyższe świadczenie na trzecie dziecko',
     content: 'Wprowadzono podwyższone świadczenie dla rodzin z trojgiem i więcej dzieci.',
     aiSummary: '800 zł na trzecie dziecko: wyższe świadczenie dla rodzin wielodzietnych, automatyczna waloryzacja, wypłata do 18 roku życia.',
+    aiDetailedSummary: `Szczegółowa analiza podwyższonego świadczenia 800+:
+
+**NOWE STAWKI:**
+• Pierwsze i drugie dziecko: 500 zł
+• Trzecie i kolejne: 800 zł
+• Wzrost o 60% dla rodzin wielodzietnych
+
+**WALORYZACJA:**
+• Coroczna o wskaźnik inflacji
+• Automatyczna (bez wniosku)
+• Od 1 marca każdego roku
+
+**KRYTERIUM WIEKU:**
+• Do 18 roku życia - bez warunków
+• 18-24 lata - kontynuacja nauki
+• Bez kryterium dochodowego
+
+**WYPŁATA:**
+• Co miesiąc, do 15 dnia
+• Na konto bankowe
+• Przez ZUS (nie gminy)
+
+**SZACOWANE KOSZTY:**
+• +5 mld zł rocznie
+• 1.2 mln dzieci objętych podwyżką
+• 400 tys. rodzin wielodzietnych
+
+**WEJŚCIE W ŻYCIE:** 1 stycznia 2026`,
     createdAt: new Date('2025-11-28T09:00:00'),
     diff: {
       fileName: 'Art. 5 - Wysokość świadczenia',
@@ -4202,6 +5013,38 @@ Dostawca usług chmurowych:
     title: 'Dopłaty dla małych gospodarstw',
     content: 'Wprowadzono system dopłat dla gospodarstw rolnych do 10 ha.',
     aiSummary: 'Wsparcie dla małych farm: dopłaty do 50 tys. zł, preferencyjne kredyty, pomoc w certyfikacji bio.',
+    aiDetailedSummary: `Szczegółowa analiza dopłat dla małych gospodarstw:
+
+**KWALIFIKACJA:**
+• Gospodarstwa do 10 ha
+• Aktywny rolnik (KRUS)
+• Minimum 2 lata prowadzenia
+• Zarejestrowane w ARiMR
+
+**WYSOKOŚĆ DOPŁAT:**
+• Do 50 000 zł rocznie
+• Gospodarstwa eko: +20% bonus
+• Młodzi rolnicy (<40 lat): +10%
+
+**PRZEZNACZENIE:**
+• Modernizacja budynków
+• Zakup maszyn i urządzeń
+• Certyfikacja ekologiczna
+• Rozwój agroturystyki
+
+**PROCEDURA:**
+• Wniosek przez eRolnik
+• Ocena w 30 dni
+• Wypłata zaliczkowa 50%
+• Rozliczenie po realizacji
+
+**KREDYTY PREFERENCYJNE:**
+• Oprocentowanie 2%
+• Okres: do 15 lat
+• Karencja: 2 lata
+• Gwarant: BGK
+
+**BUDŻET PROGRAMU:** 3 mld zł rocznie`,
     createdAt: new Date('2025-12-01T10:00:00'),
     diff: {
       fileName: 'Art. 12 - Dopłaty dla małych gospodarstw',
@@ -4223,6 +5066,37 @@ Dostawca usług chmurowych:
     title: 'Limit kosztów zarządzania',
     content: 'Wprowadzono maksymalny limit opłat za zarządzanie funduszami.',
     aiSummary: 'Tańsze fundusze: max 1,5% opłaty za zarządzanie, przejrzyste informacje o kosztach, porównywarka funduszy.',
+    aiDetailedSummary: `Szczegółowa analiza limitu kosztów zarządzania funduszami:
+
+**NOWY LIMIT OPŁAT:**
+• Max 1,5% wartości aktywów rocznie
+• Było: brak limitu (średnio 2-4%)
+• Oszczędność: 0.5-2.5% rocznie
+
+**PRZEJRZYSTOŚĆ KOSZTÓW:**
+• Uproszczony dokument KID
+• Wszystkie koszty w jednym miejscu
+• Porównanie z benchmarkiem
+• Symulacja wpływu opłat
+
+**PORÓWNYWARKA KNF:**
+• Publiczna strona internetowa
+• Ranking wg opłat i wyników
+• Filtry: typ, ryzyko, horyzont
+• Aktualizacja kwartalna
+
+**WPŁYW NA INWESTORÓW:**
+• Średnia oszczędność: 500 zł/rok
+• Wyższe stopy zwrotu netto
+• Łatwiejsze porównywanie
+• Świadome decyzje
+
+**WPŁYW NA BRANŻĘ:**
+• Presja na obniżki opłat
+• Konsolidacja TFI
+• Rozwój funduszy pasywnych
+
+**WEJŚCIE W ŻYCIE:** 1 lipca 2025`,
     createdAt: new Date('2025-11-15T11:00:00'),
     diff: {
       fileName: 'Art. 34 - Opłaty i koszty',
@@ -4245,6 +5119,39 @@ Dostawca usług chmurowych:
     title: 'Stawka 3% od przychodów',
     content: 'Określono stawkę podatku od gigantów technologicznych.',
     aiSummary: 'Podatek GAFA: 3% od przychodów z reklam i danych, próg 750 mln EUR obrotu globalnego, szacowane wpływy 2 mld zł.',
+    aiDetailedSummary: `Szczegółowa analiza podatku cyfrowego (GAFA tax):
+
+**STAWKA:** 3% od przychodów w Polsce
+
+**PROGI:**
+• Globalny obrót: > 750 mln EUR
+• Przychody w PL: > 25 mln EUR
+• Dotyczy ok. 20-30 firm
+
+**OBJĘTE PRZYCHODY:**
+1. Reklama targetowana
+2. Pośrednictwo cyfrowe (marketplace)
+3. Sprzedaż danych użytkowników
+
+**SZACOWANE WPŁYWY:**
+• Łącznie: 2 mld zł rocznie
+• Google: ~600 mln zł
+• Meta: ~500 mln zł
+• Amazon: ~300 mln zł
+• Pozostali: ~600 mln zł
+
+**KONTEKST UE:**
+• Francja: 3%
+• Włochy: 3%
+• Hiszpania: 3%
+• Negocjacje OECD trwają
+
+**PRZEZNACZENIE:**
+• Cyfryzacja administracji
+• Kompetencje cyfrowe
+• Cyberbezpieczeństwo
+
+**WEJŚCIE W ŻYCIE:** 1 stycznia 2026`,
     createdAt: new Date('2025-12-03T10:00:00'),
     diff: {
       fileName: 'Art. 5 - Stawka podatku',
@@ -4265,6 +5172,38 @@ Dostawca usług chmurowych:
     title: 'Darmowe baseny dla dzieci',
     content: 'Wprowadzono bezpłatny dostęp do basenów publicznych dla dzieci do lat 15.',
     aiSummary: 'Pływanie dla każdego: darmowe baseny dla dzieci, vouchery sportowe dla seniorów, 500 nowych orlików.',
+    aiDetailedSummary: `Szczegółowa analiza programu Sport dla Wszystkich:
+
+**DARMOWE BASENY DLA DZIECI:**
+• Wiek: do 15 lat
+• Baseny publiczne i partnerskie
+• Limit: 2 wejścia/tydzień
+• Legitymacja szkolna = bilety
+
+**VOUCHERY DLA SENIORÓW:**
+• Wiek: 65+
+• Wartość: 500 zł/rok
+• Na zajęcia sportowe i rekreacyjne
+• Realizacja przez mObywatel
+
+**ORLIKI 2.0:**
+• 500 nowych boisk w 5 lat
+• Gminy bez infrastruktury: priorytet
+• Wielofunkcyjne (piłka, kosz, siatkówka)
+• Oświetlenie i szatnie
+
+**OBOWIĄZKI GMIN:**
+• Miasta 10 tys.+: obiekt sportowy
+• Plan rozwoju sportu
+• Współpraca ze szkołami
+• Raport roczny MSiT
+
+**BUDŻET:**
+• Baseny: 600 mln zł/rok
+• Vouchery: 400 mln zł/rok
+• Orliki: 800 mln zł/rok
+
+**CEL:** +20% aktywnych sportowo do 2030`,
     createdAt: new Date('2025-11-20T13:00:00'),
     diff: {
       fileName: 'Art. 18 - Dostęp do infrastruktury sportowej',
@@ -4286,6 +5225,32 @@ Dostawca usług chmurowych:
     title: 'Certyfikat Zielony Szlak',
     content: 'Utworzono system certyfikacji obiektów ekoturystycznych.',
     aiSummary: 'Certyfikat eko: Zielony Szlak dla hoteli i pensjonatów, wymogi środowiskowe, ulgi podatkowe dla certyfikowanych.',
+    aiDetailedSummary: `Szczegółowa analiza systemu certyfikacji Zielony Szlak:
+
+**WYMAGANIA CERTYFIKATU:**
+• Min. 50% energii z OZE (panele, pompy ciepła)
+• Segregacja odpadów w min. 5 frakcjach
+• Zakaz plastiku jednorazowego
+• Min. 30% produktów lokalnych w gastronomii
+• System oszczędzania wody (max 100l/gość/noc)
+
+**KORZYŚCI DLA CERTYFIKOWANYCH OBIEKTÓW:**
+• Ulga 25% w podatku od nieruchomości
+• Priorytet w promocji turystycznej regionu
+• Dostęp do preferencyjnych kredytów na inwestycje eko
+• Oznaczenie w systemach rezerwacyjnych
+
+**PROCEDURA CERTYFIKACJI:**
+1. Wniosek online do PARP
+2. Audyt na miejscu (koszt: 2000 zł)
+3. Decyzja w ciągu 30 dni
+4. Ważność certyfikatu: 3 lata
+5. Kontrola okresowa co 12 miesięcy
+
+**STATYSTYKI PILOTAŻU:**
+• 127 obiektów certyfikowanych w 2024
+• Średni wzrost rezerwacji: +18%
+• Oszczędności energii: 35% rocznie`,
     createdAt: new Date('2025-11-22T10:00:00'),
     diff: {
       fileName: 'Art. 8 - Certyfikacja ekoturystyczna',
@@ -4306,6 +5271,36 @@ Dostawca usług chmurowych:
     title: 'Dopłaty do wymiany pieców',
     content: 'Zwiększono dopłaty do wymiany starych pieców węglowych.',
     aiSummary: 'Koniec kopciuchów: dopłata do 80% kosztów wymiany, zakaz użytkowania pieców poniżej klasy 5 od 2027, strefy czyste w miastach.',
+    aiDetailedSummary: `Szczegółowa analiza programu wymiany pieców:
+
+**WYSOKOŚĆ DOPŁAT:**
+• Do 80% kosztów wymiany pieca
+• Maksymalnie 30 000 zł na gospodarstwo
+• Dodatkowe 5 000 zł na termomodernizację
+• Premia +10% dla gospodarstw wielodzietnych
+
+**HARMONOGRAM ZAKAZÓW:**
+• Od 2025: zakaz sprzedaży pieców poniżej klasy 5
+• Od 2027: zakaz użytkowania kopciuchów
+• Od 2028: obowiązkowe świadectwa energetyczne
+• Od 2030: zakaz ogrzewania węglem w miastach 100k+
+
+**STREFY OGRANICZONEJ EMISJI:**
+• 16 miast wojewódzkich do końca 2026
+• Zakaz wjazdu pojazdów niespełniających norm
+• System opłat za wjazd starego auta
+• Zwolnienia dla mieszkańców (karnet roczny)
+
+**WSPARCIE DLA GMIN:**
+• 100 000 zł rocznie na monitoring powietrza
+• Dotacje na punkt informacyjny
+• Szkolenia dla urzędników
+• Kampanie edukacyjne dla mieszkańców
+
+**EFEKTY OCZEKIWANE:**
+• -50% emisji PM10 do 2030
+• -35% zachorowań układu oddechowego
+• Wymiana 2 mln pieców do 2030`,
     createdAt: new Date('2025-11-18T09:00:00'),
     diff: {
       fileName: 'Art. 15 - Program wymiany pieców',
@@ -4329,6 +5324,37 @@ Dostawca usług chmurowych:
     title: 'Czynsz maksymalnie 20 zł/m²',
     content: 'Ustalono maksymalną stawkę czynszu w programie Mieszkanie+.',
     aiSummary: 'Tanie mieszkania: max 20 zł/m², pierwszeństwo dla młodych rodzin, możliwość wykupu po 10 latach.',
+    aiDetailedSummary: `Szczegółowa analiza programu Mieszkanie+:
+
+**STAWKA CZYNSZU:**
+• Maksymalnie 20 zł/m² miesięcznie
+• Czynsz nie obejmuje mediów
+• Waloryzacja raz w roku wg inflacji
+• Niższe stawki dla rodzin wielodzietnych (-15%)
+
+**KRYTERIA PIERWSZEŃSTWA:**
+1. Rodziny z dziećmi (min. 1 dziecko)
+2. Osoby do 35 roku życia
+3. Osoby niepełnosprawne
+4. Pracownicy sektora publicznego
+5. Seniorzy samotni (65+)
+
+**PRAWO DO WYKUPU:**
+• Po 10 latach najmu
+• Cena: 70% wartości rynkowej
+• Wpłacony czynsz zaliczany do ceny
+• Kredyt preferencyjny 2% w BGK
+• Zakaz odsprzedaży przez 5 lat
+
+**WARUNKI UDZIAŁU:**
+• Brak własności innego mieszkania
+• Dochód poniżej 150% średniej krajowej
+• Zdolność czynszowa (czynsz max 30% dochodu)
+
+**SKALA PROGRAMU:**
+• 100 000 mieszkań do 2030
+• 40 mld zł budżetu
+• Lokalizacje w 50 miastach`,
     createdAt: new Date('2025-12-02T14:00:00'),
     diff: {
       fileName: 'Art. 12 - Zasady najmu',
@@ -4350,6 +5376,37 @@ Dostawca usług chmurowych:
     title: 'Kamery we wszystkich pojazdach',
     content: 'Wprowadzono obowiązek monitoringu we wszystkich pojazdach transportu publicznego.',
     aiSummary: 'Monitoring w autobusach: kamery obowiązkowe, przycisk alarmowy, łączność z centrum dowodzenia.',
+    aiDetailedSummary: `Szczegółowa analiza wymogów bezpieczeństwa w transporcie:
+
+**OBOWIĄZKOWE WYPOSAŻENIE:**
+• Kamery wideo (min. 4 na pojazd)
+• Przycisk alarmowy dla kierowcy i pasażerów
+• System łączności z centrum zarządzania
+• GPS z transmisją pozycji w czasie rzeczywistym
+• Oświetlenie awaryjne
+
+**PARAMETRY TECHNICZNE MONITORINGU:**
+• Rozdzielczość min. HD 720p
+• Tryb nocny (podczerwień)
+• Zapis audio w strefie kierowcy
+• Pamięć lokalna + chmura
+• Przechowywanie nagrań: 30 dni
+
+**PRZYCISK ALARMOWY:**
+• Sygnał do centrum w 3 sekundy
+• Automatyczne powiadomienie służb
+• Blokada drzwi na żądanie
+• Nagrywanie od momentu alarmu
+
+**HARMONOGRAM WDROŻENIA:**
+• Nowe pojazdy: od 1.01.2026
+• Pojazdy w eksploatacji: do 31.12.2027
+• Dotacje dla przewoźników: 10 000 zł/pojazd
+
+**KARY ZA NARUSZENIA:**
+• Brak monitoringu: 20 000 zł
+• Niesprawny alarm: 10 000 zł
+• Brak archiwum nagrań: 15 000 zł`,
     createdAt: new Date('2025-11-10T10:00:00'),
     diff: {
       fileName: 'Art. 8 - Wymagania bezpieczeństwa',
@@ -4373,6 +5430,38 @@ Dostawca usług chmurowych:
     title: 'Prędkość do 350 km/h',
     content: 'Określono parametry techniczne kolei dużych prędkości.',
     aiSummary: 'Szybka kolej: prędkość do 350 km/h, Warszawa-Łódź w 45 min, 12 nowych tras, budowa 2025-2034.',
+    aiDetailedSummary: `Szczegółowa analiza projektu Kolei Dużych Prędkości:
+
+**PARAMETRY TECHNICZNE:**
+• Prędkość maksymalna: 350 km/h
+• Prędkość eksploatacyjna: 300 km/h
+• Szerokość toru: standard UIC
+• Zasilanie: 25 kV AC
+• System sterowania: ERTMS poziom 2
+
+**PLANOWANE TRASY I CZASY PRZEJAZDU:**
+• Warszawa-Łódź: 45 min (obecnie 1h 20min)
+• Warszawa-Wrocław: 2h (obecnie 3h 30min)
+• Warszawa-Poznań: 1h 30min (obecnie 2h 45min)
+• Warszawa-Kraków: 1h 15min (obecnie 2h 20min)
+• Łódź-Wrocław: 1h 15min (obecnie 3h)
+
+**HARMONOGRAM BUDOWY:**
+• 2025-2026: dokumentacja i wykup gruntów
+• 2027-2029: odcinek Warszawa-Łódź
+• 2028-2032: odcinki promieniste
+• 2032-2034: połączenia regionalne
+
+**BUDŻET 120 MLD ZŁ:**
+• Infrastruktura: 85 mld zł
+• Tabor (30 pociągów): 20 mld zł
+• Dworzec CPK: 8 mld zł
+• Rezerwa: 7 mld zł
+
+**KORZYŚCI:**
+• 40 mln pasażerów rocznie do 2040
+• 15 000 miejsc pracy przy budowie
+• Redukcja korków: -20% ruch lotniczy krajowy`,
     createdAt: new Date('2025-11-28T11:00:00'),
     diff: {
       fileName: 'Art. 5 - Parametry techniczne',
@@ -4395,6 +5484,38 @@ Dostawca usług chmurowych:
     title: 'Weryfikacja wieku na platformach',
     content: 'Wprowadzono obowiązek weryfikacji wieku użytkowników na platformach z treściami dla dorosłych.',
     aiSummary: 'Ochrona dzieci: weryfikacja wieku obowiązkowa, zakaz reklam kierowanych do dzieci, kontrola rodzicielska w social media.',
+    aiDetailedSummary: `Szczegółowa analiza ustawy o bezpieczeństwie dzieci online:
+
+**WERYFIKACJA WIEKU:**
+• Obowiązkowa na stronach 18+
+• Metody: e-dowód, mObywatel, karta płatnicza
+• Zakaz przechowywania danych weryfikacyjnych
+• Audyt systemu co 6 miesięcy
+• Kara za omijanie: 4% obrotu platformy
+
+**ZAKAZ REKLAM KIEROWANYCH DO DZIECI:**
+• Poniżej 16 roku życia
+• Dotyczy: social media, gry, streaming
+• Zakaz targetowania behawioralnego
+• Zakaz reklam fast-food i słodyczy
+• Wyjątek: reklamy edukacyjne
+
+**KONTROLA RODZICIELSKA:**
+• Obowiązkowa w każdej aplikacji social media
+• Funkcje: limit czasu, filtr treści, raport aktywności
+• Domyślnie włączona dla kont <16 lat
+• Powiadomienia dla rodziców o podejrzanej aktywności
+
+**OBOWIĄZKI PLATFORM:**
+• Dedykowany zespół moderacji dla dzieci
+• Raportowanie treści szkodliwych do NASK
+• Coroczny audyt bezpieczeństwa
+• Przejrzysty algorytm rekomendacji
+
+**KARY:**
+• Nielegalne treści dla dzieci: do 100 mln zł
+• Brak weryfikacji wieku: do 4% obrotu
+• Brak kontroli rodzicielskiej: do 10 mln zł`,
     createdAt: new Date ('2024-12-01T09:00:00'),
     diff: {
       fileName: 'Art. 12 - Weryfikacja wieku',
@@ -4416,6 +5537,42 @@ Dostawca usług chmurowych:
     title: 'Dokumentacja medyczna online',
     content: 'Wprowadzono prawo do dostępu do pełnej dokumentacji medycznej online.',
     aiSummary: 'Cyfrowy pacjent: dokumentacja online w 24h, prawo do drugiej opinii refundowanej, rzecznik pacjenta w każdym szpitalu.',
+    aiDetailedSummary: `Szczegółowa analiza zmian w prawach pacjenta:
+
+**DOSTĘP DO DOKUMENTACJI ONLINE:**
+• Pełna dokumentacja w IKP w 24h
+• Historia leczenia od 2018 roku
+• Wyniki badań laboratoryjnych i obrazowych
+• Skierowania i recepty elektroniczne
+• Możliwość udostępnienia innemu lekarzowi
+
+**PRAWO DO DRUGIEJ OPINII:**
+• Refundowana przez NFZ
+• Przysługuje w przypadkach:
+  - Choroby nowotworowe
+  - Planowane operacje
+  - Choroby rzadkie
+  - Przewlekłe schorzenia
+• Termin: do 14 dni roboczych
+• Konsultacja zdalna lub stacjonarna
+
+**RZECZNIK PRAW PACJENTA:**
+• Obowiązkowy w każdym szpitalu
+• Dyżur min. 20h tygodniowo
+• Bezpłatna pomoc prawna
+• Mediacja w konfliktach
+• Raport roczny do NFZ
+
+**INNE ZMIANY:**
+• Karta praw pacjenta w każdym pokoju
+• Tłumacz języka migowego na żądanie
+• Dostęp do telefonu i internetu
+• Odwiedziny bez ograniczeń czasowych
+
+**WEJŚCIE W ŻYCIE:**
+• Dokumentacja 24h: od 1.07.2025
+• Rzecznik: od 1.01.2026
+• Druga opinia: od 1.04.2025`,
     createdAt: new Date('2025-11-20T10:00:00'),
     diff: {
       fileName: 'Art. 23 - Dostęp do dokumentacji',
@@ -4439,6 +5596,41 @@ Dostawca usług chmurowych:
     title: 'Granty dla młodych naukowców',
     content: 'Utworzono program grantów startowych dla naukowców do 35 roku życia.',
     aiSummary: 'Młoda nauka: granty do 100 tys. zł, uproszczona procedura, mobilność międzyuczelniana.',
+    aiDetailedSummary: `Szczegółowa analiza programu Młody Naukowiec:
+
+**PARAMETRY GRANTÓW:**
+• Kwota: do 100 000 zł
+• Czas realizacji: 24 miesiące
+• Wiek beneficjenta: do 35 lat
+• Rozliczenie: ryczałtowe lub kosztowe
+• Bez wkładu własnego
+
+**UPROSZCZONA PROCEDURA:**
+• Wniosek: max 5 stron
+• Recenzja: 2 ekspertów
+• Decyzja: 60 dni od złożenia
+• Brak etapu formalnego
+• Odwołanie w 14 dni
+
+**MOBILNOŚĆ MIĘDZYUCZELNIANA:**
+• Realizacja na dowolnej uczelni
+• Dodatek mobilnościowy: +20%
+• Pokrycie kosztów przeprowadzki
+• Zakwaterowanie służbowe
+• Powrót na macierzystą uczelnię gwarantowany
+
+**DOZWOLONE KOSZTY:**
+• Wynagrodzenie: do 60%
+• Aparatura: do 30%
+• Wyjazdy: do 15%
+• Publikacje: do 10%
+• Materiały: bez limitu
+
+**BUDŻET PROGRAMU:**
+• 500 mln zł rocznie
+• 5000 grantów w 2025
+• Priorytet: nauki ścisłe i techniczne
+• 30% dla kobiet (minimum)`,
     createdAt: new Date('2025-11-25T14:00:00'),
     diff: {
       fileName: 'Art. 45 - Program Młody Naukowiec',
@@ -4460,6 +5652,46 @@ Dostawca usług chmurowych:
     title: 'Wydatki na R&D do 2% PKB',
     content: 'Określono cel wydatków na badania i rozwój do 2030 roku.',
     aiSummary: 'Więcej na naukę: 2% PKB na R&D do 2030, 50 nowych centrów badawczych, priorytet: AI, biotech, energia.',
+    aiDetailedSummary: `Szczegółowa analiza strategii R&D do 2030:
+
+**CELE FINANSOWE:**
+• 2% PKB na R&D do 2030 (obecnie 1,4%)
+• 100 mld zł łącznego budżetu
+• 60% środków publicznych, 40% prywatnych
+• Wzrost o 0,1 pkt proc. rocznie
+
+**50 NOWYCH CENTRÓW BADAWCZYCH:**
+• Sztuczna inteligencja: 12 centrów
+• Biotechnologia: 10 centrów
+• Energia odnawialna: 10 centrów
+• Technologie kosmiczne: 8 centrów
+• Medycyna przyszłości: 10 centrów
+
+**OBSZARY PRIORYTETOWE:**
+
+1. **AI i Machine Learning:**
+   - Centrum Kompetencji AI w Warszawie
+   - 2000 nowych stanowisk badawczych
+   - Superkomputer 10 exaflopsów
+
+2. **Biotechnologia:**
+   - Leki biologiczne
+   - Terapie genowe
+   - Rolnictwo precyzyjne
+
+3. **Energia:**
+   - Wodór zielony
+   - Fuzja jądrowa
+   - Magazynowanie energii
+
+**HARMONOGRAM:**
+• 2025: 10 centrów
+• 2027: 30 centrów
+• 2030: 50 centrów (pełna sieć)
+
+**WSKAŹNIKI SUKCESU:**
+• 500 patentów rocznie
+• Top 10 w Europie wg EIS`,
     createdAt: new Date('2025-11-22T09:00:00'),
     diff: {
       fileName: 'Art. 3 - Cele strategiczne',
@@ -4483,6 +5715,40 @@ Dostawca usług chmurowych:
     title: 'Wyższe kary za niszczenie zabytków',
     content: 'Zaostrzono kary za niszczenie lub uszkadzanie zabytków.',
     aiSummary: 'Ochrona dziedzictwa: kary do 2 mln zł, rejestr zabytków online, dotacje na remonty do 80%.',
+    aiDetailedSummary: `Szczegółowa analiza zmian w ochronie zabytków:
+
+**ZAOSTRZENIE KAR:**
+• Niszczenie zabytku: do 2 000 000 zł (było 500 000 zł)
+• Zabytek szczególnej wartości: do 5 lat więzienia
+• Nielegalne prace remontowe: do 500 000 zł
+• Obowiązek przywrócenia do stanu poprzedniego
+• Zakaz prowadzenia działalności budowlanej
+
+**PUBLICZNY REJESTR ZABYTKÓW ONLINE:**
+• Wszystkie wpisy dostępne na zabytek.gov.pl
+• Mapa interaktywna z lokalizacją
+• Historia zmian i renowacji
+• Zdjęcia i dokumentacja
+• Status prawny i ochrona
+
+**DOTACJE NA REMONTY:**
+• Do 80% kosztów prac (było 50%)
+• Dla właścicieli prywatnych i publicznych
+• Priorytet: dachy, elewacje, instalacje
+• Procedura uproszczona (30 dni)
+• Budżet: 500 mln zł rocznie
+
+**NOWE KATEGORIE OCHRONY:**
+• Zabytek techniki (fabryki, mosty)
+• Zabytek podziemny (schrony, tunele)
+• Krajobraz kulturowy
+• Obiekty modernistyczne
+
+**OBOWIĄZKI WŁAŚCICIELI:**
+• Coroczna kontrola stanu
+• Ubezpieczenie od pożaru i kradzieży
+• Zgłaszanie zmian własnościowych
+• Udostępnianie na żądanie konserwatora`,
     createdAt: new Date('2025-12-03T10:00:00'),
     diff: {
       fileName: 'Art. 108 - Przepisy karne',

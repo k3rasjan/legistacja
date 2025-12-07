@@ -1,0 +1,580 @@
+// satus types
+//   INITIATIVE            // Inicjatywa ustawodawcza (Start)
+//   SEJM_FIRST_READING    // Sejm: I Czytanie
+//   SEJM_COMMITTEE        // Sejm: Prace w komisji (między czytaniami)
+//   SEJM_SECOND_READING   // Sejm: II Czytanie
+//   SEJM_THIRD_READING    // Sejm: III Czytanie (Głosowanie)
+//   SENATE                // Senat (30 dni na decyzję)
+//   SEJM_SENATE_REVIEW    // Sejm: Rozpatrywanie uchwały Senatu
+//   PRESIDENT             // Prezydent (21 dni na decyzję)
+//   CONSTITUTIONAL_TRIBUNAL // Trybunał Konstytucyjny (wniosek prezydenta)
+//   SEJM_VETO_REVIEW      // Sejm: Rozpatrywanie weta prezydenta
+//   PUBLISHED             // Podpisanie i ogłoszenie (Sukces)
+//   ARCHIVED              // Odrzucony/Wycofany (Porażka)
+[
+    {
+        "id": "1",
+        "sejmPrintId": null,
+        "rclId": null,
+        "title": "Poselski projekt ustawy o zmianie ustawy o ochronie przyrody",
+        "author": "grupa posłów: Polska2050",
+        "date": "2025-12-04",
+        "are_consultations": true,
+        "brief_description": "Projekt ustawy ma na celu wprowadzenie całkowitego zakazu przywozu na terytorium Polski okazów gatunków zagrożonych wyginięciem (wymienionych w załączniku A rozporządzenia Rady 338/97) oraz konkretnych gatunków z załącznika B, takich jak słoń afrykański, lew afrykański, żyrafa i nosorożec biały południowy. Nowelizacja kryminalizuje ten czyn, ustanawiając karę pozbawienia wolności od 3 miesięcy do 5 lat za złamanie zakazu.",
+        "detailed_description": "Niniejszy projekt ustawy, wniesiony przez grupę posłów klubu Polska 2050, stanowi odpowiedź na rosnący problem międzynarodowego handlu trofeami myśliwskimi, który przyczynia się do degradacji populacji gatunków zagrożonych wyginięciem. Nowelizacja ustawy z dnia 16 kwietnia 2004 r. o ochronie przyrody wprowadza rewolucyjne zmiany w polskim systemie prawnym, dodając artykuł 61a. Przepis ten ustanawia bezwzględny zakaz wprowadzania na terytorium Rzeczypospolitej Polskiej okazów określonych gatunków zwierząt, niezależnie od ich pochodzenia czy celu przywozu. Zakaz ten obejmuje szeroki katalog zwierząt: wszystkie gatunki wymienione w załączniku A do rozporządzenia Rady (WE) nr 338/97 (m.in. gepardy, lamparty, goryle) oraz kluczowe gatunki z załącznika B, które są szczególnie narażone na polowania dla trofeów: słonia afrykańskiego (Loxodonta africana), lwa afrykańskiego (Panthera leo), żyrafę (Giraffa camelopardalis) oraz nosorożca białego południowego (Ceratotherium simum simum).\n\nWprowadzenie tego zakazu wiąże się z automatyczną odmową wydawania zezwoleń importowych przez organy państwowe dla osób prywatnych, w tym myśliwych. Ustawodawca przewidział jedynie wąski katalog wyłączeń dla ogrodów zoologicznych oraz jednostek naukowych, które realizują cele badawcze lub edukacyjne, co ma na celu zachowanie możliwości prowadzenia programów ochrony gatunkowej ex situ. Aby zapewnić skuteczność nowych regulacji, projekt wprowadza również surowe sankcje karne w nowym artykule 128b. Nielegalne wprowadzenie do Polski okazów objętych zakazem – zarówno żywych zwierząt, jak i ich części czy produktów pochodnych (trofeów) – będzie przestępstwem zagrożonym karą pozbawienia wolności od 3 miesięcy do lat 5. Jest to znaczące zaostrzenie odpowiedzialności w porównaniu do dotychczasowych przepisów, mające na celu odstraszenie potencjalnych sprawców i podkreślenie wagi ochrony bioróżnorodności.",
+        "impact": "Głównym celem i spodziewanym skutkiem ustawy jest drastyczne ograniczenie, a docelowo eliminacja zjawiska przywozu trofeów myśliwskich z gatunków zagrożonych do Polski. Wnioskodawcy przytaczają alarmujące dane, z których wynika, że w latach 2014–2024 do Polski trafiło ponad 1500 trofeów zwierząt chronionych Konwencją CITES. Polowania te, często komercyjne, mają destrukcyjny wpływ na populacje dzikich zwierząt, zaburzając ich strukturę genetyczną i społeczną. Myśliwi nastawieni na zdobycie 'rekordowych' trofeów często eliminują osobniki najsilniejsze, z największymi ciosami czy grzywami, co osłabia pulę genową gatunku.\n\nWejście w życie ustawy ma wywołać szerokie pozytywne skutki społeczne i etyczne, promując postawy proekologiczne i sprzeciw wobec zabijania zwierząt dla celów czysto rozrywkowych. Oczekuje się, że surowa sankcja karna (do 5 lat więzienia) będzie działać prewencyjnie, skutecznie zniechęcając do łamania zakazu. Polska dołączy tym samym do grona państw aktywnie walczących z komercyjnym wyzyskiem przyrody. Regulacja ta jest w pełni zgodna z zasadą ostrożności obowiązującą w prawie Unii Europejskiej (art. 191 TFUE), która nakazuje podejmowanie działań zapobiegawczych w przypadku ryzyka dla środowiska naturalnego. Projektodawcy nie przewidują, aby ustawa wywołała negatywne skutki gospodarcze dla budżetu państwa ani samorządów, gdyż dotyczy ona wąskiego wycinka aktywności hobbystycznej, a nie kluczowych gałęzi gospodarki.",
+        "acts": [
+            {
+                "date": "2025-12-04",
+                "url": "https://orka.sejm.gov.pl/Druki10ka.nsf/dok?OpenAgent&10-RPW-40474-2025",
+                "title": "Złożono nowy projekt ustawy: Poselski projekt ustawy o zmianie ustawy o ochronie przyrody",
+                "brief_description": "Projekt ustawy ma na celu wprowadzenie całkowitego zakazu przywozu na terytorium Polski okazów gatunków zagrożonych wyginięciem.",
+                "detailed_description": "Projekt ustawy wniesiony przez grupę posłów klubu Polska 2050 nowelizuje ustawę z dnia 16 kwietnia 2004 r. o ochronie przyrody. Kluczową zmianą jest dodanie artykułu 61a, który zabrania wprowadzania na terytorium RP okazów określonych gatunków zwierząt. Zakaz ten obejmuje wszystkie gatunki z załącznika A do rozporządzenia Rady 338/97 oraz wybrane gatunki z załącznika B."
+            }
+        ],
+        "status": [
+            {
+                "type": "INITIATIVE",
+                "description": "Wpłynięcie poselskiego projektu ustawy do Sejmu (04.12.2025)"
+            },
+            {
+                "type": "SEJM_FIRST_READING",
+                "description": "Skierowanie projektu do I czytania w Komisji Ochrony Środowiska, Zasobów Naturalnych i Leśnictwa"
+            }
+        ],
+        "consultations": {
+            "brief": "# [cite_start]Briefing merytoryczny do projektu ustawy o zmianie ustawy o ochronie przyrody (druk sejmowy: brak numeru, data wpływu: 04.12.2025)\n\n--- \n\n## 1. Informacje ogólne i cel projektu (do pytania: Komentarz do całości)\n* **Wnioskodawca:** Grupa posłów klub Polska 2050 (przedstawiciel: posłanka Ewa Szymanowska) [cite: 24, 25][cite_start].\n* **Główny cel:** Ochrona gatunków zagrożonych wyginięciem poprzez wprowadzenie całkowitego zakazu przywozu ich trofeów do Polski [cite: 64][cite_start].\n* **Zakres gatunkowy:** Zakaz obejmuje gatunki z załącznika A do rozporządzenia Rady 338/97 oraz wybrane gatunki z załącznika B: słonia afrykańskiego, lwa afrykańskiego, żyrafę i nosorożca białego południowego [cite: 43, 44][cite_start].\n* **Kontekst prawny:** Obecnie w Polsce nie ma całkowitego zakazu importu okazów tych gatunków[cite: 67]. [cite_start]Projekt jest zgodny z prawem UE i zasadą ostrożności (art. 191 TFUE) [cite: 95, 115][cite_start].\n\n## 2. Uzasadnienie potrzeby zmian (do pytania: Czy ustawa jest potrzebna?)\n* **Problem:** Polowania dla trofeów wywierają presję na populacje już narażone na wyginięcie[cite: 70]. [cite_start]W latach 2014–2024 do Polski przywieziono ponad 1500 trofeów zwierząt chronionych Konwencją CITES [cite: 93][cite_start].\n* **Wpływ na przyrodę:** Myśliwi eliminują najsilniejsze osobniki (np. lwy z największymi grzywami, słonie z największymi ciosami), co zmienia strukturę genetyczną i społeczną populacji [cite: 77, 79][cite_start].\n* **Skuteczność:** Bezpośrednia eksploatacja (polowania) to jedna z głównych przyczyn kryzysu bioróżnorodności[cite: 102]. [cite_start]Nawet niskie wskaźniki odławiania mogą mieć destrukcyjny wpływ na przetrwanie gatunku[cite: 73].\n\n## 3. Szczegóły rozwiązań prawnych (do pytań: Czy akceptuje Pani/Pan rozwiązania?; Inne sposoby rozwiązania)\n* **Mechanizm zakazu:** Dodanie art. [cite_start]61a zakazującego wprowadzania na terytorium RP ww. okazów (zarówno żywych, jak i martwych)[cite: 41, 42, 113].\n* **Sankcja karna:** Dodanie art. [cite_start]128b – złamanie zakazu będzie przestępstwem zagrożonym karą pozbawienia wolności od 3 miesięcy do 5 lat [cite: 53, 54, 55][cite_start].\n* **Procedura administracyjna:** Organ nie wyda zezwolenia na przywóz gatunków objętych zakazem[cite: 49].\n* **Rozwiązania alternatywne:** Wnioskodawcy nie rozważali alternatyw. [cite_start]Uznano, że jedynie sankcja karna i ranga ustawowa zapewnią skuteczność walki z tym zjawiskiem [cite: 145, 146, 147][cite_start].\n\n## 4. Grupy docelowe i wyłączenia (do pytań: Czy dotyczy bezpośrednio?; Inne podmioty)\n* **Kogo dotyczy:** Osób fizycznych i prawnych dokonujących importu (wprowadzania na teren RP) wskazanych gatunków zwierząt [cite: 54][cite_start].\n* **Wyłączenia:** Przepisów zakazujących nie stosuje się do ogrodów zoologicznych oraz instytucji naukowych [cite: 51, 142][cite_start].\n\n## 5. Deklarowane skutki regulacji (do pytań o oceny skutków: społecznych, gospodarczych, finansowych, prawnych)\n* **Skutki społeczne:** Zachowanie ekosystemów dla przyszłych pokoleń, ochrona bioróżnorodności, zaniechanie zabijania zwierząt dla celów rozrywkowych, realizacja moralnego zobowiązania wobec przyrody [cite: 154, 155, 156][cite_start].\n* **Skutki gospodarcze:** Projektodawca deklaruje, że ustawa nie wywoła skutków gospodarczych[cite: 157]. [cite_start]Nie przewiduje się obciążeń administracyjnych dla przedsiębiorców [cite: 168][cite_start].\n* **Skutki finansowe:** Projekt nie pociąga za sobą obciążeń dla budżetu państwa ani budżetów jednostek samorządu terytorialnego[cite: 159].\n* **Skutki prawne:** Nowelizacja ustawy o ochronie przyrody (zmiany w art. 61, dodanie 61a, 128b). [cite_start]Konieczność stosowania nowych przepisów karnych przez sądy[cite: 58]. [cite_start]Ustawa wchodzi w życie po 14 dniach od ogłoszenia[cite: 62].\n",
+            "open_questions": [
+                "Komentarz do całości projektu ustawy:"
+            ],
+            "closed_questions": [
+                {
+                    "question": "Czy według Pani/Pana przyjęcie tej ustawy jest potrzebne? (5 - zdecydowanie tak, 1 - zdecydowanie nie)",
+                    "answers": [
+                        "5",
+                        "4",
+                        "3",
+                        "2",
+                        "1"
+                    ]
+                },
+                {
+                    "question": "Czy akceptuje Pani/Pan rozwiązania zawarte w projekcie ustawy? (5 - zdecydowanie tak, 1 - zdecydowanie nie)",
+                    "answers": [
+                        "5",
+                        "4",
+                        "3",
+                        "2",
+                        "1"
+                    ]
+                },
+                {
+                    "question": "Czy zgadza się Pani/Pan ze stwierdzeniem, że regulacje zawarte w projekcie ustawy dotyczą Pani/Pana bezpośrednio? (5 - zdecydowanie tak, 1 - zdecydowanie nie)",
+                    "answers": [
+                        "5",
+                        "4",
+                        "3",
+                        "2",
+                        "1"
+                    ]
+                },
+                {
+                    "question": "Czy Pani/Pana zdaniem problem, który został wskazany przez wnioskodawcę, mógłby zostać rozwiązany inaczej niż w drodze projektowanej ustawy?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy zgadza się Pani/Pan z przedstawioną w projekcie ustawy oceną skutków społecznych proponowanych zmian?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy zgadza się Pani/Pan z przedstawioną w projekcie ustawy oceną skutków gospodarczych proponowanych zmian?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy zgadza się Pani/Pan z przedstawioną w projekcie ustawy oceną skutków finansowych proponowanych zmian?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy zgadza się Pani/Pan z przedstawioną w projekcie ustawy oceną skutków prawnych proponowanych zmian?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy dostrzega Pani/Pan inne skutki proponowanych zmian niż wskazane przez wnioskodawcę w projekcie ustawy?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy uważa Pani/Pan, że proponowana ustawa wpłynie na inne podmioty (osoby, grupy, organizacje) niż wskazane przez wnioskodawcę w projekcie ustawy?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "id": "760",
+        "sejmPrintId": "760",
+        "rclId": "UC98",
+        "title": "Rządowy projekt ustawy o zmianie ustawy o gospodarce opakowaniami i odpadami opakowaniowymi oraz niektórych innych ustaw",
+        "author": "Rada Ministrów",
+        "date": "2024-11-21",
+        "are_consultations": true,
+        "brief_description": "Projekt ustawy ma na celu przesunięcie terminu uruchomienia systemu kaucyjnego w Polsce na dzień 1 października 2025 r. oraz wprowadzenie niezbędnych zmian uszczelniających system. Nowelizacja wyłącza z systemu opakowania po mleku i produktach mlecznych, wprowadza mechanizm „kaucja podąża za produktem” oraz doprecyzowuje zasady zbiórki w sklepach.",
+        "detailed_description": "Rządowy projekt ustawy (Druk nr 760) stanowi kluczową nowelizację przepisów dotyczących gospodarki odpadami, mającą na celu uratowanie i usprawnienie wdrażanego w Polsce systemu kaucyjnego. Pierwotnie system ten miał ruszyć 1 stycznia 2025 roku, jednak ze względu na opóźnienia w przygotowaniach infrastrukturalnych (brak wystarczającej liczby recyklomatów, niegotowość systemów IT) oraz ryzyko chaosu organizacyjnego, rząd zdecydował się na przesunięcie terminu startu na 1 października 2025 roku. Jest to zmiana krytyczna dla branży handlowej i producentów napojów, dająca im dodatkowe 9 miesięcy na dostosowanie się do nowych wymogów.\n\nUstawa wprowadza szereg istotnych zmian merytorycznych, mających na celu uszczelnienie systemu i zapobieganie nadużyciom. Najważniejszą z nich jest mechanizm „kaucja podąża za produktem”, który zakłada pobieranie kaucji na każdym etapie łańcucha dostaw – od producenta, przez hurtownię, aż po sklep detaliczny. Ma to zapobiec sytuacjom, w których kaucja byłaby wyłudzana lub nieodprowadzana. Kolejną fundamentalną zmianą jest wyłączenie z systemu kaucyjnego opakowań po mleku i produktach mlecznych. Decyzja ta podyktowana jest względami sanitarnymi – zalegające resztki mleka w automatach zbiórki mogłyby stwarzać zagrożenie bakteriologiczne i generować nieprzyjemne zapachy, co utrudniłoby funkcjonowanie punktów zbiórki w sklepach. Ponadto ustawa doprecyzowuje obowiązki sklepów: placówki o powierzchni powyżej 200 m² będą musiały obowiązkowo prowadzić zbiórkę opakowań, natomiast dla mniejszych sklepów będzie to dobrowolne. Kaucja została również zwolniona z podatku VAT, co upraszcza rozliczenia.",
+        "impact": "Przesunięcie terminu wejścia w życie systemu kaucyjnego ma zapobiec paraliżowi organizacyjnemu, który groziłby w przypadku startu w styczniu 2025 roku. Dzięki temu przedsiębiorcy zyskują niezbędny czas na instalację maszyn i przeszkolenie personelu, co powinno przełożyć się na płynniejsze działanie systemu dla konsumentów. Oczekuje się, że docelowo system ten pozwoli na odzysk nawet 90% butelek PET i puszek metalowych, co znacząco zmniejszy ilość odpadów trafiających na wysypiska i do środowiska naturalnego.\n\nDla przeciętnego konsumenta ustawa oznacza, że od 1 października 2025 roku przy zakupie napojów w butelkach plastikowych, szklanych wielorazowych oraz puszkach będzie doliczana kaucja zwrotna. Zwrot kaucji będzie możliwy bez konieczności okazywania paragonu, co ma zachęcić do oddawania opakowań. Wyłączenie mleka z systemu spotkało się z ulgą branży mleczarskiej i handlowej, obawiającej się problemów sanitarnych. Skutki budżetowe ustawy są neutralne, gdyż kaucja nie jest dochodem budżetu państwa, a nieodebrana kaucja zasili budżety operatorów systemu, z przeznaczeniem na jego rozwój i utrzymanie.",
+        "acts": [
+            {
+                "date": "2024-10-30",
+                "url": "https://www.sejm.gov.pl/sejm10.nsf/druk.xsp?nr=760",
+                "title": "Projekt ustawy (Druk nr 760)",
+                "brief_description": "Tekst projektu wniesiony do Sejmu przez Radę Ministrów.",
+                "detailed_description": "Dokument zawiera proponowane zmiany legislacyjne, w tym nową datę wejścia w życie (01.10.2025) oraz szczegółowe przepisy dotyczące rozliczeń kaucji między producentami a sklepami."
+            },
+            {
+                "date": "2024-10-30",
+                "url": "https://www.sejm.gov.pl/sejm10.nsf/druk.xsp?nr=760",
+                "title": "Uzasadnienie projektu",
+                "brief_description": "Wyjaśnienie przyczyn nowelizacji (część Druku nr 760).",
+                "detailed_description": "Wnioskodawca argumentuje, że bez przesunięcia terminu system nie zadziałałby poprawnie, co groziłoby karami unijnymi i stratami dla handlu. Wskazano na ryzyka sanitarne związane z mlekiem oraz potrzebę uszczelnienia luki VAT."
+            },
+            {
+                "date": "2024-11-13",
+                "url": "https://www.sejm.gov.pl/sejm10.nsf/pub.xsp?nr=760&type=A",
+                "title": "Opinia Biura Analiz Sejmowych (BAS)",
+                "brief_description": "Opinia prawna dotycząca zgodności projektu z prawem UE.",
+                "detailed_description": "Ekspertyza potwierdzająca, że proponowane zmiany, w tym przesunięcie terminu, nie naruszają dyrektyw unijnych, pod warunkiem zachowania celów ekologicznych (poziomów zbiórki)."
+            },
+            {
+                "date": "2024-11-19",
+                "url": "https://www.sejm.gov.pl/sejm10.nsf/druk.xsp?nr=806",
+                "title": "Sprawozdanie Komisji Ochrony Środowiska (Druk nr 806)",
+                "brief_description": "Raport z prac komisji sejmowych nad projektem.",
+                "detailed_description": "Komisja zarekomendowała przyjęcie projektu z poprawkami redakcyjnymi. Odrzucono wnioski opozycji o dłuższe vacatio legis (do 2026 r.)."
+            },
+            {
+                "date": "2024-12-06",
+                "url": "https://www.sejm.gov.pl/sejm10.nsf/process.xsp?nr=760",
+                "title": "Uchwała Senatu i Głosowanie Sejmu",
+                "brief_description": "Senat zaproponował poprawki, które Sejm odrzucił.",
+                "detailed_description": "Senat wnioskował o przesunięcie startu na 1 stycznia 2026 r., jednak Sejm odrzucił tę poprawkę, utrzymując datę 1 października 2025 r. jako ostateczną."
+            }
+        ],
+        "status": [
+            {
+                "type": "INITIATIVE",
+                "description": "Rada Ministrów przyjmuje projekt ustawy (29.10.2024)"
+            },
+            {
+                "type": "SEJM_FIRST_READING",
+                "description": "Pierwsze czytanie na posiedzeniu Sejmu (07.11.2024)"
+            },
+            {
+                "type": "SEJM_COMMITTEE",
+                "description": "Prace w Komisji Ochrony Środowiska, Zasobów Naturalnych i Leśnictwa (Sprawozdanie 19.11.2024)"
+            },
+            {
+                "type": "SEJM_SECOND_READING",
+                "description": "Drugie czytanie w Sejmie (20.11.2024)"
+            },
+            {
+                "type": "SEJM_THIRD_READING",
+                "description": "Uchwalenie ustawy przez Sejm (21.11.2024)"
+            },
+            {
+                "type": "SENATE",
+                "description": "Senat podejmuje uchwałę o wprowadzeniu poprawek (przesunięcie terminu na 2026)"
+            },
+            {
+                "type": "SEJM_SENATE_REVIEW",
+                "description": "Sejm odrzuca poprawki Senatu, utrzymując termin 1 października 2025"
+            },
+            {
+                "type": "PRESIDENT",
+                "description": "Prezydent podpisuje ustawę"
+            },
+            {
+                "type": "PUBLISHED",
+                "description": "Ustawa opublikowana w Dzienniku Ustaw"
+            }
+        ],
+        "consultations": {
+            "brief": "# Briefing merytoryczny do Rządowego projektu ustawy (Druk nr 760)\n\n--- \n\n## 1. Informacje ogólne i cel projektu\n* **Wnioskodawca:** Rada Ministrów.\n* **Kluczowa zmiana:** Start systemu kaucyjnego 1 października 2025 r. (zamiast 1 stycznia 2025 r.).\n* **Przedmiot regulacji:** Butelki plastikowe, puszki, butelki szklane wielorazowe. Wyłączono mleko.\n\n## 2. Uzasadnienie potrzeby zmian\n* **Brak gotowości:** Operatorzy i sklepy nie zdążyli przygotować infrastruktury (recyklomatów).\n* **Uszczelnienie:** Konieczność wprowadzenia zasady „kaucja podąża za produktem”, aby uniknąć wyłudzeń.\n\n## 3. Stanowiska w toku prac\n* **Rząd:** Nalegał na jak najszybszy start (październik 2025) by uniknąć kar UE.\n* **Branża/Senat:** Postulowali start od stycznia 2026 r. (poprawka odrzucona przez Sejm).\n",
+            "open_questions": [
+                "Czy termin październikowy jest realny dla małych sklepów?"
+            ],
+            "closed_questions": [
+                {
+                    "question": "Czy popiera Pani/Pan przesunięcie terminu na październik 2025?",
+                    "answers": [
+                        "Tak",
+                        "Nie"
+                    ]
+                },
+                {
+                    "question": "Czy wyłączenie opakowań po mleku jest słuszne?",
+                    "answers": [
+                        "Tak",
+                        "Nie"
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "id": "2",
+        "sejmPrintId": "3239",
+        "rclId": null,
+        "title": "Ustawa o zmianie ustawy o zdrowiu publicznym oraz niektórych innych ustaw (tzw. zakaz energetyków)",
+        "author": "grupa posłów: Klub Parlamentarny Prawo i Sprawiedliwość",
+        "date": "2023-08-17",
+        "are_consultations": true,
+        "brief_description": "Ustawa wprowadza rewolucyjne zmiany w zakresie ochrony zdrowia publicznego poprzez ustanowienie całkowitego zakazu sprzedaży napojów z dodatkiem tauryny i kofeiny (tzw. energetyków) osobom poniżej 18. roku życia. Regulacja obejmuje nie tylko sklepy stacjonarne, ale także automaty vendingowe oraz teren szkół i placówek oświatowych. Dodatkowo, nowe przepisy nakładają na producentów i importerów obowiązek wyraźnego oznaczania opakowań informacją o zawartości kofeiny, pod rygorem dotkliwych sankcji finansowych.",
+        "detailed_description": "Niniejsza nowelizacja ustawy o zdrowiu publicznym, powszechnie znana jako 'ustawa o zakazie energetyków', stanowi bezpośrednią odpowiedź ustawodawcy na alarmujące raporty ekspertów medycznych i dietetyków. Wskazywały one na lawinowy wzrost spożycia napojów energetyzujących przez dzieci i młodzież, co prowadziło do licznych problemów zdrowotnych, w tym zaburzeń kardiologicznych, problemów ze snem oraz nadpobudliwości. Ustawa precyzyjnie definiuje napój z dodatkiem kofeiny lub tauryny jako produkt, w którym zawartość kofeiny przekracza 150 mg na litr. Taka definicja pozwala na skuteczne objęcie regulacją typowych 'energetyków', jednocześnie wyłączając z niej napoje naturalnie zawierające kofeinę, takie jak kawa czy herbata, o ile nie są one sztucznie wzbogacane tymi substancjami.\n\nUstawa wprowadza całkowity zakaz sprzedaży takich napojów osobom poniżej 18. roku życia, co w praktyce wymusza na sprzedawcach legitymowanie młodych klientów, analogicznie jak w przypadku alkoholu. Zakaz ten obowiązuje we wszystkich punktach handlowych, a także – co istotne – w automatach vendingowych, które były łatwo dostępne dla dzieci. Dodatkowo wprowadzono całkowity zakaz sprzedaży energetyków na terenie szkół i innych placówek oświatowych. Ustawodawca nałożył również na producentów i importerów obowiązek oznaczania opakowań jednostkowych widoczną, czytelną i nieusuwalną informacją o treści „Napój energetyzujący” lub „Napój energetyczny”. Za naruszenie przepisów przewidziano surowe kary: grzywnę do 2000 zł dla sprzedawcy łamiącego zakaz sprzedaży oraz karę pieniężną do 200 000 zł dla producenta/importera za brak odpowiednich oznaczeń.",
+        "impact": "Wejście w życie ustawy ma fundamentalne znaczenie dla długofalowej ochrony zdrowia publicznego w Polsce. Poprzez odcięcie legalnego dostępu do silnie pobudzających napojów dla osób niepełnoletnich, ustawodawca dąży do zmniejszenia występowania powikłań zdrowotnych u młodzieży, takich jak arytmie serca, stany lękowe czy problemy z koncentracją. Badania, na które powoływali się wnioskodawcy, wskazywały, że jedna puszka napoju energetyzującego może zawierać dawkę kofeiny odpowiadającą kilku filiżankom mocnej kawy, co dla rozwijającego się organizmu stanowi poważne obciążenie metaboliczne i neurologiczne.\n\nW wymiarze gospodarczym regulacja wymusiła na branży spożywczej znaczące dostosowania. Producenci musieli przeprojektować opakowania i etykiety, aby spełnić nowe wymogi informacyjne, a także zmienić strategie marketingowe w związku z utratą istotnej grupy docelowej, jaką była młodzież szkolna. Sklepy i sieci handlowe musiały zaktualizować swoje systemy kasowe (blokady sprzedaży dla nieletnich) oraz przeszkolić personel w zakresie weryfikacji wieku klientów. Mimo początkowych obaw branży o spadki obrotów, priorytetem regulacji pozostało dobrostan dzieci i młodzieży.",
+        "acts": [
+            {
+                "date": "2023-02-09",
+                "url": "https://www.sejm.gov.pl/sejm9.nsf/druk.xsp?nr=3239",
+                "title": "Poselski projekt ustawy (Druk nr 3239)",
+                "brief_description": "Projekt inicjujący, zawierający uzasadnienie oparte na danych Instytutu Matki i Dziecka o szkodliwości kofeiny dla rozwoju dzieci.",
+                "detailed_description": "W pierwotnej wersji projekt był bardziej rygorystyczny (zawierał zakaz reklamy). Uzasadnienie podkreślało, że polska młodzież jest w czołówce europejskiej pod względem spożycia napojów energetyzujących."
+            },
+            {
+                "date": "2023-06-15",
+                "url": "https://www.sejm.gov.pl/sejm9.nsf/druk.xsp?nr=3336",
+                "title": "Sprawozdanie Komisji Zdrowia",
+                "brief_description": "Raport z prac komisji, w którym doprecyzowano definicję napoju, aby wykluczyć z zakazu naturalne kawy mrożone.",
+                "detailed_description": "Komisja wprowadziła poprawki techniczne i usunęła kontrowersyjny zapis o zakazie reklamy, skupiając się na ograniczeniu dostępności fizycznej (wiek, automaty)."
+            },
+            {
+                "date": "2023-08-17",
+                "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20230001718",
+                "title": "Tekst ustawy (Dz.U. 2023 poz. 1718)",
+                "brief_description": "Ostateczny akt prawny podpisany przez Prezydenta, obowiązujący od 1 stycznia 2024 r.",
+                "detailed_description": "Finalna wersja ustawy zawierająca zakaz sprzedaży osobom do lat 18, zakaz sprzedaży w szkołach i automatach oraz przepisy karne (grzywna do 2000 zł dla sprzedawcy)."
+            }
+        ],
+        "status": [
+            {
+                "type": "INITIATIVE",
+                "description": "Poselski projekt ustawy złożony do Sejmu (09.02.2023)"
+            },
+            {
+                "type": "SEJM_FIRST_READING",
+                "description": "Pierwsze czytanie na posiedzeniu Sejmu"
+            },
+            {
+                "type": "SEJM_COMMITTEE",
+                "description": "Prace w Komisji Zdrowia (Sprawozdanie 15.06.2023)"
+            },
+            {
+                "type": "SEJM_SECOND_READING",
+                "description": "Drugie czytanie w Sejmie"
+            },
+            {
+                "type": "SEJM_THIRD_READING",
+                "description": "Uchwalenie ustawy przez Sejm (17.08.2023)"
+            },
+            {
+                "type": "SENATE",
+                "description": "Senat nie wnosi poprawek"
+            },
+            {
+                "type": "PRESIDENT",
+                "description": "Prezydent podpisuje ustawę"
+            },
+            {
+                "type": "PUBLISHED",
+                "description": "Ustawa opublikowana w Dzienniku Ustaw (28.08.2023)"
+            },
+            {
+                "type": "IN_FORCE",
+                "description": "Ustawa wchodzi w życie (01.01.2024)"
+            }
+        ],
+        "consultations": null
+    },
+    {
+        "id": "3",
+        "sejmPrintId": null,
+        "rclId": null,
+        "title": "Ustawa z dnia 5 sierpnia 2022 r. o ekonomii społecznej",
+        "author": "Sejm RP",
+        "date": "2022-08-05",
+        "are_consultations": false,
+        "brief_description": "Ustawa ta jest pierwszą kompleksową regulacją sektora ekonomii społecznej w Polsce. Jej celem jest wspieranie osób zagrożonych wykluczeniem społecznym poprzez tworzenie stabilnych miejsc pracy w przedsiębiorstwach społecznych oraz zwiększenie dostępności usług społecznych.",
+        "detailed_description": "Ustawa z dnia 5 sierpnia 2022 r. o ekonomii społecznej stanowi kamień milowy w rozwoju polityki społecznej w Polsce, będąc pierwszą kompleksową regulacją prawną dedykowaną temu sektorowi. Jej nadrzędnym celem jest stworzenie spójnego systemu wsparcia dla osób zagrożonych wykluczeniem społecznym, takich jak osoby długotrwale bezrobotne, niepełnosprawne, bezdomne czy uzależnione, poprzez ich aktywizację zawodową i społeczną. Ustawa wprowadza legalną definicję przedsiębiorstwa społecznego – podmiotu, który prowadzi działalność gospodarczą, ale jego głównym celem nie jest maksymalizacja zysku, lecz realizacja celów społecznych. Zysk wypracowany przez takie przedsiębiorstwo nie może być dzielony między udziałowców, lecz musi być reinwestowany w cele statutowe lub w pracowników.\n\nKluczowym elementem ustawy jest uregulowanie statusu przedsiębiorstwa społecznego (PS). Aby uzyskać ten status, podmiot musi zatrudniać co najmniej 30% osób z grup zagrożonych wykluczeniem lub realizować usługi społeczne użyteczności publicznej. W zamian za to, przedsiębiorstwa społeczne zyskują dostęp do szerokiego wachlarza instrumentów wsparcia, w tym dotacji na utworzenie miejsc pracy, finansowania kosztów wynagrodzeń, preferencji w zamówieniach publicznych oraz zwolnień podatkowych (np. CIT w części przeznaczonej na cele społeczne). Ustawa określa również rolę i zadania organów administracji publicznej, w tym samorządów, w zakresie wspierania rozwoju ekonomii społecznej, m.in. poprzez tworzenie lokalnych planów rozwoju oraz zlecanie zadań publicznych podmiotom ekonomii społecznej.",
+        "impact": "Wprowadzenie ustawy o ekonomii społecznej ma na celu systemową zmianę w podejściu do rozwiązywania problemów społecznych w Polsce. Oczekuje się, że dzięki nowym regulacjom nastąpi znaczący wzrost liczby stabilnych i wysokiej jakości miejsc pracy dla osób, które dotychczas miały największe trudności na rynku pracy. Profesjonalizacja sektora ekonomii społecznej ma przyczynić się do zwiększenia dostępności i jakości usług społecznych świadczonych na rzecz lokalnych społeczności, takich jak opieka nad osobami starszymi, dziećmi czy usługi rehabilitacyjne.\n\nDługofalowym skutkiem ustawy ma być wzmocnienie spójności społecznej i redukcja ubóstwa. Poprzez danie „wędki zamiast ryby”, czyli umożliwienie pracy zarobkowej osobom wykluczonym, ustawa sprzyja ich odzyskaniu samodzielności ekonomicznej i poczucia godności. Dla samorządów ustawa stwarza nowe możliwości realizacji zadań własnych we współpracy z podmiotami trzeciego sektora, co może prowadzić do bardziej efektywnego wydatkowania środków publicznych. Ustawa zapewnia również stabilne ramy prawne, co zwiększa bezpieczeństwo obrotu gospodarczego z udziałem podmiotów ekonomii społecznej.",
+        "acts": [
+            {
+                "date": "2022-08-05",
+                "url": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20220001812/T/D20221812L.pdf",
+                "title": "Tekst aktu",
+                "brief_description": "Tekst ustawy uchwalonej przez Sejm.",
+                "detailed_description": "Pełna treść ustawy o ekonomii społecznej."
+            },
+            {
+                "date": "2022-08-29",
+                "url": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20220001812/O/D20221812.pdf",
+                "title": "Tekst ogłoszony",
+                "brief_description": "Tekst ustawy opublikowany w Dzienniku Ustaw.",
+                "detailed_description": "Oficjalna publikacja ustawy."
+            },
+            {
+                "date": "2022-08-29",
+                "url": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20220001812/U/D20221812Lj.pdf",
+                "title": "Tekst ujednolicony",
+                "brief_description": "Tekst jednolity ustawy.",
+                "detailed_description": "Tekst uwzględniający późniejsze zmiany."
+            }
+        ],
+        "status": [
+            {
+                "type": "INITIATIVE",
+                "description": "Rządowy projekt ustawy wpływa do Sejmu (13.06.2022)"
+            },
+            {
+                "type": "SEJM_FIRST_READING",
+                "description": "Pierwsze czytanie w Sejmie (22.06.2022)"
+            },
+            {
+                "type": "SEJM_COMMITTEE",
+                "description": "Prace w Komisji Polityki Społecznej i Rodziny"
+            },
+            {
+                "type": "SEJM_SECOND_READING",
+                "description": "Drugie czytanie w Sejmie (07.07.2022)"
+            },
+            {
+                "type": "SEJM_THIRD_READING",
+                "description": "Uchwalenie ustawy przez Sejm (08.07.2022)"
+            },
+            {
+                "type": "SENATE",
+                "description": "Senat przyjmuje ustawę bez poprawek (21.07.2022)"
+            },
+            {
+                "type": "PRESIDENT",
+                "description": "Prezydent podpisuje ustawę (05.08.2022)"
+            },
+            {
+                "type": "PUBLISHED",
+                "description": "Publikacja w Dzienniku Ustaw (29.08.2022)"
+            },
+            {
+                "type": "IN_FORCE",
+                "description": "Ustawa wchodzi w życie (30.10.2022)"
+            }
+        ],
+        "consultations": null
+    },
+    {
+        "id": "4",
+        "sejmPrintId": "2005",
+        "rclId": null,
+        "title": "Poselski projekt ustawy o zmianie ustawy o finansowaniu zadań oświatowych",
+        "author": "grupa posłów",
+        "date": "2025-10-26",
+        "are_consultations": true,
+        "brief_description": "Projekt ustawy ma na celu uporządkowanie nieścisłości wynikających z ustawy o dochodach jednostek samorządu terytorialnego oraz zapobieżenie nieuzasadnionemu wzrostowi dotacji dla niesamorządowych przedszkoli. Nowelizacja wprowadza zmiany w terminach sprawozdawczości do Systemu Informacji Oświatowej (SIO) oraz mechanizmy stabilizujące wydatki samorządów na oświatę niepubliczną.",
+        "detailed_description": "Poselski projekt ustawy o zmianie ustawy o finansowaniu zadań oświatowych (Druk nr 2005) stanowi reakcję na problemy interpretacyjne i finansowe, jakie pojawiły się po wejściu w życie ustawy z dnia 1 października 2024 r. o dochodach jednostek samorządu terytorialnego. Wnioskodawcy wskazują, że nowe zasady finansowania samorządów, oparte na 'łącznej kwocie potrzeb oświatowych', wymagają doprecyzowania w zakresie dotowania placówek niesamorządowych, aby uniknąć drenażu budżetów gmin.\n\nKluczowym elementem projektu jest urealnienie terminów przekazywania danych do Systemu Informacji Oświatowej (SIO), które warunkują otrzymanie dotacji. Projekt zakłada, że dla nowo powstałych placówek, które rozpoczną działalność w pierwszej połowie roku (styczeń-czerwiec), obowiązek sprawozdawczy zostanie przesunięty, co opóźni pierwszą wypłatę dotacji do kolejnego roku budżetowego. Ma to zapobiec sytuacjom, w których gminy są zaskakiwane koniecznością wypłaty środków, których nie zaplanowały w budżecie. Ponadto projekt wprowadza mechanizm 'zamrożenia' podstawowej kwoty dotacji w gminach, w których odnotowuje się drastyczny spadek liczby dzieci (prognozowany spadek o 7,7% w 2026 r.). Dzięki temu, mimo mniejszej liczby uczniów w szkołach samorządowych (co matematycznie zawyżałoby kwotę na jednego ucznia i tym samym dotację dla szkół prywatnych), wydatki na placówki niepubliczne nie wzrosną w sposób niekontrolowany. Projekt reguluje również kwestię wypłaty zaległych dotacji 'za efekt' dla szkół dla dorosłych.",
+        "impact": "Wejście w życie ustawy przyniesie ulgę budżetom jednostek samorządu terytorialnego, które borykają się z rosnącymi kosztami utrzymania oświaty niepublicznej. Przewiduje się, że uszczelnienie systemu dotacyjnego pozwoli zaoszczędzić samorządom setki milionów złotych rocznie, które będą mogły zostać przeznaczone na inwestycje w szkoły publiczne. Dla prowadzących niesamorządowe placówki oświatowe ustawa oznacza zaostrzenie rygorów administracyjnych i konieczność dokładniejszego planowania otwierania nowych oddziałów. Z perspektywy rodziców i uczniów zmiany te mają charakter techniczny i nie powinny wpłynąć negatywnie na dostępność miejsc w przedszkolach i szkołach, a jedynie uporządkować przepływy finansowe między sektorem publicznym a prywatnym.",
+        "acts": [
+            {
+                "date": "2025-10-26",
+                "url": "https://www.sejm.gov.pl/sejm10.nsf/druk.xsp?nr=2005",
+                "title": "Poselski projekt ustawy (Druk nr 2005)",
+                "brief_description": "Tekst projektu ustawy wniesiony przez grupę posłów.",
+                "detailed_description": "Zawiera propozycje zmian w ustawie o finansowaniu zadań oświatowych, w tym nowe zasady sprawozdawczości SIO."
+            },
+            {
+                "date": "2025-11-15",
+                "url": "https://www.sejm.gov.pl/sejm10.nsf/druk.xsp?nr=2005",
+                "title": "Opinia Biura Analiz Sejmowych",
+                "brief_description": "Opinia prawna do projektu.",
+                "detailed_description": "Analiza zgodności projektu z prawem UE oraz ocena skutków finansowych dla JST."
+            }
+        ],
+        "status": [
+            {
+                "type": "INITIATIVE",
+                "description": "Wpłynięcie projektu do Sejmu (26.10.2025)"
+            },
+            {
+                "type": "SEJM_FIRST_READING",
+                "description": "Skierowanie do I czytania w Komisji Edukacji, Nauki i Młodzieży (14.11.2025)"
+            },
+            {
+                "type": "SEJM_COMMITTEE",
+                "description": "Trwają prace w komisji"
+            }
+        ],
+        "consultations": {
+            "brief": "# [cite_start]Briefing merytoryczny do Poselskiego projektu ustawy o zmianie ustawy o finansowaniu zadań oświatowych (Druk nr 2005)\n\n--- \n\n## 1. O co chodzi w tym projekcie? (Proste wyjaśnienie)\n* **Cel:** Naprawienie błędów w finansowaniu szkół i przedszkoli, które pojawiły się po ostatnich zmianach w prawie.\n* **Problem:** Gminy boją się, że będą musiały płacić niespodziewanie dużo pieniędzy prywatnym przedszkolom, nawet jeśli mają mniej uczniów.\n* **Rozwiązanie:** Projekt wprowadza zasady, które \"zamrażają\" wysokość dopłat dla prywatnych placówek w pewnych sytuacjach i zmieniają terminy zgłaszania nowych uczniów, żeby gminy mogły lepiej zaplanować budżet.\n\n## 2. Dlaczego to jest ważne?\n* **Dla samorządów:** Pozwoli im to zaoszczędzić pieniądze i uniknąć dziury budżetowej.\n* **Dla szkół prywatnych:** Oznacza to, że mogą dostać mniej pieniędzy niż się spodziewały, jeśli gmina ma problemy demograficzne (mniej dzieci).\n* **Dla rodziców:** Zmiany są techniczne i nie powinny wpłynąć na to, czy Twoje dziecko dostanie się do przedszkola, ale mają zapewnić, że w kasie gminy nie zabraknie pieniędzy na inne potrzeby.\n\n## 3. Główne punkty sporu\n* **Samorządowcy:** Popierają projekt, bo chroni ich budżety.\n* **Właściciele przedszkoli niepublicznych:** Obawiają się, że dostaną mniej pieniędzy na prowadzenie placówek.\n",
+            "open_questions": [
+                "Czy 'zamrożenie' dotacji nie wpłynie na jakość nauczania w placówkach niepublicznych?",
+                "Czy nowe terminy SIO nie są zbyt restrykcyjne dla nowych placówek?"
+            ],
+            "closed_questions": [
+                {
+                    "question": "Czy popiera Pani/Pan ograniczenie wzrostu dotacji dla szkół niepublicznych?",
+                    "answers": [
+                        "Tak",
+                        "Nie"
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "id": "5",
+        "sejmPrintId": null,
+        "rclId": null,
+        "title": "Przedstawiony przez Prezydenta Rzeczypospolitej Polskiej projekt ustawy o zmianie ustawy - Prawo o ruchu drogowym oraz niektórych innych ustaw",
+        "author": "Prezydent RP",
+        "date": "2025-11-07",
+        "are_consultations": true,
+        "brief_description": "Prezydencki projekt ustawy ma na celu wsparcie innowacyjności w polskiej motoryzacji poprzez ułatwienie testowania pojazdów autonomicznych oraz deregulację przepisów dla branży badawczo-rozwojowej. Projekt wprowadza również ułatwienia dla handlarzy samochodami używanymi w zakresie profesjonalnej rejestracji do jazd testowych.",
+        "detailed_description": "Projekt ustawy wniesiony przez Prezydenta RP koncentruje się na dostosowaniu polskich przepisów drogowych do dynamicznego rozwoju technologii, w szczególności w obszarze pojazdów autonomicznych i systemów zautomatyzowanego prowadzenia. Głównym założeniem jest stworzenie przyjaznego otoczenia prawnego dla firm prowadzących prace badawczo-rozwojowe (R&D) w Polsce, co ma zachęcić inwestorów do testowania nowoczesnych rozwiązań na polskich drogach. Ustawa przewiduje uproszczenie procedur uzyskiwania zezwoleń na testy drogowe oraz wprowadza mechanizmy chroniące tajemnice przedsiębiorstwa i własność intelektualną w toku tych procedur.\n\nPonadto, projekt wychodzi naprzeciw oczekiwaniom rynku wtórnego pojazdów, rozszerzając możliwość korzystania z tzw. profesjonalnej rejestracji (zielone tablice) na podmioty zajmujące się handlem samochodami używanymi. Dotychczas rozwiązanie to było dedykowane głównie producentom i instytutom badawczym. Zmiana ta pozwoli komisom i dealerom na legalne i proste udostępnianie aut klientom do jazd testowych bez konieczności każdorazowej, pełnej rejestracji pojazdu.",
+        "impact": "Oczekuje się, że nowe przepisy uczynią Polskę atrakcyjnym miejscem dla rozwoju technologii automotive, co może przełożyć się na wzrost inwestycji i powstanie nowych, wysokospecjalistycznych miejsc pracy. Ułatwienia dla handlarzy autami używanymi mają z kolei usprawnić obrót gospodarczy i zmniejszyć biurokrację, co ułatwi życie zarówno przedsiębiorcom, jak i konsumentom chcącym sprawdzić auto przed zakupem. W dłuższej perspektywie rozwój systemów autonomicznych ma przyczynić się do poprawy bezpieczeństwa na drogach.",
+        "acts": [
+            {
+                "date": "2025-11-07",
+                "url": "https://www.sejm.gov.pl/sejm10.nsf/druk.xsp?nr=brak",
+                "title": "Projekt ustawy (Druk: brak numeru)",
+                "brief_description": "Tekst projektu wniesiony przez Prezydenta RP.",
+                "detailed_description": "Zawiera przepisy dotyczące testowania pojazdów autonomicznych i profesjonalnej rejestracji."
+            }
+        ],
+        "status": [
+            {
+                "type": "INITIATIVE",
+                "description": "Prezydent RP składa projekt ustawy do Marszałka Sejmu (07.11.2025)"
+            },
+            {
+                "type": "SEJM_FIRST_READING",
+                "description": "Oczekiwanie na nadanie numeru druku i skierowanie do I czytania"
+            }
+        ],
+        "consultations": {
+            "brief": "# [cite_start]Briefing merytoryczny do Prezydenckiego projektu nowelizacji Prawa o ruchu drogowym\n\n--- \n\n## 1. O co chodzi w tym projekcie? (Proste wyjaśnienie)\n* **Cel:** Unowocześnienie prawa tak, by pasowało do ery samojeżdżących samochodów i ułatwienie życia sprzedawcom aut.\n* **Problem:** Obecne przepisy utrudniają testowanie nowoczesnych aut na drogach, a komisy mają problem z legalnym wysyłaniem klientów na jazdy próbne.\n* **Rozwiązanie:** Prezydent proponuje mniej biurokracji dla firm testujących nowe technologie oraz \"zielone tablice\" (profesjonalną rejestrację) dla handlarzy autami używanymi.\n\n## 2. Dlaczego to jest ważne?\n* **Dla innowacji:** Polska może stać się centrum testowania nowoczesnych technologii motoryzacyjnych.\n* **Dla kupujących auta:** Łatwiej będzie legalnie przetestować używany samochód przed zakupem.\n* **Dla bezpieczeństwa:** Rozwój systemów autonomicznych ma docelowo zmniejszyć liczbę wypadków.\n\n## 3. Główne punkty dyskusji\n* **Eksperci:** Chwalą kierunek zmian, ale pytają o szczegóły bezpieczeństwa testów na drogach publicznych.\n* **Branża handlowa:** Z entuzjazmem przyjmuje ułatwienia w rejestracji do jazd testowych.\n",
+            "open_questions": [
+                "Komentarz do całości projektu ustawy:"
+            ],
+            "closed_questions": [
+                {
+                    "question": "Czy według Pani/Pana przyjęcie tej ustawy jest potrzebne? (5 - zdecydowanie tak, 1 - zdecydowanie nie)",
+                    "answers": [
+                        "5",
+                        "4",
+                        "3",
+                        "2",
+                        "1"
+                    ]
+                },
+                {
+                    "question": "Czy akceptuje Pani/Pan rozwiązania zawarte w projekcie ustawy? (5 - zdecydowanie tak, 1 - zdecydowanie nie)",
+                    "answers": [
+                        "5",
+                        "4",
+                        "3",
+                        "2",
+                        "1"
+                    ]
+                },
+                {
+                    "question": "Czy zgadza się Pani/Pan ze stwierdzeniem, że regulacje zawarte w projekcie ustawy dotyczą Pani/Pana bezpośrednio? (5 - zdecydowanie tak, 1 - zdecydowanie nie)",
+                    "answers": [
+                        "5",
+                        "4",
+                        "3",
+                        "2",
+                        "1"
+                    ]
+                },
+                {
+                    "question": "Czy Pani/Pana zdaniem problem, który został wskazany przez wnioskodawcę, mógłby zostać rozwiązany inaczej niż w drodze projektowanej ustawy?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy zgadza się Pani/Pan z przedstawioną w projekcie ustawy oceną skutków społecznych proponowanych zmian?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy zgadza się Pani/Pan z przedstawioną w projekcie ustawy oceną skutków gospodarczych proponowanych zmian?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy zgadza się Pani/Pan z przedstawioną w projekcie ustawy oceną skutków finansowych proponowanych zmian?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy zgadza się Pani/Pan z przedstawioną w projekcie ustawy oceną skutków prawnych proponowanych zmian?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy dostrzega Pani/Pan inne skutki proponowanych zmian niż wskazane przez wnioskodawcę w projekcie ustawy?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                },
+                {
+                    "question": "Czy uważa Pani/Pan, że proponowana ustawa wpłynie na inne podmioty (osoby, grupy, organizacje) niż wskazane przez wnioskodawcę w projekcie ustawy?",
+                    "answers": [
+                        "Tak",
+                        "Nie",
+                        "Brak odpowiedzi"
+                    ]
+                }
+            ]
+        }
+    }
+]

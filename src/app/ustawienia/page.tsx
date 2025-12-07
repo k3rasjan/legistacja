@@ -2,7 +2,7 @@
 
 import { HamburgerMenu } from '@/components/layout/HamburgerMenu';
 import { useAccessibility } from '@/contexts/AccessibilityContext';
-import { Settings, Eye, Type, Zap, Link2 } from 'lucide-react';
+import { Settings, Eye, Type, Zap, Link2, Accessibility } from 'lucide-react';
 
 interface ToggleSwitchProps {
   enabled: boolean;
@@ -62,7 +62,10 @@ export default function UstawieniaPage() {
         </div>
 
         <section className="mb-6 sm:mb-8">
-          <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Dostępność (WCAG)</h2>
+          <div className="flex items-center gap-2 mb-3 sm:mb-4">
+            <Accessibility className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+            <h2 className="text-base sm:text-lg font-semibold">Dostępność (WCAG)</h2>
+          </div>
           <div className="space-y-3 sm:space-y-4">
             <ToggleSwitch
               enabled={settings.highContrast}

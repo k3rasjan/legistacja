@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
@@ -88,8 +89,8 @@ export function PostCard({ update }: PostCardProps) {
               <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               <span className="text-xs sm:text-sm font-medium">Szczegółowa analiza AI</span>
             </div>
-            <div className="text-xs sm:text-sm space-y-2 whitespace-pre-line">
-              {update.aiDetailedSummary}
+            <div className="text-xs sm:text-sm prose prose-sm dark:prose-invert max-w-none prose-p:my-2 prose-ul:my-2 prose-li:my-0.5 prose-strong:text-foreground">
+              <ReactMarkdown>{update.aiDetailedSummary}</ReactMarkdown>
             </div>
           </div>
         )}

@@ -25,9 +25,9 @@ export function WrappedFirstVisit({ onContinue }: WrappedFirstVisitProps) {
     <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden">
       {/* Animated gradient background */}
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20"
         style={{
-          background: 'linear-gradient(135deg, #10b981 0%, #3b82f6 25%, #6366f1 50%, #8b5cf6 75%, #10b981 100%)',
+          background: 'linear-gradient(135deg, #e4e4e7 0%, #d4d4d8 25%, #a1a1aa 50%, #d4d4d8 75%, #e4e4e7 100%)',
           backgroundSize: '400% 400%',
           animation: 'gradient 15s ease infinite',
         }}
@@ -36,27 +36,27 @@ export function WrappedFirstVisit({ onContinue }: WrappedFirstVisitProps) {
       {/* Floating orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute w-96 h-96 rounded-full blur-3xl opacity-20"
+          className="absolute w-96 h-96 rounded-full blur-3xl opacity-15"
           style={{
-            background: 'linear-gradient(135deg, #10b981, #3b82f6)',
+            background: 'linear-gradient(135deg, #d4d4d8, #a1a1aa)',
             top: '10%',
             left: '20%',
             animation: 'float 8s ease-in-out infinite',
           }}
         />
         <div
-          className="absolute w-80 h-80 rounded-full blur-3xl opacity-20"
+          className="absolute w-80 h-80 rounded-full blur-3xl opacity-15"
           style={{
-            background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+            background: 'linear-gradient(135deg, #a1a1aa, #71717a)',
             bottom: '15%',
             right: '15%',
             animation: 'float 10s ease-in-out infinite reverse',
           }}
         />
         <div
-          className="absolute w-64 h-64 rounded-full blur-3xl opacity-15"
+          className="absolute w-64 h-64 rounded-full blur-3xl opacity-10"
           style={{
-            background: 'linear-gradient(135deg, #3b82f6, #10b981)',
+            background: 'linear-gradient(135deg, #71717a, #d4d4d8)',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
@@ -103,7 +103,7 @@ export function WrappedFirstVisit({ onContinue }: WrappedFirstVisitProps) {
             <span
               className="text-5xl md:text-6xl font-black bg-clip-text text-transparent"
               style={{
-                backgroundImage: 'linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #6366f1 100%)',
+                backgroundImage: 'linear-gradient(135deg, #18181b 0%, #3f3f46 50%, #52525b 100%)',
               }}
             >
               ostatnich 30 dni
@@ -126,12 +126,9 @@ export function WrappedFirstVisit({ onContinue }: WrappedFirstVisitProps) {
         {/* Continue button */}
         <button
           onClick={onContinue}
-          className={`group relative inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-lg text-white overflow-hidden transition-all duration-500 ${
+          className={`group relative inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-lg text-white overflow-hidden transition-all duration-500 bg-neutral-900 hover:bg-neutral-800 ${
             showButton ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
-          style={{
-            background: 'linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #6366f1 100%)',
-          }}
         >
           <span
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"

@@ -40,13 +40,13 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
     slides.push({
       type: 'text',
       textLines: ['Dużo się działo', 'w polskiej polityce.'],
-      accentColor: 'rgba(168, 85, 247, 0.4)',
+      accentColor: 'rgba(82, 82, 91, 0.6)',
     });
   } else {
     slides.push({
       type: 'text',
       textLines: ['Fajnie, że wróciłeś.', 'Sprawdźmy co przegapiłeś.'],
-      accentColor: 'rgba(99, 102, 241, 0.4)',
+      accentColor: 'rgba(82, 82, 91, 0.6)',
     });
   }
 
@@ -58,7 +58,7 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
       `${totalUpdates} zmian`,
       'czeka na Ciebie.',
     ],
-    accentColor: 'rgba(236, 72, 153, 0.4)',
+    accentColor: 'rgba(113, 113, 122, 0.5)',
   });
 
   // Add cards with occasional text breaks
@@ -68,7 +68,7 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
       slides.push({
         type: 'text',
         textLines: ['Oto najważniejsze', 'zmiany w prawie.'],
-        accentColor: 'rgba(34, 197, 94, 0.4)',
+        accentColor: 'rgba(82, 82, 91, 0.6)',
       });
     }
 
@@ -79,7 +79,7 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
       slides.push({
         type: 'text',
         textLines: ['Jest tego więcej...'],
-        accentColor: 'rgba(249, 115, 22, 0.4)',
+        accentColor: 'rgba(113, 113, 122, 0.5)',
       });
     }
   });
@@ -162,7 +162,7 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
 
   return (
     <div
-      className="fixed inset-0 bg-[#1a1a2e] overflow-hidden select-none"
+      className="fixed inset-0 bg-background overflow-hidden select-none"
       style={{ fontFamily: 'var(--font-geist-sans), system-ui, sans-serif' }}
     >
       {/* Progress bar */}
@@ -179,10 +179,10 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
                 }, 400);
               }
             }}
-            className="flex-1 h-1 sm:h-1.5 rounded-full overflow-hidden bg-white/20 hover:bg-white/30 transition-colors"
+            className="flex-1 h-1 sm:h-1.5 rounded-full overflow-hidden bg-neutral-200 hover:bg-neutral-300 transition-colors"
           >
             <div
-              className="h-full rounded-full transition-all duration-500 bg-white"
+              className="h-full rounded-full transition-all duration-500 bg-neutral-900"
               style={{
                 width: index < currentSlide ? '100%' : index === currentSlide ? '100%' : '0%',
                 opacity: index <= currentSlide ? 1 : 0,
@@ -210,8 +210,8 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
           className="absolute left-0 top-0 bottom-0 w-1/4 z-40 cursor-pointer group"
         >
           <div className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0 -translate-x-2">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center rotate-180">
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white/70" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-neutral-100 border border-neutral-200 flex items-center justify-center rotate-180">
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-neutral-500" />
             </div>
           </div>
         </button>
@@ -231,7 +231,7 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
           onClick={goToNextSlide}
           className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-50 group"
         >
-          <div className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-base sm:text-lg transition-all hover:bg-white/20 hover:scale-105 active:scale-95">
+          <div className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-neutral-900 text-white font-semibold text-base sm:text-lg transition-all hover:bg-neutral-800 hover:scale-105 active:scale-95">
             <span>Dalej</span>
             <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </div>
@@ -239,7 +239,7 @@ export function WrappedStory({ cards, totalUpdates, totalUstawy, daysCovered, is
       )}
 
       {/* Slide counter */}
-      <div className="absolute bottom-6 sm:bottom-8 right-3 sm:right-6 z-50 text-white/40 text-xs sm:text-sm font-medium tabular-nums">
+      <div className="absolute bottom-6 sm:bottom-8 right-3 sm:right-6 z-50 text-neutral-400 text-xs sm:text-sm font-medium tabular-nums">
         {currentSlide + 1} / {totalSlides}
       </div>
     </div>
