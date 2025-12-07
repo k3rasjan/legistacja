@@ -6,10 +6,8 @@ import {
   Menu,
   X,
   Home,
-  Search,
   Bell,
   Bookmark,
-  Settings,
   Scale,
   MessageSquare,
   List,
@@ -41,7 +39,6 @@ const navItems: NavItem[] = [
   { icon: MessageSquare, label: "Konsultacje", href: "/konsultacje" },
   { icon: Bell, label: "Powiadomienia", href: "/powiadomienia" },
   { icon: Bookmark, label: "Obserwowane", href: "/obserwowane" },
-  { icon: Settings, label: "Ustawienia", href: "/ustawienia" },
 ];
 
 interface HamburgerMenuProps {

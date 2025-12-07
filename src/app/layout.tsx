@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AccessibilityProvider } from "@/contexts/AccessibilityContext";
+import { AccessibilityWidget } from "@/components/layout/AccessibilityWidget";
 import { DebugPanel } from "@/components/debug/DebugPanel";
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <AccessibilityProvider>
           {children}
+          <AccessibilityWidget />
           <DebugPanel />
         </AccessibilityProvider>
       </body>

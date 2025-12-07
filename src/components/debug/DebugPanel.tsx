@@ -41,7 +41,7 @@ export function DebugPanel() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-[9999]">
+    <div className="fixed bottom-20 right-4 z-[9999]">
       {isOpen ? (
         <div className="bg-yellow-100 dark:bg-yellow-900/90 border border-yellow-400 rounded-lg shadow-lg p-3 text-xs min-w-[200px]">
           <div className="flex items-center justify-between mb-3">
